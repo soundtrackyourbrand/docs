@@ -1,6 +1,7 @@
-# docs
-Documentation for Soundtrack API &amp; SDK.
+# Overview
+[This repo](https://github.com/soundtrackyourbrand/docs) contains:
+* [Documentation for Soundtrack API](https://developer.soundtrackyourbrand.com/api)
+* [Auto-generated reference for Soundtrack API](https://developer.soundtrackyourbrand.com/api/reference)
+* [Documentation for Soundtrack SDK](https://developer.soundtrackyourbrand.com/sdk)
 
-API (<a href="/api/">docs</a> | <a href="/api/reference">reference</a>)
-<br><br>
-SDK (<a href="/sdk">docs</a>)
+# Want to help improve?
