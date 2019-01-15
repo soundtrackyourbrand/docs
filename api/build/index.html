@@ -1,0 +1,1118 @@
+%>
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Docs | Soundtrack API</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;shell&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#docs-that-doesn-39-t-suck" class="toc-h1 toc-link" data-title="Docs that doesn't suck">Docs that doesn't suck</a>
+          </li>
+          <li>
+            <a href="#getting-a-grasp" class="toc-h1 toc-link" data-title="Getting a grasp">Getting a grasp</a>
+          </li>
+          <li>
+            <a href="#the-basics" class="toc-h1 toc-link" data-title="The basics">The basics</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#your-request" class="toc-h2 toc-link" data-title="Your request">Your request</a>
+                  </li>
+                  <li>
+                    <a href="#our-response" class="toc-h2 toc-link" data-title="Our response">Our response</a>
+                  </li>
+                  <li>
+                    <a href="#soundtrack-hierarchy" class="toc-h2 toc-link" data-title="Soundtrack hierarchy">Soundtrack hierarchy</a>
+                  </li>
+                  <li>
+                    <a href="#asking-what-you-don-39-t-know" class="toc-h2 toc-link" data-title="Asking what you don't know">Asking what you don't know</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#type-of-actions" class="toc-h1 toc-link" data-title="Type of actions">Type of actions</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#queries" class="toc-h2 toc-link" data-title="Queries">Queries</a>
+                  </li>
+                  <li>
+                    <a href="#subscriptions" class="toc-h2 toc-link" data-title="Subscriptions">Subscriptions</a>
+                  </li>
+                  <li>
+                    <a href="#mutations" class="toc-h2 toc-link" data-title="Mutations">Mutations</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+          </li>
+          <li>
+            <a href="#rate-limit" class="toc-h1 toc-link" data-title="Rate limit">Rate limit</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#queries-amp-mutations" class="toc-h2 toc-link" data-title="Queries &amp; Mutations">Queries &amp; Mutations</a>
+                  </li>
+                  <li>
+                    <a href="#subscriptions-2" class="toc-h2 toc-link" data-title="Subscriptions">Subscriptions</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#explore" class="toc-h1 toc-link" data-title="Explore">Explore</a>
+          </li>
+          <li>
+            <a href="#example-app" class="toc-h1 toc-link" data-title="Example app">Example app</a>
+          </li>
+          <li>
+            <a href="#terms-of-use" class="toc-h1 toc-link" data-title="Terms of use">Terms of use</a>
+          </li>
+          <li>
+            <a href="#next-level" class="toc-h1 toc-link" data-title="Next level">Next level</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#graphql" class="toc-h2 toc-link" data-title="GraphQL">GraphQL</a>
+                  </li>
+                  <li>
+                    <a href="#introspection" class="toc-h2 toc-link" data-title="Introspection">Introspection</a>
+                  </li>
+                  <li>
+                    <a href="#connections" class="toc-h2 toc-link" data-title="Connections">Connections</a>
+                  </li>
+                  <li>
+                    <a href="#parameterised-queries" class="toc-h2 toc-link" data-title="Parameterised queries">Parameterised queries</a>
+                  </li>
+                  <li>
+                    <a href="#fragments-amp-multiple-queries" class="toc-h2 toc-link" data-title="Fragments &amp; multiple queries">Fragments &amp; multiple queries</a>
+                  </li>
+                  <li>
+                    <a href="#authorizing-as-a-user" class="toc-h2 toc-link" data-title="Authorizing as a user">Authorizing as a user</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='#'>Get your free credentials here</a></li>
+            <li><a href='https://join.slack.com/t/soundtrack-api/shared_invite/enQtNDMwMjY0Mzg2ODk2LTk0YWI4MjBmNzJiODg4MDFiZmYxYmI0NDk3ZmRiN2FlYjUyMGFmNTAxZjZhMjhhNmMzNmRlYmM4YjNkNDhjMDk'>Join our public Slack channel</a></li>
+            <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='docs-that-doesn-39-t-suck'>Docs that doesn&#39;t suck</h1>
+<blockquote>
+<p><strong>&quot;I&#39;m new to the Soundtrack API&quot;</strong><br>
+These docs are structured for you, so just keep scrolling.</p>
+
+<p><strong>&quot;I kind of know my way around&quot;</strong><br>
+Search in the left nav bar, use our <a href="https://api.soundtrackyourbrand.com/v2/explore">playground</a> and <a href="https://soundtrackyourbrand.github.io/docs-soundtrack_api_reference/">reference</a>.</p>
+
+<p><strong>&quot;I just want to start coding&quot;</strong><br>
+Ensure you have credentials and head over to our <a href="https://api.soundtrackyourbrand.com/v2/explore">playground</a>.</p>
+</blockquote>
+
+<p>This is the documentation for Soundtrack API. There&#39;s just too much shitty documentation out there, and we aim to be better than that. Feel free to do pull requests <a href="https://github.com/soundtrackyourbrand/docs-soundtrack_api/">straight into the repo</a> if you have any suggestions - or drop us a line in our <a href="https://join.slack.com/t/soundtrack-api/shared_invite/enQtNDMwMjY0Mzg2ODk2LTk0YWI4MjBmNzJiODg4MDFiZmYxYmI0NDk3ZmRiN2FlYjUyMGFmNTAxZjZhMjhhNmMzNmRlYmM4YjNkNDhjMDk">public Slack channel</a>.</p>
+
+<p>Soundtrack is a complete music streaming service for businesses.  Soundtrack API lets you build display-, control- and monitoring apps on top of Soundtrack. You can learn more about Soundtrack <a href="https://www.soundtrackyourbrand.com">here</a> and get inspired on how to use the API <a href="https://www.soundtrackyourbrand.com/api">here</a>.</p>
+
+<aside class="success">
+You'll need a <a href="https://business.soundtrackyourbrand.com/signup/">Soundtrack account</a> and an <a href="#">API token</a> to get started (unless you use <a href="#authorizing-as-a-user">this way</a> to authorize). Soundtrack API is free for all Soundtrack users.
+</aside>
+<h1 id='getting-a-grasp'>Getting a grasp</h1><pre class="highlight shell tab-shell"><code>curl -XPOST https://api.soundtrackyourbrand.com/v2 <span class="se">\</span>
+-H <span class="s1">'Authorization: Basic your_token'</span> <span class="se">\</span>
+-H <span class="s1">'Content-Type: application/graphql'</span> <span class="se">\</span>
+-d <span class="s1">'
+query {
+  nowPlaying(soundZone: "U291bmRabwsMWNhedTc1Nm8v") {
+    track {
+      name
+      artists {
+        name
+      }
+    }
+  }
+}
+'</span>
+</code></pre>
+<blockquote>
+<p><strong>Response</strong></p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"nowPlaying"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"track"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Branches"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"artists"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluida"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>We&#39;ve built Soundtrack API using GraphQL. One big upside is that you only get what you ask for (<a href="#graphql">we list more upsides here</a>).</p>
+
+<p>To get a quick grasp of the API, lets take an example: you want to add some info in your app of what&#39;s currently playing in your store.</p>
+
+<p>In this query, you ask for the <strong>track name</strong> and <strong>name(s) of the artist(s)</strong>. What do you get in response? A classic blob of all-data-existing-on-this-endpoint á la REST that you then need to parse? No, the response is... track name and artist(s) name(s).</p>
+
+<p>There&#39;s obviously a bunch of more stuff you can fetch and control. Keep scrolling to explore some of it (for the full API reference <a href="https://soundtrackyourbrand.github.io/docs-soundtrack_api_reference/">click here</a>).</p>
+<h1 id='the-basics'>The basics</h1>
+<p>It&#39;s not a pre-requisite to know the ins and outs of GraphQL, but we do recommend you to at least read our brief GraphQL intro <a href="#graphql">further down this page</a>.</p>
+<h2 id='your-request'>Your request</h2><h3 id='endpoint'>Endpoint</h3><pre class="highlight shell tab-shell"><code>https://api.soundtrackyourbrand.com/v2
+</code></pre>
+<p>There&#39;s only one endpoint, unless you&#39;re using <a href="#subscriptions">subscriptions</a> (we&#39;ll come to that in a bit).</p>
+<h3 id='token'>Token</h3><pre class="highlight shell tab-shell"><code>-H <span class="s1">'Authorization: Basic your_token'</span>
+</code></pre>
+<p>For the token <a href="#">you&#39;ve received from Soundtrack</a>, we use <code>Basic</code>-auth. Make sure to keep your token safe, we&#39;ll block any tokens that are compromised.</p>
+
+<p>You can login without asking us for a token, given you have login credentials to Soundtrack. Just follow <a href="#authorizing-as-a-user">these instructions</a>.</p>
+<h3 id='content-type'>Content-Type</h3><pre class="highlight shell tab-shell"><code>-H <span class="s1">'Content-Type: application/graphql'</span>
+</code></pre>
+<p>To make things easier to read, these docs uses <code>application/graphql</code> as content-type.</p>
+
+<blockquote>
+<p>In production, use the below content-type and <a href="#parameterised-queries">adjust your queries</a></p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>-H <span class="s1">'Content-Type: application/json'</span>
+</code></pre>
+<p>In production, we recommend that you use <a href="#parameterised-queries">parameterised queries</a> (<code>application/json</code>). It decreases the risk for injections and you&#39;ll be able to re-use more code.</p>
+<h3 id='body'>Body</h3><pre class="highlight shell tab-shell"><code>-d <span class="s1">'
+{
+  nowPlaying(soundZone: "soundzone_id") {
+    track {
+      name
+      album {
+        name
+        image {
+          url
+        }
+      }
+    }
+  }
+}
+'</span>
+</code></pre>
+<p>Soundtrack API supports queries (get stuff), mutations (do stuff) and subscriptions (know when stuff changes). We&#39;ll describe all of these three in a bit, but what you need to know now is: regardless what you are doing, you need to send a <code>POST</code> body specifying what you want to get/do.</p>
+<h2 id='our-response'>Our response</h2><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"nowPlaying"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"track"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sweet Addiction - Live Edit"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"album"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nous Horizon, Vol. 2 (Re-Works &amp; Edits)"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://l.cdnurl.com/image/31bbda8605500ba6345bd61941fd3cc536ad779"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>We will respond with a <code>JSON</code>. Notice that the shape of the JSON in the response follows the shape of the query.</p>
+<h2 id='soundtrack-hierarchy'>Soundtrack hierarchy</h2>
+<p>We highly recommend that you play around with your Soundtrack account so you get an overview of the product prior to using the API. All guides and frequently asked questions regarding Soundtrack can be found on our <a href="http://help.soundtrackyourbrand.com">help pages</a>.</p>
+
+<p>As you&#39;ve seen in the examples, there&#39;s something called a &quot;sound zone&quot;. In the table below, we&#39;ve explained the different concepts you need to know about.</p>
+
+<table><thead>
+<tr>
+<th>Concept</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Account</td>
+<td>e.g. &quot;Sven&#39;s burgers&quot;. Can have multiple locations.</td>
+</tr>
+<tr>
+<td>Location</td>
+<td>e.g. &quot;Flagship Store, Stockholm&quot;. Can have multiple sound zones.</td>
+</tr>
+<tr>
+<td>Sound zone</td>
+<td>e.g. &quot;Bar&quot; or &quot;Lobby&quot;. Can only have one device.</td>
+</tr>
+<tr>
+<td>Device</td>
+<td>One of the <a href="https://help.soundtrackbusiness.com/hc/en-us/articles/115002026372">supported player types</a>. Needed to play music.</td>
+</tr>
+<tr>
+<td>User</td>
+<td>Can control one or many accounts.</td>
+</tr>
+</tbody></table>
+
+<p>Each sound zone can only output one music stream. So if you want different music in different parts of the same location, you need multiple sound zones (and thus: multiple devices).</p>
+
+<p>If you want the same music everywhere in the same location you’ll only need one sound zone (and one device) and then distribute the music using your audio system.</p>
+
+<p>Each sound zone equals one subscription (which is what costs money).</p>
+<h2 id='asking-what-you-don-39-t-know'>Asking what you don&#39;t know</h2><pre class="highlight shell tab-shell"><code>curl -XPOST https://api.soundtrackyourbrand.com/v2 <span class="se">\</span>
+-H <span class="s1">'Authorization: Basic your_token'</span> <span class="se">\</span>
+-H <span class="s1">'Content-Type: application/graphql'</span> <span class="se">\</span>
+-d <span class="s1">'
+query {
+  me {
+  ...on PublicAPIClient {
+      accounts(first: 1) {
+        edges {
+          node {
+            businessName
+            locations(first: 1) {
+              edges {
+                node {
+                  name
+                    soundZones(first: 2) {
+                    edges {
+                      node {
+                        id
+                        name
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+'</span>
+</code></pre>
+<p>As you saw in the <a href="#getting-a-grasp">first example query</a>, with a short query you&#39;ll get the info you need - given you know the <code>id</code> (e.g. the id of the sound zone). But how do you get to know what the <code>id</code> is? You ask Soundtrack API.</p>
+
+<p>In this example, we want to know:</p>
+
+<ul>
+<li><p>The <strong>businessName</strong> of the first account we have access to (e.g. <code>Sven&#39;s Burger Corp.</code>)</p></li>
+<li><p>The <strong>name</strong> of the first <strong>location</strong> belonging to that account (e.g. <code>Flagship restaurant NYC</code>)</p></li>
+<li><p>The <strong>id</strong> and <strong>name</strong> of the first two <strong>sound zones</strong> belonging to that location (e.g. <code>{lLCwxazBn.., The Bar},{wwNHd3ZTg.., Restaurant area}</code>)</p></li>
+</ul>
+
+<p>As you might notice, there are a two new concepts in this query:</p>
+
+<ul>
+<li><p>Introspection (the <code>me</code>-part) which allows you to explore what you have access to.</p></li>
+<li><p>Connections (the <code>edges</code>, <code>nodes</code> &amp; <code>first: 1</code>) which enables pagination as well as some other things.</p></li>
+</ul>
+
+<p>For the sake of structure, we&#39;ll let you drill down on introspection <a href="#graphql">here</a> and connections <a href="#connections">here</a>.</p>
+<h1 id='type-of-actions'>Type of actions</h1>
+<p>Soundtrack API supports queries, subscriptions and mutations.</p>
+
+<table><thead>
+<tr>
+<th></th>
+<th>Example, use case</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Queries</td>
+<td>Fetch information that usually doesn&#39;t change (e.g. sound zone name)</td>
+</tr>
+<tr>
+<td>Subscriptions</td>
+<td>Fetch information that usually changes (e.g. what&#39;s currently playing)</td>
+</tr>
+<tr>
+<td>Mutations</td>
+<td>Make changes (e.g. skip to next track)</td>
+</tr>
+</tbody></table>
+<h2 id='queries'>Queries</h2><pre class="highlight shell tab-shell"><code>curl -XPOST https://api.soundtrackyourbrand.com/v2 <span class="se">\</span>
+-H <span class="s1">'Authorization: Basic your_token'</span> <span class="se">\</span>
+-H <span class="s1">'Content-Type: application/graphql'</span> <span class="se">\</span>
+-d <span class="s1">'
+query {
+  soundZone(id:"soundzone_id") {
+    name
+    id
+    isPaired
+  }
+}
+'</span>
+</code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"soundZone"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Staff room"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"isPaired"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"U291bmRab25lLCwxanAzcjVsZTlkcy9m8v"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Use queries for getting information that you don&#39;t expect to change very often. For example: a sound zone id, the name of the account and a list of all your locations.</p>
+
+<p>In the beginning of your query, there&#39;s the root query. If you have the id to your account or sound zone, you can input this id and instantly get the information you need. If you don&#39;t have the ids, just start off with <code>me</code> to get it, <a href="#asking-what-you-don-39-t-know">as explained here</a>. All root queries can be found in the <a href="https://soundtrackyourbrand.github.io/docs-soundtrack_api_reference/rootquerytype.doc.html">reference</a>.</p>
+
+<p>In this example, we ask for the name and the id of a specific sound zone. We also ask whether it is paired to a player or not.</p>
+
+<p>For queries, you actually don&#39;t need to start the body with <code>query</code> since GraphQL assumes it&#39;s a query if that initial string is missing. However, we recommend including it to make the code self-explanatory.</p>
+<h2 id='subscriptions'>Subscriptions</h2>
+<p>Use subscriptions for getting information you expect to change often. For example: what is currently playing, current playback state (played/paused) and current sound zone errors.</p>
+
+<p>All subscriptions can be found in the <a href="https://soundtrackyourbrand.github.io/docs-soundtrack_api_reference/rootsubscriptiontype.doc.html">reference</a>.</p>
+<h3 id='endpoint-amp-token'>Endpoint &amp; token</h3><pre class="highlight plaintext tab-plaintext"><code>wss://api.soundtrackyourbrand.com/v2?Authorization=Basic%20your_token
+</code></pre>
+<p>For subscriptions there are two things you need to adjust: the endpoint and the way you supply your token.</p>
+
+<p>The <strong>endpoint</strong> is <code>wss</code> instead of <code>https</code>. That&#39;s because we use <a href="https://en.wikipedia.org/wiki/WebSocket">web sockets</a> for subscriptions (WSS = Web Sockets Secure).</p>
+
+<p>You won&#39;t be using any headers, so the <strong>token</strong> need to be passed as a query parameter.</p>
+<h3 id='example'>Example</h3><pre class="highlight plaintext tab-plaintext"><code>subscription nowPlaying {
+  nowPlayingUpdate(input: {soundZone: "soundzone_id"}) {
+    nowPlaying {
+      track {
+        name
+        album {
+          name
+          image {
+            url
+            width
+            height
+          }
+        }
+        artists {
+          name
+        }
+      }
+    }
+  }
+}
+</code></pre>
+<blockquote>
+<p>Initial response</p>
+</blockquote>
+<pre class="highlight plaintext tab-plaintext"><code>"Your subscription data will appear here after server publication!"
+</code></pre>
+<blockquote>
+<p>Response once there&#39;s data (this response will update)</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"nowPlayingUpdate"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"nowPlaying"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"track"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Needs"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"artists"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Loure"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">],</span><span class="w">
+          </span><span class="s2">"album"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Smooth Talk EP"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"image"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">640</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://theurltothealbumartwork.com/07dc5282"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">640</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<aside class="notice">
+Since cURL doesn't support web sockets out-of-the box, we don't provide you with a cURL example. Instead: if you want to try subscriptions straight away, check out our <a href="https://api.soundtrackyourbrand.com/v2/explore">playground</a>.
+</aside>
+
+<p>In this example we want to get enough information in order to build a neat display screen showing what&#39;s playing. For that we need the <strong>name of the artist, album &amp; track</strong> as well as some <strong>album art info</strong>.</p>
+
+<p>Once you fire away the request, you&#39;ll most likely get an initial response stating that there&#39;s not yet any data to display. Once there&#39;s anything that is changing, the response will update.</p>
+
+<p><strong>&quot;But I want to show what&#39;s playing when a user opens my app - they shouldn&#39;t have to wait!&quot;</strong></p>
+
+<p>Good thinking! In those cases you should have an initial query where you ask for what&#39;s playing. Then you&#39;ll let the subscription take over from there.</p>
+
+<p><strong>&quot;What if I the web socket connection is lost in one way or another?&quot;</strong></p>
+
+<p>It&#39;s up to you to handle this in your code. Maybe by sending a query (to fetch what&#39;s playing) and then re-try the subscription.</p>
+
+<p><strong>&quot;Why can&#39;t I just use queries instead of subscriptions?&quot;</strong></p>
+
+<p>With subscriptions you limit the amount of requests as well as avoid getting <a href="#rate-limit">rate limited</a>. Also, you get the info you need in a more timely manner which makes it easier for you to provide a great user experience!</p>
+<h2 id='mutations'>Mutations</h2><pre class="highlight shell tab-shell"><code>curl -XPOST https://api.soundtrackyourbrand.com/v2 <span class="se">\</span>
+-H <span class="s1">'Authorization: Basic your_token'</span> <span class="se">\</span>
+-H <span class="s1">'Content-Type: application/graphql'</span> <span class="se">\</span>
+-d <span class="s1">'
+mutation {
+  setVolume(input: {soundZone:"soundzone_id", volume: 11}) {
+      volume
+  }
+}
+'</span>
+</code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"setVolume"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Use mutations to make changes. For example: change the volume, skip track and play/pause.</p>
+
+<p>All mutations can be found in the <a href="https://soundtrackyourbrand.github.io/docs-soundtrack_api_reference/rootmutationtype.doc.html">reference</a>.</p>
+
+<p>In this example you set the volume to 11 on a specific sound zone. You always need to ask for a response, so in this case we just ask for the volume.</p>
+<h1 id='errors'>Errors</h1>
+<blockquote>
+<p>Incorrect input (an account id that doesn&#39;t exist)</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl -XPOST https://api.soundtrackyourbrand.com/v2 <span class="se">\</span>
+-H <span class="s1">'Authorization: Basic your_token'</span> <span class="se">\</span>
+-H <span class="s1">'Content-Type: application/graphql'</span> <span class="se">\</span>
+-d <span class="s1">'
+query {
+  account(id:"QWNjb3VudCwsWNheXg3dTc1Nm8v") {
+    businessName
+  }
+}
+'</span>
+</code></pre>
+<blockquote>
+<p>Response (HTTP <code>200 OK</code>)</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"errors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"path"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"account"</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Forbidden"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"locations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"line"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"column"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"account"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>With GraphQL, a HTTP code stating <code>200 OK</code> doesn&#39;t always mean that you get the data you wanted. If the query executes but bumps into an error along the way, you&#39;ll get a <code>200</code> with an <code>errors</code>-object appended to the response body.</p>
+
+<table><thead>
+<tr>
+<th>Error</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>HTTP <code>5xx</code> or WebSocket <code>1xxx</code></td>
+<td>Server problems</td>
+<td>e.g. server not available</td>
+</tr>
+<tr>
+<td>HTTP <code>4xx</code></td>
+<td>Client problems</td>
+<td>e.g. rate limited</td>
+</tr>
+<tr>
+<td>HTTP <code>200</code> with <code>errors</code>-body</td>
+<td>GraphQL problems</td>
+<td>e.g. incorrect input</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+Did you get an error message that you think could be improved? Please <a href="https://join.slack.com/t/soundtrack-api/shared_invite/enQtNDMwMjY0Mzg2ODk2LTk0YWI4MjBmNzJiODg4MDFiZmYxYmI0NDk3ZmRiN2FlYjUyMGFmNTAxZjZhMjhhNmMzNmRlYmM4YjNkNDhjMDkg">reach out on Slack</a> and let us know.
+</aside>
+<h1 id='rate-limit'>Rate limit</h1>
+<blockquote>
+<p>Please note that the rate limit is subject to change since we continuously monitor how the API is used and make relevant updates.</p>
+</blockquote>
+
+<p>The Soundtrack API enforces rate limiting. You start off with the maximum amount of tokens (18000) and for every call (query, mutation or subscription) you make, tokens will be deducted.</p>
+
+<p>The number of tokens deducted depends on the complexity of the call you are making. But we don’t just take tokens from you - every second you get 5 tokens back.</p>
+
+<p>Let’s say you make a query with a complexity of 100. Now you’re down to 17900. After 20 seconds you’re back to 18000 tokens (5 tokens per second). Simple, right?</p>
+<h2 id='queries-amp-mutations'>Queries &amp; Mutations</h2><pre class="highlight shell tab-shell"><code>curl -XPOST https://api.soundtrackyourbrand.com/v2 <span class="se">\</span>
+-H <span class="s1">'Authorization: Basic your_token'</span> <span class="se">\</span>
+-H <span class="s1">'Content-Type: application/graphql'</span> <span class="se">\</span>
+-d <span class="s1">'
+query {
+  account(id:"account_id") {
+    businessName
+
+    locations(first: 10) {
+      edges {
+        location: node {
+          soundZones(first: 10) {
+            edges {
+              node {
+                device {
+                  id
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+'</span>
+</code></pre>
+<p>Queries and mutations calculates the rate limit in the same way. Keep scrolling to understand how we rate limit subscriptions.</p>
+
+<p>In this section&#39;s example you’re fetching the device information from the first ten sound zones for each of the first ten locations on a single account. In the same call, you’re also fetching the now playing information form one sound zone. Here’s how we calculate:</p>
+
+<table><thead>
+<tr>
+<th></th>
+<th>Cost</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>accounts</td>
+<td>1</td>
+</tr>
+<tr>
+<td>locations</td>
+<td>10</td>
+</tr>
+<tr>
+<td>soundzones</td>
+<td>100 (10 sound zones on 10 locations)</td>
+</tr>
+<tr>
+<td>device</td>
+<td>100 (10 devices on 10 sound zones)</td>
+</tr>
+<tr>
+<td><strong>total</strong></td>
+<td><strong>211</strong></td>
+</tr>
+</tbody></table>
+
+<p>A request’s cost is deducted from your tokens. <strong>The cost is calculated based on the query, and not the data it would return if it were to execute</strong>.</p>
+
+<p>In the example above, even if each location only had one single sound zone, the cost for the sound zones would still be 100 (instead of 10). This means you should try to be conservative with how much data you ask for in deeply nested connections in order to preserve your tokens.</p>
+<h3 id='quot-but-i-don-39-t-want-to-calculate-quot'>&quot;But I don&#39;t want to calculate!&quot;</h3><pre class="highlight shell tab-shell"><code>curl -XPOST https://api.soundtrackyourbrand.com/v2 <span class="se">\</span>
+-H <span class="s1">'Authorization: Basic your_token'</span> <span class="se">\</span>
+-H <span class="s1">'Content-Type: application/graphql'</span> <span class="se">\</span>
+-d <span class="s1">'
+query {
+  queryInfo {
+    complexity
+  }
+  account(id:"account_id") {
+    businessName
+  }
+}
+'</span>
+</code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"queryInfo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"complexity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"account"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"businessName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The Halloumi Burger Joints"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Just append <code>queryInfo</code> to your query and we&#39;ll do the calculation for you (we currently don&#39;t have this for mutations nor subscriptions).</p>
+<h2 id='subscriptions-2'>Subscriptions</h2>
+<p>The maximum complexity of a subscription is 100.</p>
+<h1 id='explore'>Explore</h1>
+<p>The best way to explore (and, in our opinion, the best documentation too!) is <a href="https://api.soundtrackyourbrand.com/v2/explore">our playground</a>.</p>
+
+<p>Once you’ve added your Authorization header you can use it to create and run queries towards the Soundtrack API. There are documentation and auto-completion features.</p>
+
+<p>Please keep in mind that all queries use live data and count towards your rate limit.</p>
+<h1 id='example-app'>Example app</h1>
+<blockquote>
+<p>Find the example app <a href="https://github.com/soundtrackyourbrand/soundtrack_api-example_app">in this repo</a>. Feel free to contribute.</p>
+</blockquote>
+
+<p>To get you started we’ve implemented a simple react-relay app. We’ve decided to create a frontend app since it is easy for you to get up and running locally. However, we strongly encourage you to not build a frontend application where the API client secret can be found in the source code.</p>
+
+<p>Secrets found in public applications will be blocked. What you probably want to do is to build a backend service that implements whatever authentication layer that your app needs.</p>
+<h1 id='terms-of-use'>Terms of use</h1>
+<blockquote>
+<p>Read and comply to our <a href="https://www.soundtrackyourbrand.com/legal/api-terms-of-use">API Terms of Use</a></p>
+</blockquote>
+
+<p>By using the Soundtrack API, you accept to our <a href="https://www.soundtrackyourbrand.com/legal/api-terms-of-use">API Terms of Use</a>. Please note that it should be clear to the end user that you are the one that has built and is maintaining the application. Using Soundtrack marketing material (except artwork provided via the API) needs Soundtrack Your Brand’s written consent. For example, you are not allowed to use our graphics (e.g. buttons) used in our products to create a similar experience.</p>
+
+<p>Due to licensing restrictions, visitors are currently not allowed to control playback. For example, you are allowed to build an application where your authorized staff changes the playlist but the same functionality can’t be exposed to your visitors. Sharing track name, sharing url, etc. is however fine as this is regarded as non-interactive.</p>
+<h1 id='next-level'>Next level</h1>
+<p>Want to shape up your queries or just read more about a specific topic? We&#39;ve gathered some good-to-knows here.</p>
+<h2 id='graphql'>GraphQL</h2>
+<p>The API is built using GraphQL, abiding by the <a href="https://facebook.github.io/relay/graphql/connections.htm">Relay Connection Specification</a> in order to make it as easy as possible to use third party libraries, such as Relay or Apollo.</p>
+<h3 id='what-is-graphql'>What is GraphQL?</h3>
+<p>GraphQL is a query language for APIs. It describes the API as a graph of connected objects which can be queried with a single request. A single query can load data from multiple, deeply nested entities that would normally require multiple chained requests in a REST API.</p>
+
+<p>This makes it easier for you as an application developer to get the data you need, but also improves performance since it minimises the number of requests you need to make.</p>
+
+<p>GraphQL is an API query layer. This means that all queries you run is defined by the API in beforehand. You cannot select data based on any criteria you want, in contrast with other query languages such as SQL.</p>
+
+<p>GraphQL is also an open standard with multiple server and client libraries, which makes it easy to get an application scaffold up and running.</p>
+
+<p>Subscriptions in the Soundtrack API is powered by the <a href="https://phoenixframework.org/">Phoenix framework</a>. An implementation of this protocol can be found <a href="https://github.com/absinthe-graphql/absinthe-socket/tree/master/packages/socket">here</a>. Here are two noteworthy articles on subscriptions in GraphQL: <a href="http://graphql.org/blog/subscriptions-in-graphql-and-relay/">Subscriptions in GraphQL and Relay</a> &amp; <a href="https://hexdocs.pm/phoenix/js/">Javascript docs</a>.</p>
+<h3 id='why-graphql'>Why GraphQL?</h3>
+<p>Here are some of the reasons why we chose GraphQL:</p>
+
+<ul>
+<li><p>Being able to query for the exact data that you need makes it easier to quickly get up and running. And greatly improves the performance.</p></li>
+<li><p>GraphQL is strongly typed and has very good introspection features, which enables very good tooling for both exploring and using the API.</p></li>
+<li><p>There are good client libraries as well as IDE support.</p></li>
+<li><p>The ability to join multiple queries together is a big performance improvement.</p></li>
+</ul>
+<h3 id='libraries'>Libraries</h3>
+<p>If you’re building a backend implementation, all you need is an HTTP client and a JSON parser. If you’re building something for the frontend, Relay and Apollo are popular choices. Just make sure you don’t expose your API Credentials by accident (if we find any exposed credentials, we will revoke them).</p>
+<h3 id='additional-reading'>Additional reading</h3>
+<ul>
+<li><p><a href="http://graphql.org/">GraphQL’s official site</a></p></li>
+<li><p><a href="http://facebook.github.io/graphql/October2016/">GraphQL Specification</a></p></li>
+<li><p><a href="https://www.howtographql.com/">How to GraphQL</a></p></li>
+<li><p><a href="https://facebook.github.io/relay/graphql/connections.htm">Relay Connection Specification</a></p></li>
+<li><p>There are many good talks on GraphQL on <a href="https://www.youtube.com/results?search_query=graphql">YouTube</a></p></li>
+</ul>
+<h2 id='introspection'>Introspection</h2>
+<p>Here&#39;s a good read on <a href="https://graphql.org/learn/introspection/">introspection in GraphQL</a>.</p>
+<h2 id='connections'>Connections</h2><pre class="highlight shell tab-shell"><code>curl -XPOST https://api.soundtrackyourbrand.com/v2 <span class="se">\</span>
+-H <span class="s1">'Authorization: Basic your_token'</span> <span class="se">\</span>
+-H <span class="s1">'Content-Type: application/graphql'</span> <span class="se">\</span>
+-d <span class="s1">'
+query {
+  node(id: "track_id") {
+    ...on Track {
+      name
+      previewUrl
+    }
+  }
+}
+'</span>
+</code></pre>
+<p>Every one to many relationship is modelled using a concept of connections, edges and nodes. This is according to <a href="https://facebook.github.io/relay/graphql/connections.htm">Relay’s Connection Specification</a> and allows every such relationship to be paginated in a consistent manner.</p>
+<h3 id='node-queries'>Node queries</h3>
+<p>Most of the central entities (account, sound zones, now playing) have specific top-level queries to find them by id.</p>
+
+<p>For many other entities, you can use the more general <code>node</code> query to get a specific entity, should you need it. Use the <a href="https://api.soundtrackyourbrand.com/v2/explore">playground</a> to see what entities implement the node interface (or see the <a href="https://soundtrackyourbrand.github.io/docs-soundtrack_api_reference/node.doc.html">reference</a>).</p>
+
+<blockquote>
+<p>Pagination: first query</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl -XPOST https://api.soundtrackyourbrand.com/v2 <span class="se">\</span>
+-H <span class="s1">'Authorization: Basic your_token'</span> <span class="se">\</span>
+-H <span class="s1">'Content-Type: application/graphql'</span> <span class="se">\</span>
+-d <span class="s1">'
+query {
+  account(id: "account_id") {
+    access {
+      users(first: 5) {
+        pageInfo {
+          hasNextPage
+          endCursor
+        }
+        edges {
+          role
+          node {
+            name
+            id
+          }
+        }
+      }
+    }
+  }
+}
+'</span>
+</code></pre>
+<blockquote>
+<p>Pagination: second query</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl -XPOST https://api.soundtrackyourbrand.com/v2 <span class="se">\</span>
+-H <span class="s1">'Authorization: Basic your_token'</span> <span class="se">\</span>
+-H <span class="s1">'Content-Type: application/graphql'</span> <span class="se">\</span>
+-d <span class="s1">'
+query {
+  account(id: "account_id") {
+    access {
+      users(first: 5 after: "endCursor") {
+        pageInfo {
+          hasNextPage
+          endCursor
+        }
+        edges {
+          role
+          node {
+            name
+            id
+          }
+        }
+      }
+    }
+  }
+}
+'</span>
+</code></pre><h3 id='pagination'>Pagination</h3>
+<p>You call the connection describing for example how many results you want and from what page, and then you go through the connection’s edges and get each node. The edge contains metadata about the relationship from the parent to the node, such as a user&#39;s role.</p>
+
+<p>The first query would get the first five users who has access to the account. To get the next page, use the <code>endCursor</code> on the <code>pageInfo</code> as a cursor to the next query.</p>
+<h2 id='parameterised-queries'>Parameterised queries</h2>
+<blockquote>
+<p>The JSON payload is as follows:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"query"</span><span class="p">:</span><span class="w"> </span><span class="s2">"query"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"parameters"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"parameter1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"value1"</span><span class="p">},</span><span class="w">
+    </span><span class="s2">"operationName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"only needed if the query has multiple operations"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>For example:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl -XPOST https://api.soundtrackyourbrand.com/v2 <span class="se">\</span>
+-H <span class="s1">'Authorization: Basic your_token'</span> <span class="se">\</span>
+-H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+-d <span class="s1">'
+{
+    "query": "query($id: ID!) { soundZone(id: $id) { name } }",
+    "variables": { "id": "soundzone_id" }
+}
+'</span>
+</code></pre>
+<blockquote>
+<p>A more complex example:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl -XPOST https://api.soundtrackyourbrand.com/v2 <span class="se">\</span>
+-H <span class="s1">'Authorization: Basic your_token'</span> <span class="se">\</span>
+-H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+-d <span class="s1">'
+{
+    "query": "query soundZone($id: ID!) { soundZone(id: $id) { name } } query account($id: ID!) { account(id: $id) { businessName } }",
+    "variables": { "id": "soundzone_id" },
+    "operationName": "soundZone"
+}
+'</span>
+</code></pre>
+<p>In production, we recommend that you use parameterised queries. It decreases the risk for injections and you&#39;ll be able to re-use more code.</p>
+
+<p>In order to use parameterised queries, the API expects the <code>Content-Type</code> to be <code>application/json</code>.</p>
+<h2 id='fragments-amp-multiple-queries'>Fragments &amp; multiple queries</h2><pre class="highlight shell tab-shell"><code>curl -XPOST https://api.soundtrackyourbrand.com/v2 <span class="se">\</span>
+-H <span class="s1">'Authorization: Basic your_token'</span> <span class="se">\</span>
+-H <span class="s1">'Content-Type: application/graphql'</span> <span class="se">\</span>
+-d <span class="s1">'
+fragment nowPlayingFields on NowPlaying {
+  startedAt
+    track {
+      name
+      artists {
+        name
+      }
+      album {
+        image {
+          url
+          width
+          height
+        }
+      }
+    }
+}
+
+query {
+  nowPlaying1: nowPlaying(soundZone: "soundzone_id_1") {
+    ...nowPlayingFields
+  }
+
+  nowPlaying2: nowPlaying(soundZone: "soundzone_id_2") {
+    ...nowPlayingFields
+  }
+}
+'</span>
+</code></pre>
+<p>This example combines multiple queries into a single query. This can be done for all GraphQL you want to run (as long as they are independent from each other) in order to save round trips. It also shows how you can use <a href="http://graphql.org/learn/queries/#fragments">GraphQL fragments</a> to reduce the amount of boilerplate in your queries.</p>
+<h2 id='authorizing-as-a-user'>Authorizing as a user</h2><pre class="highlight shell tab-shell"><code>curl -XPOST https://api.soundtrackyourbrand.com/v2 <span class="se">\</span>
+-H <span class="s1">'Content-Type: application/graphql'</span> <span class="se">\</span>
+-d <span class="s1">'
+mutation {
+  loginUser(input: {email: "your_email", password: "your_password"}) {
+    token
+    refreshToken
+  }
+}
+'</span>
+</code></pre>
+<p>If you want to, you can skip asking for API client credentials and just get a token using your existing Soundtrack-credentials, using the <code>loginUser</code>-mutation. For the <code>loginUser</code>-mutation you (obviously...) don&#39;t need an authorization-header.</p>
+
+<p>The response will contain two tokens:</p>
+
+<ul>
+<li><code>token</code> is your access token which you will use in your other API calls (e.g. when making queries).</li>
+<li><code>refreshToken</code> is used for obtaining a new <code>token</code>. We&#39;ll get back to this in a bit.</li>
+</ul>
+
+<p>Note that since you&#39;re not logging in as an API client, you can&#39;t use <code>...on PublicAPIClient</code> in your <code>me</code>-query (<a href="#asking-what-you-don-39-t-know">this example</a>). Instead, use <code>...on User</code>.</p>
+
+<blockquote>
+<p>If you use this way of authorizing, use <code>Bearer</code> and not <code>Basic</code></p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>-H <span class="s1">'Authorization: Bearer your_token'</span>
+</code></pre><h3 id='using-token'>Using <code>token</code></h3>
+<p>You use the access <code>token</code> in the same way as already described in these docs, except that you should use <code>Bearer</code> instead of <code>Basic</code> in your authorization header (for <a href="#subscriptions">subscriptions</a>: as a query parameter)</p>
+
+<p>The token won&#39;t be valid forever. That&#39;s why you need to use your <code>refreshToken</code> as soon as you get <code>HTTP 401</code> on your requests.</p>
+<h3 id='using-refreshtoken'>Using <code>refreshToken</code></h3><pre class="highlight shell tab-shell"><code>curl -XPOST https://api.soundtrackyourbrand.com/v2 <span class="se">\</span>
+-H <span class="s1">'Content-Type: application/graphql'</span> <span class="se">\</span>
+-d <span class="s1">'
+mutation{
+  refreshToken(input:{token:"your_refresh_token"}){
+    token
+    refreshToken
+  }
+}
+'</span>
+</code></pre>
+<p>The <code>refreshToken</code> will enable you to fetch a new access <code>token</code>. Once you get the response, replace your old <code>token</code> with the new one.</p>
+
+<p>Always make it a habit to request the <code>refreshToken</code> as well, since it also can change.</p>
+
+<p>If your <code>refreshToken</code> is outdated (your app might have been offline), remember that you always can use the <code>loginUser</code>-mutation to get a new one.</p>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
