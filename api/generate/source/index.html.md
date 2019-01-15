@@ -20,12 +20,12 @@ search: true
 > These docs are structured for you, so just keep scrolling.
 
 > **"I kind of know my way around"**<br>
-> Search in the left nav bar, use our [playground](https://api.soundtrackyourbrand.com/v2/explore) and [reference](https://soundtrackyourbrand.github.io/docs-soundtrack_api_reference/).
+> Search in the left nav bar, use our [playground](https://api.soundtrackyourbrand.com/v2/explore) and [reference](https://developer.soundtrackyourbrand.com/api/reference).
 
 > **"I just want to start coding"**<br>
 > Ensure you have credentials and head over to our [playground](https://api.soundtrackyourbrand.com/v2/explore).
 
-This is the documentation for Soundtrack API. There's just too much shitty documentation out there, and we aim to be better than that. Feel free to do pull requests [straight into the repo](https://github.com/soundtrackyourbrand/docs-soundtrack_api/) if you have any suggestions - or drop us a line in our [public Slack channel](https://join.slack.com/t/soundtrack-api/shared_invite/enQtNDMwMjY0Mzg2ODk2LTk0YWI4MjBmNzJiODg4MDFiZmYxYmI0NDk3ZmRiN2FlYjUyMGFmNTAxZjZhMjhhNmMzNmRlYmM4YjNkNDhjMDk).
+This is the documentation for Soundtrack API. There's just too much shitty documentation out there, and we aim to be better than that. Feel free to do pull requests [straight into the repo](https://github.com/soundtrackyourbrand/docs/blob/master/api/generate/source/index.html.md) if you have any suggestions - or drop us a line in our [public Slack channel](https://join.slack.com/t/soundtrack-api/shared_invite/enQtNDMwMjY0Mzg2ODk2LTk0YWI4MjBmNzJiODg4MDFiZmYxYmI0NDk3ZmRiN2FlYjUyMGFmNTAxZjZhMjhhNmMzNmRlYmM4YjNkNDhjMDk).
 
 Soundtrack is a complete music streaming service for businesses.  Soundtrack API lets you build display-, control- and monitoring apps on top of Soundtrack. You can learn more about Soundtrack [here](https://www.soundtrackyourbrand.com) and get inspired on how to use the API [here](https://www.soundtrackyourbrand.com/api).
 
@@ -78,7 +78,7 @@ To get a quick grasp of the API, lets take an example: you want to add some info
 
 In this query, you ask for the **track name** and **name(s) of the artist(s)**. What do you get in response? A classic blob of all-data-existing-on-this-endpoint á la REST that you then need to parse? No, the response is... track name and artist(s) name(s).
 
-There's obviously a bunch of more stuff you can fetch and control. Keep scrolling to explore some of it (for the full API reference [click here](https://soundtrackyourbrand.github.io/docs-soundtrack_api_reference/)).
+There's obviously a bunch of more stuff you can fetch and control. Keep scrolling to explore some of it (for the full API reference [click here](https://developer.soundtrackyourbrand.com/api/reference)).
 
 
 # The basics
@@ -282,7 +282,7 @@ query {
 
 Use queries for getting information that you don't expect to change very often. For example: a sound zone id, the name of the account and a list of all your locations.
 
-In the beginning of your query, there's the root query. If you have the id to your account or sound zone, you can input this id and instantly get the information you need. If you don't have the ids, just start off with `me` to get it, [as explained here](#asking-what-you-don-39-t-know). All root queries can be found in the [reference](https://soundtrackyourbrand.github.io/docs-soundtrack_api_reference/rootquerytype.doc.html).
+In the beginning of your query, there's the root query. If you have the id to your account or sound zone, you can input this id and instantly get the information you need. If you don't have the ids, just start off with `me` to get it, [as explained here](#asking-what-you-don-39-t-know). All root queries can be found in the [reference](https://developer.soundtrackyourbrand.com/api/reference/rootquerytype.doc.html).
 
 In this example, we ask for the name and the id of a specific sound zone. We also ask whether it is paired to a player or not.
 
@@ -292,7 +292,7 @@ For queries, you actually don't need to start the body with `query` since GraphQ
 
 Use subscriptions for getting information you expect to change often. For example: what is currently playing, current playback state (played/paused) and current sound zone errors.
 
-All subscriptions can be found in the [reference](https://soundtrackyourbrand.github.io/docs-soundtrack_api_reference/rootsubscriptiontype.doc.html).
+All subscriptions can be found in the [reference](https://developer.soundtrackyourbrand.com/api/reference/rootsubscriptiontype.doc.html).
 
 ### Endpoint & token
 
@@ -415,7 +415,7 @@ mutation {
 
 Use mutations to make changes. For example: change the volume, skip track and play/pause.
 
-All mutations can be found in the [reference](https://soundtrackyourbrand.github.io/docs-soundtrack_api_reference/rootmutationtype.doc.html).
+All mutations can be found in the [reference](https://developer.soundtrackyourbrand.com/api/reference/rootmutationtype.doc.html).
 
 In this example you set the volume to 11 on a specific sound zone. You always need to ask for a response, so in this case we just ask for the volume.
 
@@ -665,7 +665,7 @@ Every one to many relationship is modelled using a concept of connections, edges
 
 Most of the central entities (account, sound zones, now playing) have specific top-level queries to find them by id.
 
-For many other entities, you can use the more general `node` query to get a specific entity, should you need it. Use the [playground](https://api.soundtrackyourbrand.com/v2/explore) to see what entities implement the node interface (or see the [reference](https://soundtrackyourbrand.github.io/docs-soundtrack_api_reference/node.doc.html)).
+For many other entities, you can use the more general `node` query to get a specific entity, should you need it. Use the [playground](https://api.soundtrackyourbrand.com/v2/explore) to see what entities implement the node interface (or see the [reference](https://developer.soundtrackyourbrand.com/api/reference/node.doc.html)).
 
 
 > Pagination: first query

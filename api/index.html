@@ -318,13 +318,13 @@
 These docs are structured for you, so just keep scrolling.</p>
 
 <p><strong>&quot;I kind of know my way around&quot;</strong><br>
-Search in the left nav bar, use our <a href="https://api.soundtrackyourbrand.com/v2/explore">playground</a> and <a href="https://soundtrackyourbrand.github.io/docs-soundtrack_api_reference/">reference</a>.</p>
+Search in the left nav bar, use our <a href="https://api.soundtrackyourbrand.com/v2/explore">playground</a> and <a href="https://developer.soundtrackyourbrand.com/api/reference">reference</a>.</p>
 
 <p><strong>&quot;I just want to start coding&quot;</strong><br>
 Ensure you have credentials and head over to our <a href="https://api.soundtrackyourbrand.com/v2/explore">playground</a>.</p>
 </blockquote>
 
-<p>This is the documentation for Soundtrack API. There&#39;s just too much shitty documentation out there, and we aim to be better than that. Feel free to do pull requests <a href="https://github.com/soundtrackyourbrand/docs-soundtrack_api/">straight into the repo</a> if you have any suggestions - or drop us a line in our <a href="https://join.slack.com/t/soundtrack-api/shared_invite/enQtNDMwMjY0Mzg2ODk2LTk0YWI4MjBmNzJiODg4MDFiZmYxYmI0NDk3ZmRiN2FlYjUyMGFmNTAxZjZhMjhhNmMzNmRlYmM4YjNkNDhjMDk">public Slack channel</a>.</p>
+<p>This is the documentation for Soundtrack API. There&#39;s just too much shitty documentation out there, and we aim to be better than that. Feel free to do pull requests <a href="https://github.com/soundtrackyourbrand/docs/blob/master/api/generate/source/index.html.md">straight into the repo</a> if you have any suggestions - or drop us a line in our <a href="https://join.slack.com/t/soundtrack-api/shared_invite/enQtNDMwMjY0Mzg2ODk2LTk0YWI4MjBmNzJiODg4MDFiZmYxYmI0NDk3ZmRiN2FlYjUyMGFmNTAxZjZhMjhhNmMzNmRlYmM4YjNkNDhjMDk">public Slack channel</a>.</p>
 
 <p>Soundtrack is a complete music streaming service for businesses.  Soundtrack API lets you build display-, control- and monitoring apps on top of Soundtrack. You can learn more about Soundtrack <a href="https://www.soundtrackyourbrand.com">here</a> and get inspired on how to use the API <a href="https://www.soundtrackyourbrand.com/api">here</a>.</p>
 
@@ -371,7 +371,7 @@ query {
 
 <p>In this query, you ask for the <strong>track name</strong> and <strong>name(s) of the artist(s)</strong>. What do you get in response? A classic blob of all-data-existing-on-this-endpoint á la REST that you then need to parse? No, the response is... track name and artist(s) name(s).</p>
 
-<p>There&#39;s obviously a bunch of more stuff you can fetch and control. Keep scrolling to explore some of it (for the full API reference <a href="https://soundtrackyourbrand.github.io/docs-soundtrack_api_reference/">click here</a>).</p>
+<p>There&#39;s obviously a bunch of more stuff you can fetch and control. Keep scrolling to explore some of it (for the full API reference <a href="https://developer.soundtrackyourbrand.com/api/reference">click here</a>).</p>
 <h1 id='the-basics'>The basics</h1>
 <p>It&#39;s not a pre-requisite to know the ins and outs of GraphQL, but we do recommend you to at least read our brief GraphQL intro <a href="#graphql">further down this page</a>.</p>
 <h2 id='your-request'>Your request</h2><h3 id='endpoint'>Endpoint</h3><pre class="highlight shell tab-shell"><code>https://api.soundtrackyourbrand.com/v2
@@ -566,7 +566,7 @@ query {
 </span></code></pre>
 <p>Use queries for getting information that you don&#39;t expect to change very often. For example: a sound zone id, the name of the account and a list of all your locations.</p>
 
-<p>In the beginning of your query, there&#39;s the root query. If you have the id to your account or sound zone, you can input this id and instantly get the information you need. If you don&#39;t have the ids, just start off with <code>me</code> to get it, <a href="#asking-what-you-don-39-t-know">as explained here</a>. All root queries can be found in the <a href="https://soundtrackyourbrand.github.io/docs-soundtrack_api_reference/rootquerytype.doc.html">reference</a>.</p>
+<p>In the beginning of your query, there&#39;s the root query. If you have the id to your account or sound zone, you can input this id and instantly get the information you need. If you don&#39;t have the ids, just start off with <code>me</code> to get it, <a href="#asking-what-you-don-39-t-know">as explained here</a>. All root queries can be found in the <a href="https://developer.soundtrackyourbrand.com/api/reference/rootquerytype.doc.html">reference</a>.</p>
 
 <p>In this example, we ask for the name and the id of a specific sound zone. We also ask whether it is paired to a player or not.</p>
 
@@ -574,7 +574,7 @@ query {
 <h2 id='subscriptions'>Subscriptions</h2>
 <p>Use subscriptions for getting information you expect to change often. For example: what is currently playing, current playback state (played/paused) and current sound zone errors.</p>
 
-<p>All subscriptions can be found in the <a href="https://soundtrackyourbrand.github.io/docs-soundtrack_api_reference/rootsubscriptiontype.doc.html">reference</a>.</p>
+<p>All subscriptions can be found in the <a href="https://developer.soundtrackyourbrand.com/api/reference/rootsubscriptiontype.doc.html">reference</a>.</p>
 <h3 id='endpoint-amp-token'>Endpoint &amp; token</h3><pre class="highlight plaintext tab-plaintext"><code>wss://api.soundtrackyourbrand.com/v2?Authorization=Basic%20your_token
 </code></pre>
 <p>For subscriptions there are two things you need to adjust: the endpoint and the way you supply your token.</p>
@@ -679,7 +679,7 @@ mutation {
 </span></code></pre>
 <p>Use mutations to make changes. For example: change the volume, skip track and play/pause.</p>
 
-<p>All mutations can be found in the <a href="https://soundtrackyourbrand.github.io/docs-soundtrack_api_reference/rootmutationtype.doc.html">reference</a>.</p>
+<p>All mutations can be found in the <a href="https://developer.soundtrackyourbrand.com/api/reference/rootmutationtype.doc.html">reference</a>.</p>
 
 <p>In this example you set the volume to 11 on a specific sound zone. You always need to ask for a response, so in this case we just ask for the volume.</p>
 <h1 id='errors'>Errors</h1>
@@ -927,7 +927,7 @@ query {
 <h3 id='node-queries'>Node queries</h3>
 <p>Most of the central entities (account, sound zones, now playing) have specific top-level queries to find them by id.</p>
 
-<p>For many other entities, you can use the more general <code>node</code> query to get a specific entity, should you need it. Use the <a href="https://api.soundtrackyourbrand.com/v2/explore">playground</a> to see what entities implement the node interface (or see the <a href="https://soundtrackyourbrand.github.io/docs-soundtrack_api_reference/node.doc.html">reference</a>).</p>
+<p>For many other entities, you can use the more general <code>node</code> query to get a specific entity, should you need it. Use the <a href="https://api.soundtrackyourbrand.com/v2/explore">playground</a> to see what entities implement the node interface (or see the <a href="https://developer.soundtrackyourbrand.com/api/reference/node.doc.html">reference</a>).</p>
 
 <blockquote>
 <p>Pagination: first query</p>
