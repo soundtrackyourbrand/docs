@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="./styles/graphdoc.css" />
     <link rel="shortcut icon" type="image/png" href="https://business.soundtrackyourbrand.com/favicon.ico?v=3"/>
-    <title>RefreshTokenInput</title>
+    <title>RefreshLoginPayload</title>
     <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700" rel="stylesheet"><link type="text/css" rel="stylesheet" href="./assets/code.css" /><link type="text/css" rel="stylesheet" href="./assets/require-by.css" />
 </head>
 <body class="slds-scrollable--y">
@@ -376,9 +376,9 @@
                 QueryInfo
             </a>
         </li>
-        <li  title="RefreshTokenPayload">
-            <a href="refreshtokenpayload.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
-                RefreshTokenPayload
+        <li class="slds-is-active" title="RefreshLoginPayload">
+            <a href="refreshloginpayload.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                RefreshLoginPayload
             </a>
         </li>
         <li  title="Schedule">
@@ -541,9 +541,9 @@
                 PlayInput
             </a>
         </li>
-        <li class="slds-is-active" title="RefreshTokenInput">
-            <a href="refreshtokeninput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
-                RefreshTokenInput
+        <li  title="RefreshLoginInput">
+            <a href="refreshlogininput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                RefreshLoginInput
             </a>
         </li>
         <li  title="SetPlayFromInput">
@@ -596,8 +596,8 @@
         </div>
     </div>
     <div class="container">
-        <p class="slds-text-title--caps slds-text-color--weak">INPUT_OBJECT</p>
-        <h1 class="slds-text-heading--large">RefreshTokenInput</h1>
+        <p class="slds-text-title--caps slds-text-color--weak">OBJECT</p>
+        <h1 class="slds-text-heading--large">RefreshLoginPayload</h1>
         <div class="slds-text-body--regular"></div>
         
     </div>
@@ -610,7 +610,7 @@
             </a>
             GraphQL Schema definition
         </h2>
-        <code class="highlight"><ul class="code" style="padding-left:28px"><li><span class="keyword operator ts">input</span> <span class="identifier">RefreshTokenInput</span> {</li><li><span class="tab"><li><span class="tab"><span class="comment line">#   A unique identifier for the client performing the mutation.</span></span></li><li><span class="tab"><span class="meta">clientMutationId</span>: <a class="support type" href="string.doc.html">String</a></span></li></span></li><li><span class="tab"><li><span class="tab"><span class="comment line">#   The refresh token gotten from the login mutation</span></span></li><li><span class="tab"><span class="meta">token</span>: <a class="support type" href="string.doc.html">String</a>!</span></li></span></li><li>}</li></ul></code>
+        <code class="highlight"><ul class="code" style="padding-left:28px"><li><span class="keyword operator ts">type</span> <span class="identifier">RefreshLoginPayload</span> {</li><li></li><li><span class="tab"><span class="comment line">#   A unique identifier for the client performing the mutation.</span></span></li><li><span class="tab"><span class="meta">clientMutationId</span>: <a class="support type" href="string.doc.html">String</a> </span></li><li></li><li><span class="tab"><span class="meta">refreshToken</span>: <a class="support type" href="string.doc.html">String</a> </span></li><li></li><li><span class="tab"><span class="meta">token</span>: <a class="support type" href="string.doc.html">String</a> </span></li><li>}</li></ul></code>
     </div>
 </section>
 <section>

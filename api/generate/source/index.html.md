@@ -857,7 +857,7 @@ curl -XPOST https://api.soundtrackyourbrand.com/v2 \
 -H 'Content-Type: application/graphql' \
 -d '
 mutation{
-  refreshToken(input:{token:"your_refresh_token"}){
+  refreshLogin(input:{refreshToken: "your_refresh_token"}){
     token
     refreshToken
   }

@@ -1,5 +1,5 @@
 
-%>
+
 
 <!doctype html>
 <html>
@@ -1095,7 +1095,7 @@ mutation {
 -H <span class="s1">'Content-Type: application/graphql'</span> <span class="se">\</span>
 -d <span class="s1">'
 mutation{
-  refreshToken(input:{token:"your_refresh_token"}){
+  refreshLogin(input:{refreshToken: "your_refresh_token"}){
     token
     refreshToken
   }
