@@ -5,7 +5,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - shell
 
 toc_footers:
-  - <a href='#'>Get your free credentials here</a>
+  - <a href='https://www.soundtrackyourbrand.com/api/apply'>Get your free credentials here</a>
   - <a href='https://join.slack.com/t/soundtrack-api/shared_invite/enQtNDMwMjY0Mzg2ODk2LTk0YWI4MjBmNzJiODg4MDFiZmYxYmI0NDk3ZmRiN2FlYjUyMGFmNTAxZjZhMjhhNmMzNmRlYmM4YjNkNDhjMDk'>Join our public Slack channel</a>
   - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
 
@@ -30,7 +30,7 @@ This is the documentation for Soundtrack API. There's just too much shitty docum
 Soundtrack is a complete music streaming service for businesses.  Soundtrack API lets you build display-, control- and monitoring apps on top of Soundtrack. You can learn more about Soundtrack [here](https://www.soundtrackyourbrand.com) and get inspired on how to use the API [here](https://www.soundtrackyourbrand.com/api).
 
 <aside class="notice">
-You'll need a <a href="https://business.soundtrackyourbrand.com/signup/">Soundtrack account</a> and an <a href="#">API token</a> to get started (unless you use <a href="#authorizing-as-a-user">this way</a> to authorize). Soundtrack API is free for all Soundtrack users.
+You'll need a <a href="https://business.soundtrackyourbrand.com/signup/">Soundtrack account</a> and an <a href="https://www.soundtrackyourbrand.com/api/apply">API token</a> to get started (unless you use <a href="#authorizing-as-a-user">this way</a> to authorize). Soundtrack API is free for all Soundtrack users.
 </aside>
 
 
