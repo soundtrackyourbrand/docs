@@ -5,7 +5,8 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - shell
 
 toc_footers:
-  - <a href='https://www.soundtrackyourbrand.com/api/apply'>Get your free credentials here</a>
+  - <a href='https://www.soundtrackyourbrand.com/our-api/apply'>Get your free credentials here</a>
+  - <a href='https://www.soundtrackyourbrand.com/our-api/'>Get inspired</a>
   - <a href='https://join.slack.com/t/soundtrack-api/shared_invite/enQtNDMwMjY0Mzg2ODk2LTk0YWI4MjBmNzJiODg4MDFiZmYxYmI0NDk3ZmRiN2FlYjUyMGFmNTAxZjZhMjhhNmMzNmRlYmM4YjNkNDhjMDk'>Join our public Slack channel</a>
   - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
 
