@@ -571,7 +571,7 @@ The maximum complexity of a subscription is 100.
 
 # Explore
 
-The best way to explore (and, in our opinion, the best documentation too!) is [our playground](https://api.soundtrackyourbrand.com/v2/explore).
+The best way to explore (and, in our opinion, the best documentation too!) is [our playground](https://api.soundtrackyourbrand.com/v2/explore). If you'd like to dig into the schema without authorizing, check out [our reference](https://developer.soundtrackyourbrand.com/api/reference/).
 
 Once you’ve added your Authorization header you can use it to create and run queries towards the Soundtrack API. There are documentation and auto-completion features.
 
