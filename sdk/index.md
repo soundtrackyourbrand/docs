@@ -45,7 +45,7 @@ Unless anything else is communicated by Soundtrack, the application shall be nam
 * Soundtrack provides source code examples as-is and it's the Partners responsibility to make them work.
 * Partner can use any part of the source code example, change and modify them, except splayerapi-x.h
 * Partner is responsible to check with Soundtrack's infrastructure every 15 minutes to see if new releases are available.
-* Partner is responsible for providing a toolchain that is at most 5 years old at any given time now and in the future.
+* Partner is responsible for providing a toolchain that supports a C++ standard that is at most 5 years old at any given time now and in the future.
 
 ## Changelog
 
