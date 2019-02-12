@@ -104,9 +104,9 @@ mutation PartnerCodeCreator($input:GeneratePairingCodesInput!){
 ```
 {   
     "input": {
-        "description":"SYB Artpec-5 mips",
+        "description":"ARM64",
         "deviceType": "EMBEDDED",
-        "label": "SYB C2018",
+        "label": "Partnername M324",
         "hardwareIds": ["partner_id_ab12"]
     }
 }
