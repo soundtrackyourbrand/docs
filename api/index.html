@@ -3,15 +3,15 @@
 
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href="images/favicon.ico" rel="icon" type="image/ico" />
-    <title>Docs | Soundtrack API</title>
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link href="images/favicon.ico" rel="icon" type="image/ico" />
+  <title>Docs | Soundtrack API</title>
 
-    <style>
-      .highlight table td { padding: 5px; }
+  <style>
+    .highlight table td { padding: 5px; }
 .highlight table pre { margin: 0; }
 .highlight .gh {
   color: #999999;
@@ -198,121 +198,121 @@
 .highlight .o {
   color: #f92672;
 }
-    </style>
-    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
-    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
-      <script src="javascripts/all.js"></script>
-  </head>
+  </style>
+  <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+  <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+  <script src="javascripts/all.js"></script>
+</head>
 
-  <body class="index" data-languages="[&quot;shell&quot;]">
-    <a href="#" id="nav-button">
-      <span>
-        NAV
-        <img src="images/navbar.png" alt="Navbar" />
-      </span>
-    </a>
-    <div class="toc-wrapper">
-      <center><div class="logo-soundtrack"><img src="images/logo.png" class="logo" alt="Logo" /></div></center>
-        <div class="search">
-          <input type="text" class="search" id="input-search" placeholder="Search">
-        </div>
-        <ul class="search-results"></ul>
-      <ul id="toc" class="toc-list-h1">
-          <li>
-            <a href="#docs-that-doesn-39-t-suck" class="toc-h1 toc-link" data-title="Docs that doesn't suck">Docs that doesn't suck</a>
-          </li>
-          <li>
-            <a href="#getting-a-grasp" class="toc-h1 toc-link" data-title="Getting a grasp">Getting a grasp</a>
-          </li>
-          <li>
-            <a href="#the-basics" class="toc-h1 toc-link" data-title="The basics">The basics</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#your-request" class="toc-h2 toc-link" data-title="Your request">Your request</a>
-                  </li>
-                  <li>
-                    <a href="#our-response" class="toc-h2 toc-link" data-title="Our response">Our response</a>
-                  </li>
-                  <li>
-                    <a href="#soundtrack-hierarchy" class="toc-h2 toc-link" data-title="Soundtrack hierarchy">Soundtrack hierarchy</a>
-                  </li>
-                  <li>
-                    <a href="#asking-what-you-don-39-t-know" class="toc-h2 toc-link" data-title="Asking what you don't know">Asking what you don't know</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#type-of-actions" class="toc-h1 toc-link" data-title="Type of actions">Type of actions</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#queries" class="toc-h2 toc-link" data-title="Queries">Queries</a>
-                  </li>
-                  <li>
-                    <a href="#subscriptions" class="toc-h2 toc-link" data-title="Subscriptions">Subscriptions</a>
-                  </li>
-                  <li>
-                    <a href="#mutations" class="toc-h2 toc-link" data-title="Mutations">Mutations</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
-          </li>
-          <li>
-            <a href="#rate-limit" class="toc-h1 toc-link" data-title="Rate limit">Rate limit</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#queries-amp-mutations" class="toc-h2 toc-link" data-title="Queries &amp; Mutations">Queries &amp; Mutations</a>
-                  </li>
-                  <li>
-                    <a href="#subscriptions-2" class="toc-h2 toc-link" data-title="Subscriptions">Subscriptions</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#explore" class="toc-h1 toc-link" data-title="Explore">Explore</a>
-          </li>
-          <li>
-            <a href="#example-app" class="toc-h1 toc-link" data-title="Example app">Example app</a>
-          </li>
-          <li>
-            <a href="#terms-of-use" class="toc-h1 toc-link" data-title="Terms of use">Terms of use</a>
-          </li>
-          <li>
-            <a href="#next-level" class="toc-h1 toc-link" data-title="Next level">Next level</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#graphql" class="toc-h2 toc-link" data-title="GraphQL">GraphQL</a>
-                  </li>
-                  <li>
-                    <a href="#introspection" class="toc-h2 toc-link" data-title="Introspection">Introspection</a>
-                  </li>
-                  <li>
-                    <a href="#connections" class="toc-h2 toc-link" data-title="Connections">Connections</a>
-                  </li>
-                  <li>
-                    <a href="#parameterised-queries" class="toc-h2 toc-link" data-title="Parameterised queries">Parameterised queries</a>
-                  </li>
-                  <li>
-                    <a href="#fragments-amp-multiple-queries" class="toc-h2 toc-link" data-title="Fragments &amp; multiple queries">Fragments &amp; multiple queries</a>
-                  </li>
-                  <li>
-                    <a href="#authorizing-as-a-user" class="toc-h2 toc-link" data-title="Authorizing as a user">Authorizing as a user</a>
-                  </li>
-              </ul>
-          </li>
-      </ul>
-        <ul class="toc-footer">
-            <li><a href='https://www.soundtrackyourbrand.com/our-api/apply'>Get your free credentials here</a></li>
-            <li><a href='https://www.soundtrackyourbrand.com/our-api/'>Get inspired</a></li>
-            <li><a href='https://join.slack.com/t/soundtrack-api/shared_invite/enQtNDMwMjY0Mzg2ODk2LTk0YWI4MjBmNzJiODg4MDFiZmYxYmI0NDk3ZmRiN2FlYjUyMGFmNTAxZjZhMjhhNmMzNmRlYmM4YjNkNDhjMDk'>Join our public Slack channel</a></li>
-            <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
-        </ul>
+<body class="index" data-languages="[&quot;shell&quot;]">
+  <a href="#" id="nav-button">
+    <span>
+      NAV
+      <img src="images/navbar.png" alt="Navbar" />
+    </span>
+  </a>
+  <div class="toc-wrapper">
+    <center><div class="logo-soundtrack"><img src="images/logo.png" class="logo" alt="Logo" /></div></center>
+    <div class="search">
+      <input type="text" class="search" id="input-search" placeholder="Search">
     </div>
-    <div class="page-wrapper">
-      <div class="dark-box"></div>
-      <div class="content">
-        <h1 id='docs-that-doesn-39-t-suck'>Docs that doesn&#39;t suck</h1>
+    <ul class="search-results"></ul>
+    <ul id="toc" class="toc-list-h1">
+      <li>
+        <a href="#docs-that-doesn-39-t-suck" class="toc-h1 toc-link" data-title="Docs that doesn't suck">Docs that doesn't suck</a>
+      </li>
+      <li>
+        <a href="#getting-a-grasp" class="toc-h1 toc-link" data-title="Getting a grasp">Getting a grasp</a>
+      </li>
+      <li>
+        <a href="#the-basics" class="toc-h1 toc-link" data-title="The basics">The basics</a>
+        <ul class="toc-list-h2">
+          <li>
+            <a href="#your-request" class="toc-h2 toc-link" data-title="Your request">Your request</a>
+          </li>
+          <li>
+            <a href="#our-response" class="toc-h2 toc-link" data-title="Our response">Our response</a>
+          </li>
+          <li>
+            <a href="#soundtrack-hierarchy" class="toc-h2 toc-link" data-title="Soundtrack hierarchy">Soundtrack hierarchy</a>
+          </li>
+          <li>
+            <a href="#asking-what-you-don-39-t-know" class="toc-h2 toc-link" data-title="Asking what you don't know">Asking what you don't know</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#type-of-actions" class="toc-h1 toc-link" data-title="Type of actions">Type of actions</a>
+        <ul class="toc-list-h2">
+          <li>
+            <a href="#queries" class="toc-h2 toc-link" data-title="Queries">Queries</a>
+          </li>
+          <li>
+            <a href="#subscriptions" class="toc-h2 toc-link" data-title="Subscriptions">Subscriptions</a>
+          </li>
+          <li>
+            <a href="#mutations" class="toc-h2 toc-link" data-title="Mutations">Mutations</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+      </li>
+      <li>
+        <a href="#rate-limit" class="toc-h1 toc-link" data-title="Rate limit">Rate limit</a>
+        <ul class="toc-list-h2">
+          <li>
+            <a href="#queries-amp-mutations" class="toc-h2 toc-link" data-title="Queries &amp; Mutations">Queries &amp; Mutations</a>
+          </li>
+          <li>
+            <a href="#subscriptions-2" class="toc-h2 toc-link" data-title="Subscriptions">Subscriptions</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#explore" class="toc-h1 toc-link" data-title="Explore">Explore</a>
+      </li>
+      <li>
+        <a href="#example-app" class="toc-h1 toc-link" data-title="Example app">Example app</a>
+      </li>
+      <li>
+        <a href="#terms-of-use" class="toc-h1 toc-link" data-title="Terms of use">Terms of use</a>
+      </li>
+      <li>
+        <a href="#next-level" class="toc-h1 toc-link" data-title="Next level">Next level</a>
+        <ul class="toc-list-h2">
+          <li>
+            <a href="#graphql" class="toc-h2 toc-link" data-title="GraphQL">GraphQL</a>
+          </li>
+          <li>
+            <a href="#introspection" class="toc-h2 toc-link" data-title="Introspection">Introspection</a>
+          </li>
+          <li>
+            <a href="#connections" class="toc-h2 toc-link" data-title="Connections">Connections</a>
+          </li>
+          <li>
+            <a href="#parameterised-queries" class="toc-h2 toc-link" data-title="Parameterised queries">Parameterised queries</a>
+          </li>
+          <li>
+            <a href="#fragments-amp-multiple-queries" class="toc-h2 toc-link" data-title="Fragments &amp; multiple queries">Fragments &amp; multiple queries</a>
+          </li>
+          <li>
+            <a href="#authorizing-as-a-user" class="toc-h2 toc-link" data-title="Authorizing as a user">Authorizing as a user</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <ul class="toc-footer">
+      <li><a href='https://www.soundtrackyourbrand.com/our-api/apply'>Get your free credentials here</a></li>
+      <li><a href='https://www.soundtrackyourbrand.com/our-api/'>Get inspired</a></li>
+      <li><a href='https://join.slack.com/t/soundtrack-api/shared_invite/enQtNDMwMjY0Mzg2ODk2LTk0YWI4MjBmNzJiODg4MDFiZmYxYmI0NDk3ZmRiN2FlYjUyMGFmNTAxZjZhMjhhNmMzNmRlYmM4YjNkNDhjMDk'>Join our public Slack channel</a></li>
+      <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
+    </ul>
+  </div>
+  <div class="page-wrapper">
+    <div class="dark-box"></div>
+    <div class="content">
+      <h1 id='docs-that-doesn-39-t-suck'>Docs that doesn&#39;t suck</h1>
 <blockquote>
 <p><strong>&quot;I&#39;m new to the Soundtrack API&quot;</strong><br>
 These docs are structured for you, so just keep scrolling.</p>
@@ -1108,10 +1108,10 @@ mutation{
 
 <p>If your <code>refreshToken</code> is outdated (your app might have been offline), remember that you always can use the <code>loginUser</code>-mutation to get a new one.</p>
 
-      </div>
-      <div class="dark-box">
-
-      </div>
     </div>
-  </body>
+    <div class="dark-box">
+
+    </div>
+  </div>
+</body>
 </html>

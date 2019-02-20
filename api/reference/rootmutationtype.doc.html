@@ -101,6 +101,11 @@
                 Product
             </a>
         </li>
+        <li  title="Reason">
+            <a href="reason.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                Reason
+            </a>
+        </li>
         <li  title="Role">
             <a href="role.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 Role
@@ -184,6 +189,16 @@
         <li  title="Artist">
             <a href="artist.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 Artist
+            </a>
+        </li>
+        <li  title="BlockedTrack">
+            <a href="blockedtrack.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                BlockedTrack
+            </a>
+        </li>
+        <li  title="BlockTrackPayload">
+            <a href="blocktrackpayload.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                BlockTrackPayload
             </a>
         </li>
         <li  title="Color">
@@ -381,6 +396,11 @@
                 RefreshLoginPayload
             </a>
         </li>
+        <li  title="RemoveFromMusicLibraryPayload">
+            <a href="removefrommusiclibrarypayload.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                RemoveFromMusicLibraryPayload
+            </a>
+        </li>
         <li  title="Schedule">
             <a href="schedule.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 Schedule
@@ -466,6 +486,11 @@
                 TrackEdge
             </a>
         </li>
+        <li  title="UnblockTrackPayload">
+            <a href="unblocktrackpayload.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                UnblockTrackPayload
+            </a>
+        </li>
         <li  title="User">
             <a href="user.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 User
@@ -511,6 +536,11 @@
                 AddToMusicLibraryInput
             </a>
         </li>
+        <li  title="BlockTrackInput">
+            <a href="blocktrackinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                BlockTrackInput
+            </a>
+        </li>
         <li  title="LoginDeviceInput">
             <a href="logindeviceinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 LoginDeviceInput
@@ -546,6 +576,11 @@
                 RefreshLoginInput
             </a>
         </li>
+        <li  title="RemoveFromMusicLibraryInput">
+            <a href="removefrommusiclibraryinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                RemoveFromMusicLibraryInput
+            </a>
+        </li>
         <li  title="SetPlayFromInput">
             <a href="setplayfrominput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 SetPlayFromInput
@@ -564,6 +599,11 @@
         <li  title="SoundZoneUpdateInput">
             <a href="soundzoneupdateinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 SoundZoneUpdateInput
+            </a>
+        </li>
+        <li  title="UnblockTrackInput">
+            <a href="unblocktrackinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                UnblockTrackInput
             </a>
         </li>
     </ul>
@@ -610,7 +650,7 @@
             </a>
             GraphQL Schema definition
         </h2>
-        <code class="highlight"><ul class="code" style="padding-left:42px"><li><span class="keyword operator ts">type</span> <span class="identifier">RootMutationType</span> {</li><li></li><li><span class="tab"><span class="comment line">#   add an entry to a music library</span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>input</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">addToMusicLibrary</span>(<span class="meta">input</span>: <a class="support type" href="addtomusiclibraryinput.doc.html">AddToMusicLibraryInput</a>!): <a class="support type" href="addtomusiclibrarypayload.doc.html">AddToMusicLibraryPayload</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   login a device with hardware id and vendor secret</span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>input</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">loginDevice</span>(<span class="meta">input</span>: <a class="support type" href="logindeviceinput.doc.html">LoginDeviceInput</a>!): <a class="support type" href="logindevicepayload.doc.html">LoginDevicePayload</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   login a user with username and password</span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>input</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">loginUser</span>(<span class="meta">input</span>: <a class="support type" href="loginuserinput.doc.html">LoginUserInput</a>!): <a class="support type" href="loginuserpayload.doc.html">LoginUserPayload</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   Pause playback of a sound zone</span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>input</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">pause</span>(<span class="meta">input</span>: <a class="support type" href="pauseinput.doc.html">PauseInput</a>!): <a class="support type" href="pausepayload.doc.html">PausePayload</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   Start playback of a sound zone</span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>input</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">play</span>(<span class="meta">input</span>: <a class="support type" href="playinput.doc.html">PlayInput</a>!): <a class="support type" href="playpayload.doc.html">PlayPayload</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   refresh access token</span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>input</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">refreshLogin</span>(<span class="meta">input</span>: <a class="support type" href="refreshlogininput.doc.html">RefreshLoginInput</a>!): <a class="support type" href="refreshloginpayload.doc.html">RefreshLoginPayload</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   Change playback source of a sound zone</span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>input</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">setPlayFrom</span>(<span class="meta">input</span>: <a class="support type" href="setplayfrominput.doc.html">SetPlayFromInput</a>!): <a class="support type" href="setplayfrompayload.doc.html">SetPlayFromPayload</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   Set the volume of a sound zone</span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>input</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">setVolume</span>(<span class="meta">input</span>: <a class="support type" href="setvolumeinput.doc.html">SetVolumeInput</a>!): <a class="support type" href="setvolumepayload.doc.html">SetVolumePayload</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   Skip the current playing track of a sound zone</span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>input</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">skipTrack</span>(<span class="meta">input</span>: <a class="support type" href="skiptrackinput.doc.html">SkipTrackInput</a>!): <a class="support type" href="skiptrackpayload.doc.html">SkipTrackPayload</a> </span></li><li>}</li></ul></code>
+        <code class="highlight"><ul class="code" style="padding-left:42px"><li><span class="keyword operator ts">type</span> <span class="identifier">RootMutationType</span> {</li><li></li><li><span class="tab"><span class="comment line">#   add an entry to a music library</span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>input</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">addToMusicLibrary</span>(<span class="meta">input</span>: <a class="support type" href="addtomusiclibraryinput.doc.html">AddToMusicLibraryInput</a>!): <a class="support type" href="addtomusiclibrarypayload.doc.html">AddToMusicLibraryPayload</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   block a track for a sound zone</span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>input</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">blockTrack</span>(<span class="meta">input</span>: <a class="support type" href="blocktrackinput.doc.html">BlockTrackInput</a>!): <a class="support type" href="blocktrackpayload.doc.html">BlockTrackPayload</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   login a device with hardware id and vendor secret</span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>input</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">loginDevice</span>(<span class="meta">input</span>: <a class="support type" href="logindeviceinput.doc.html">LoginDeviceInput</a>!): <a class="support type" href="logindevicepayload.doc.html">LoginDevicePayload</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   login a user with username and password</span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>input</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">loginUser</span>(<span class="meta">input</span>: <a class="support type" href="loginuserinput.doc.html">LoginUserInput</a>!): <a class="support type" href="loginuserpayload.doc.html">LoginUserPayload</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   Pause playback of a sound zone</span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>input</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">pause</span>(<span class="meta">input</span>: <a class="support type" href="pauseinput.doc.html">PauseInput</a>!): <a class="support type" href="pausepayload.doc.html">PausePayload</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   Start playback of a sound zone</span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>input</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">play</span>(<span class="meta">input</span>: <a class="support type" href="playinput.doc.html">PlayInput</a>!): <a class="support type" href="playpayload.doc.html">PlayPayload</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   refresh access token</span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>input</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">refreshLogin</span>(<span class="meta">input</span>: <a class="support type" href="refreshlogininput.doc.html">RefreshLoginInput</a>!): <a class="support type" href="refreshloginpayload.doc.html">RefreshLoginPayload</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   remove an entry to a music library</span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>input</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">removeFromMusicLibrary</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">input</span>: <a class="support type" href="removefrommusiclibraryinput.doc.html">RemoveFromMusicLibraryInput</a>!</span></span></li><li><span class="tab">): <a class="support type" href="removefrommusiclibrarypayload.doc.html">RemoveFromMusicLibraryPayload</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   Change playback source of a sound zone</span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>input</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">setPlayFrom</span>(<span class="meta">input</span>: <a class="support type" href="setplayfrominput.doc.html">SetPlayFromInput</a>!): <a class="support type" href="setplayfrompayload.doc.html">SetPlayFromPayload</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   Set the volume of a sound zone</span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>input</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">setVolume</span>(<span class="meta">input</span>: <a class="support type" href="setvolumeinput.doc.html">SetVolumeInput</a>!): <a class="support type" href="setvolumepayload.doc.html">SetVolumePayload</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   Skip the current playing track of a sound zone</span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>input</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">skipTrack</span>(<span class="meta">input</span>: <a class="support type" href="skiptrackinput.doc.html">SkipTrackInput</a>!): <a class="support type" href="skiptrackpayload.doc.html">SkipTrackPayload</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   unblock a track for a sound zone</span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>input</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">unblockTrack</span>(<span class="meta">input</span>: <a class="support type" href="unblocktrackinput.doc.html">UnblockTrackInput</a>!): <a class="support type" href="unblocktrackpayload.doc.html">UnblockTrackPayload</a> </span></li><li>}</li></ul></code>
     </div>
 </section>
 <section>
@@ -643,7 +683,7 @@
             m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
         })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-        ga('create', 'abc', 'auto');
+        ga('create', 'xxx', 'auto');
         ga('send', 'pageview');
 
     </script>

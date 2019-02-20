@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="./styles/graphdoc.css" />
     <link rel="shortcut icon" type="image/png" href="https://business.soundtrackyourbrand.com/favicon.ico?v=3"/>
-    <title>PlaybackUpdateInput</title>
+    <title>BlockTrackPayload</title>
     <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700" rel="stylesheet"><link type="text/css" rel="stylesheet" href="./assets/code.css" /><link type="text/css" rel="stylesheet" href="./assets/require-by.css" />
 </head>
 <body class="slds-scrollable--y">
@@ -196,7 +196,7 @@
                 BlockedTrack
             </a>
         </li>
-        <li  title="BlockTrackPayload">
+        <li class="slds-is-active" title="BlockTrackPayload">
             <a href="blocktrackpayload.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 BlockTrackPayload
             </a>
@@ -561,7 +561,7 @@
                 PauseInput
             </a>
         </li>
-        <li class="slds-is-active" title="PlaybackUpdateInput">
+        <li  title="PlaybackUpdateInput">
             <a href="playbackupdateinput.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 PlaybackUpdateInput
             </a>
@@ -636,8 +636,8 @@
         </div>
     </div>
     <div class="container">
-        <p class="slds-text-title--caps slds-text-color--weak">INPUT_OBJECT</p>
-        <h1 class="slds-text-heading--large">PlaybackUpdateInput</h1>
+        <p class="slds-text-title--caps slds-text-color--weak">OBJECT</p>
+        <h1 class="slds-text-heading--large">BlockTrackPayload</h1>
         <div class="slds-text-body--regular"></div>
         
     </div>
@@ -650,7 +650,7 @@
             </a>
             GraphQL Schema definition
         </h2>
-        <code class="highlight"><ul class="code" style="padding-left:28px"><li><span class="keyword operator ts">input</span> <span class="identifier">PlaybackUpdateInput</span> {</li><li><span class="tab"><li><span class="tab"><span class="meta">soundZone</span>: <a class="support type" href="id.doc.html">ID</a>!</span></li></span></li><li>}</li></ul></code>
+        <code class="highlight"><ul class="code" style="padding-left:42px"><li><span class="keyword operator ts">type</span> <span class="identifier">BlockTrackPayload</span> {</li><li></li><li><span class="tab"><span class="comment line">#   The track that has been blocked</span></span></li><li><span class="tab"><span class="meta">blockedTrack</span>: <a class="support type" href="blockedtrack.doc.html">BlockedTrack</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   A unique identifier for the client performing the mutation.</span></span></li><li><span class="tab"><span class="meta">clientMutationId</span>: <a class="support type" href="string.doc.html">String</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   id of the parent account</span></span></li><li><span class="tab"><span class="meta">parent</span>: <a class="support type" href="id.doc.html">ID</a>! </span></li><li></li><li><span class="tab"><span class="comment line">#   id of a soundtrack, playlist or schedule</span></span></li><li><span class="tab"><span class="meta">source</span>: <a class="support type" href="id.doc.html">ID</a>! </span></li><li>}</li></ul></code>
     </div>
 </section>
 <section>
@@ -661,7 +661,7 @@
             </a>
             Require by
         </h2>
-        <ul class="require-by"><li><a href="rootsubscriptiontype.doc.html" title="RootSubscriptionType - ">RootSubscriptionType<em>null</em></a><li></ul>
+        <ul class="require-by"><li><a href="rootmutationtype.doc.html" title="RootMutationType - ">RootMutationType<em>null</em></a><li></ul>
     </div>
 </section>
 <footer>
