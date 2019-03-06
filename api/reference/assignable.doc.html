@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="./styles/graphdoc.css" />
     <link rel="shortcut icon" type="image/png" href="https://business.soundtrackyourbrand.com/favicon.ico?v=3"/>
-    <title>BlockTrackPayload</title>
+    <title>Assignable</title>
     <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700" rel="stylesheet"><link type="text/css" rel="stylesheet" href="./assets/code.css" /><link type="text/css" rel="stylesheet" href="./assets/require-by.css" />
 </head>
 <body class="slds-scrollable--y">
@@ -121,7 +121,7 @@
 <div class="slds-grid slds-grid--vertical slds-navigation-list--vertical">
     <h4 class="slds-text-title--caps slds-p-around--medium">Interfaces</h4>
     <ul>
-        <li  title="Assignable">
+        <li class="slds-is-active" title="Assignable">
             <a href="assignable.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 Assignable
             </a>
@@ -201,7 +201,7 @@
                 BlockedTrack
             </a>
         </li>
-        <li class="slds-is-active" title="BlockTrackPayload">
+        <li  title="BlockTrackPayload">
             <a href="blocktrackpayload.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 BlockTrackPayload
             </a>
@@ -641,8 +641,8 @@
         </div>
     </div>
     <div class="container">
-        <p class="slds-text-title--caps slds-text-color--weak">OBJECT</p>
-        <h1 class="slds-text-heading--large">BlockTrackPayload</h1>
+        <p class="slds-text-title--caps slds-text-color--weak">INTERFACE</p>
+        <h1 class="slds-text-heading--large">Assignable</h1>
         <div class="slds-text-body--regular"></div>
         
     </div>
@@ -655,7 +655,7 @@
             </a>
             GraphQL Schema definition
         </h2>
-        <code class="highlight"><ul class="code" style="padding-left:42px"><li><span class="keyword operator ts">type</span> <span class="identifier">BlockTrackPayload</span> {</li><li></li><li><span class="tab"><span class="comment line">#   The track that has been blocked</span></span></li><li><span class="tab"><span class="meta">blockedTrack</span>: <a class="support type" href="blockedtrack.doc.html">BlockedTrack</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   A unique identifier for the client performing the mutation.</span></span></li><li><span class="tab"><span class="meta">clientMutationId</span>: <a class="support type" href="string.doc.html">String</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   id of the parent account</span></span></li><li><span class="tab"><span class="meta">parent</span>: <a class="support type" href="id.doc.html">ID</a>! </span></li><li></li><li><span class="tab"><span class="comment line">#   id of a soundtrack, playlist or schedule</span></span></li><li><span class="tab"><span class="meta">source</span>: <a class="support type" href="id.doc.html">ID</a>! </span></li><li>}</li></ul></code>
+        <code class="highlight"><ul class="code" style="padding-left:28px"><li><span class="keyword operator ts">interface</span> <span class="identifier">Assignable</span> {</li><li></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>library</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">inMusicLibrary</span>(<span class="meta">library</span>: <a class="support type" href="id.doc.html">ID</a>): <a class="support type" href="boolean.doc.html">Boolean</a> </span></li><li>}</li></ul></code>
     </div>
 </section>
 <section>
@@ -666,7 +666,9 @@
             </a>
             Require by
         </h2>
-        <ul class="require-by"><li><a href="rootmutationtype.doc.html" title="RootMutationType - ">RootMutationType<em>null</em></a><li></ul>
+        <ul class="require-by"><li><a href="playlist.doc.html" title="Playlist - A playlist">Playlist<em>A playlist</em></a><li><li><a href="schedule.doc.html" title="Schedule - A schedule of what music should play when, during the course of a week
+">Schedule<em>A schedule of what music should play when, during the course of a week
+</em></a><li><li><a href="soundtrack.doc.html" title="Soundtrack - A soundtrack is a week-long, curated collection of music hand-picked for commercial use">Soundtrack<em>A soundtrack is a week-long, curated collection of music hand-picked for commercial use</em></a><li></ul>
     </div>
 </section>
 <footer>
