@@ -31,7 +31,7 @@ This is the documentation for Soundtrack API. There's just too much shitty docum
 Soundtrack is a complete music streaming service for businesses.  Soundtrack API lets you build display-, control- and monitoring apps on top of Soundtrack. You can learn more about Soundtrack [here](https://www.soundtrackyourbrand.com) and get inspired on how to use the API [here](https://www.soundtrackyourbrand.com/api).
 
 <aside class="notice">
-You'll need a <a href="https://business.soundtrackyourbrand.com/signup/">Soundtrack account</a> and an <a href="https://www.soundtrackyourbrand.com/api/apply">API token</a> to get started (unless you use <a href="#authorizing-as-a-user">this way</a> to authorize). Soundtrack API is free for all Soundtrack users.
+You'll need a <a href="https://business.soundtrackyourbrand.com/signup/">Soundtrack account</a> and an <a href="https://www.soundtrackyourbrand.com/our-api/apply">API token</a> to get started (unless you use <a href="#authorizing-as-a-user">this way</a> to authorize). Soundtrack API is free for all Soundtrack users.
 </aside>
 
 
