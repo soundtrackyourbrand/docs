@@ -189,6 +189,7 @@ Splayer API is provisioned by Soundtrack's backoffice systems with rollout limit
 "user_agent": "",
 "version": "3f69b075cd",
 "link": "https://download.api.soundtrackyourbrand.com/ci-releases/splayer-i686/libsplayer-splayerapi-3f69b075cd_i686.so",
+"checksum": "6482a6cdf959af43fe921a22025bacb32543acb0",
 "type": "splayer_api",
 "platform": "splayer-i686",
 "auto_promote": true,
@@ -197,6 +198,8 @@ Splayer API is provisioned by Soundtrack's backoffice systems with rollout limit
 ```
 
 The two important fields are version and link, you can disregard all other fields in the JSON. In the example above the version is hashnumber, since the example is not from a proper release, but the latest build. The link points directly to the library.
+
+The checksum is a sha1 hash of he file in the link, make sure to verify the checksum matches for security and reliability reason!
 
 To get provisioning working you need to send three HTTP headers. Basically each device sends a Vendor Hardware ID as described above and a Device Vendor ID. In the example below the Vendor Hardware ID is `28cfe91fcc6d`.
 
