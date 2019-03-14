@@ -15,7 +15,7 @@ includes:
 search: true
 ---
 
-# Docs that doesn't suck
+# Docs that don't suck
 
 > **"I'm new to the Soundtrack API"**<br>
 > These docs are structured for you, so just keep scrolling.
