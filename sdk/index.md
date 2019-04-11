@@ -255,7 +255,7 @@ All times below are CET/CEST. Consider that the times below are deadlines.
 
 If you did not get in touch with us, you will have to wait until next full release to get the patch.
 
-### Release schedule player software
+### Release schedule
 
 Date | Release
 --- | --- | ---
