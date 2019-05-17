@@ -7,7 +7,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
 toc_footers:
   - <a href='https://www.soundtrackyourbrand.com/our-api/apply'>Get your free credentials here</a>
   - <a href='https://www.soundtrackyourbrand.com/our-api/'>Get inspired</a>
-  - <a href='https://join.slack.com/t/soundtrack-api/shared_invite/enQtNDMwMjY0Mzg2ODk2LTk0YWI4MjBmNzJiODg4MDFiZmYxYmI0NDk3ZmRiN2FlYjUyMGFmNTAxZjZhMjhhNmMzNmRlYmM4YjNkNDhjMDk'>Join our public Slack channel</a>
+  - <a href='https://join.slack.com/t/soundtrack-api/shared_invite/enQtNjM5MzAwMzExNTI3LTg0ODY3NzViNzIzNjRmOWZiODc4YjQ4ZTZmYzA2MzRiNWIwMmYyNjRhMDdjNjdlMmYwNzk0NzM3OTdkZWRhZTQ'>Join our public Slack channel</a>
   - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
 
 includes:
@@ -26,7 +26,7 @@ search: true
 > **"I just want to start coding"**<br>
 > Ensure you have credentials and head over to our [playground](https://api.soundtrackyourbrand.com/v2/explore).
 
-This is the documentation for Soundtrack API. There's just too much shitty documentation out there, and we aim to be better than that. Feel free to do pull requests [straight into the repo](https://github.com/soundtrackyourbrand/docs/blob/master/api/generate/source/index.html.md) if you have any suggestions - or drop us a line in our [public Slack channel](https://join.slack.com/t/soundtrack-api/shared_invite/enQtNDMwMjY0Mzg2ODk2LTk0YWI4MjBmNzJiODg4MDFiZmYxYmI0NDk3ZmRiN2FlYjUyMGFmNTAxZjZhMjhhNmMzNmRlYmM4YjNkNDhjMDk).
+This is the documentation for Soundtrack API. There's just too much shitty documentation out there, and we aim to be better than that. Feel free to do pull requests [straight into the repo](https://github.com/soundtrackyourbrand/docs/blob/master/api/generate/source/index.html.md) if you have any suggestions - or drop us a line in our [public Slack channel](https://join.slack.com/t/soundtrack-api/shared_invite/enQtNjM5MzAwMzExNTI3LTg0ODY3NzViNzIzNjRmOWZiODc4YjQ4ZTZmYzA2MzRiNWIwMmYyNjRhMDdjNjdlMmYwNzk0NzM3OTdkZWRhZTQ).
 
 Soundtrack is a complete music streaming service for businesses.  Soundtrack API lets you build display-, control- and monitoring apps on top of Soundtrack. You can learn more about Soundtrack [here](https://www.soundtrackyourbrand.com) and get inspired on how to use the API [here](https://www.soundtrackyourbrand.com/api).
 
@@ -470,7 +470,7 @@ HTTP `4xx` | Client problems | e.g. rate limited
 HTTP `200` with `errors`-body | GraphQL problems | e.g. incorrect input
 
 <aside class="notice">
-Did you get an error message that you think could be improved? Please <a href="https://join.slack.com/t/soundtrack-api/shared_invite/enQtNDMwMjY0Mzg2ODk2LTk0YWI4MjBmNzJiODg4MDFiZmYxYmI0NDk3ZmRiN2FlYjUyMGFmNTAxZjZhMjhhNmMzNmRlYmM4YjNkNDhjMDkg">reach out on Slack</a> and let us know.
+Did you get an error message that you think could be improved? Please <a href="https://join.slack.com/t/soundtrack-api/shared_invite/enQtNjM5MzAwMzExNTI3LTg0ODY3NzViNzIzNjRmOWZiODc4YjQ4ZTZmYzA2MzRiNWIwMmYyNjRhMDdjNjdlMmYwNzk0NzM3OTdkZWRhZTQ">reach out on Slack</a> and let us know.
 </aside>
 
 # Rate limit
