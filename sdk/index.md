@@ -23,7 +23,7 @@ This page contains the documentation for the SDK. In order to use it, you will n
 
 Soundtrack SDK is the package containing all code and documentation needed for you to get started. Splayer API is the local API within the SDK, used for initiating and controlling playback.
 
-Unless anything else is communicated by Soundtrack, the application shall be named "0Soundtrack Player".
+Unless anything else is communicated by Soundtrack, the application shall be named "Soundtrack Player".
 
 ### Features
 * Static and shared libraries (dynamic)
