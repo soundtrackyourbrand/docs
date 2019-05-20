@@ -180,20 +180,11 @@ Splayer API is provisioned by Soundtrack's backoffice systems with rollout limit
 
 ```json
 {
-"id": "QnVpbGQsLDFrOTdhZm1jdzc0Lw..",
-"iso8601_created_at": "2017-11-30T11:24:43.805244Z",
-"created_by": "",
-"iso8601_updated_at": "2017-11-30T11:32:54.062388Z",
-"updated_by": "VXNlciwsMWppbHR4bWwwamsv",
-"remote_addr": "",
-"user_agent": "",
-"version": "3f69b075cd",
-"link": "https://download.api.soundtrackyourbrand.com/ci-releases/splayer-i686/libsplayer-splayerapi-3f69b075cd_i686.so",
-"checksum": "6482a6cdf959af43fe921a22025bacb32543acb0",
-"type": "splayer_api",
-"platform": "splayer-i686",
-"auto_promote": true,
-"status": "released"
+"id": "QnVpbGQsLDFsZ2g1bW1uNnJrLw..",
+"version": "48.17-308",
+"link": "https://download.api.soundtrackyourbrand.com/ci-releases/splayer-x86_64/libsplayer-1-48.17-308-splayer-x86_64.so",
+"checksum": "9e12bb0ded21711ea1c666dc776b2751febcc01f",
+"platform": "splayer-x86_64"
 }
 ```
 
