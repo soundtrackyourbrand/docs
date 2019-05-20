@@ -53,7 +53,7 @@ Unless anything else is communicated by Soundtrack, the application shall be nam
 * A reasonable strong cpu, that could handle our parallel encryption, decoding and digital signal processing.
 * A minimum of 4GB, recommended 8GB of storage used for offline music and data storage.
 * Partner needs to provide a C++14 capable cross compiler toolchain, and compiler options that we can build our library in a x86-64 linux docker container.
-* An onboard RTC, in case of a powerloss we can not play audio playback until we have a valid systemtime due to our scheduling, and licensing constraints.
+* An onboard battery backuped RTC, in case of a powerloss we can not play audio playback until we have a valid systemtime due to our scheduling, and licensing constraints.
 
 
 ## Changelog
