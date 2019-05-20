@@ -26,8 +26,8 @@ Soundtrack SDK is the package containing all code and documentation needed for y
 Unless anything else is communicated by Soundtrack, the application shall be named "Soundtrack Player".
 
 ### Features
-* Static and shared libraries (dynamic)
-* Few entry points which means faster load times and simple mapping both for dynamic and static linking
+* Provided as a single shared library, built with toolchain provided by partner and with no external dependencies out of that.
+* Few entry points which means faster load times and simple mapping both for dynamic linking
 * Extendable API without the need to recompile (unless there are breaking changes)
 * Callbacks for audio so the user can control their hardware specific needs.
 
@@ -46,6 +46,15 @@ Unless anything else is communicated by Soundtrack, the application shall be nam
 * Partner can use any part of the source code example, change and modify them, except splayerapi-x.h
 * Partner is responsible to check with Soundtrack's infrastructure every 15 minutes to see if new releases are available.
 * Partner is responsible for providing a toolchain that supports a C++ standard that is at most 5 years old at any given time now and in the future.
+
+### Requirements
+* A POSIX api compatible OS, that support tcp sockets, and threads.
+* At lest 64Mb free ram for the player to operate in.
+* A reasonable strong cpu, that could handle our parallel encryption, decoding and digital signal processing.
+* A minimum of 4GB, recommended 8GB of storage used for offline music and data storage.
+* Partner needs to provide a C++14 capable cross compiler toolchain, and compiler options that we can build our library in a x86-64 linux docker container.
+* An onboard RTC, in case of a powerloss we can not play audio playback until we have a valid systemtime due to our scheduling, and licensing constraints.
+
 
 ## Changelog
 
