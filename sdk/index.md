@@ -261,10 +261,8 @@ Date | Release
 --- | --- | ---
 10 Apr 2019 | Pre-release 48
 17 Apr 2019 | Full-release 48
-```diff
-- 15 May 2019 | Pre-release 49
-22 May 2019 | Full-release 49
-```
+```diff - 15 May 2019``` | ```diff - Pre-release 49```
+```diff - 22 May 2019``` | ```diff - Full-release 49```
 5 Jun 2019 | Pre-release 50
 12 Jun 2018 | Full-release 50
 3 Jul 2019 | Pre-release 51
