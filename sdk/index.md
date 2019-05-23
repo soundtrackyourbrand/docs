@@ -259,16 +259,18 @@ If you did not get in touch with us, you will have to wait until next full relea
 
 Date | Release
 --- | --- | ---
-10 Apr 2019 | Pre-release 49
-17 Apr 2019 | Full-release 49
-8 May 2019 | Pre-release 50
-15 May 2019 | Full-release 50
-5 Jun 2019 | Pre-release 51
-12 Jun 2018 | Full-release 51
-3 Jul 2019 | Pre-release 52
-10 Jul 2019 | Full-release 52
-31 Jul 2019 | Pre-release 53
-7 Aug 2019 | Full-release 53
+10 Apr 2019 | Pre-release 48
+17 Apr 2019 | Full-release 48
+```diff
+- 15 May 2019 | Pre-release 49
+22 May 2019 | Full-release 49
+```
+5 Jun 2019 | Pre-release 50
+12 Jun 2018 | Full-release 50
+3 Jul 2019 | Pre-release 51
+10 Jul 2019 | Full-release 51
+31 Jul 2019 | Pre-release 52
+7 Aug 2019 | Full-release 52
 
 ## Q&A
 
