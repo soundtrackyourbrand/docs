@@ -270,6 +270,8 @@ Date | Release
 31 Jul 2019 | Pre-release 52
 7 Aug 2019 | Full-release 52
 
+* <cite><span style="color:red;">* Dates marked as red are changed release dates according from the plan./span></cite>
+
 ## Q&A
 
 ### Older version of libstdc++ and ld.so running on the target.
