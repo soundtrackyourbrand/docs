@@ -98,7 +98,12 @@ Each sound zone can only have one **device**. Soundtrack supports multiple devic
 Before we can run an application using the SDK we must create a device using the Partner API. This device will be unique and needs to be paired to a sound zone. A device can only be paired with one sound zone at a time. The Partner API is a GraphQL API and you can run the following to create a device. Note: you need your Partner API credentials to do this step. It only needs to be done once since the pairing code does not change.
 
 1. Go to https://partner.soundtrackyourbrand.com/api/explore (this is just an explore tool, you should of course implement this code where you find it suitable)
-2. Add the Authorization header. In the “Value” field, write “Basic <your_credentials>” where <your_credentials> are the Partner API credentials that you should have received from Soundtrack. Ensure that you copy the full base64-token including the == on the end.
+2. Add the Authorization header. In the “Value” field, write “Basic <your_credentials>” where <your_credentials> are the Partner API credentials that you should have received from Soundtrack. Ensure that you copy the full base64-token including the == on the end
+
+Example:
+```
+Authorization: base64encode(client_id:client_secret)
+```
 3. Enter a GraphQL query in the top box
 ```
 mutation PartnerCodeCreator($input:GeneratePairingCodesInput!){
