@@ -264,16 +264,16 @@ If you did not get in touch with us, you will have to wait until next full relea
 
 Date | Release
 --- | --- | ---
-10 Apr 2019 | Pre-release 48
-17 Apr 2019 | Full-release 48
-<span style="color:red;">15 May 2019</span> | Pre-release 49
-<span style="color:red;">22 May 2019</span> | Full-release 49
-<span style="color:red;">19 Jun 2019</span> | Pre-release 50
-<span style="color:red;">26 Jun 2019</span> | Full-release 50
 3 Jul 2019 | Pre-release 51
 10 Jul 2019 | Full-release 51
-31 Jul 2019 | Pre-release 52
-7 Aug 2019 | Full-release 52
+28 Aug 2019 | Pre-release 52
+4 Sep 2019 | Full-release 52
+25 Sep 2019 | Pre-release 53
+2 Oct 2019 | Full-release 53
+23 Oct 2019 | Pre-release 54
+30 Oct 2019 | Full-release 54
+20 Nov 2019 | Pre-release 55
+27 Nov 2019 | Full-release 55
 
 <span style="color:red;">* Dates marked as red are changed release dates according from the original plan.</span>
 
