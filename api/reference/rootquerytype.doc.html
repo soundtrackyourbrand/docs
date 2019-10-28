@@ -56,6 +56,11 @@
                 Date
             </a>
         </li>
+        <li  title="Float">
+            <a href="float.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                Float
+            </a>
+        </li>
         <li  title="ID">
             <a href="id.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 ID
@@ -171,6 +176,11 @@
                 AccountEdge
             </a>
         </li>
+        <li  title="AccountSettings">
+            <a href="accountsettings.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                AccountSettings
+            </a>
+        </li>
         <li  title="AccountUsersConnection">
             <a href="accountusersconnection.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 AccountUsersConnection
@@ -194,6 +204,16 @@
         <li  title="Artist">
             <a href="artist.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 Artist
+            </a>
+        </li>
+        <li  title="ArtistConnection">
+            <a href="artistconnection.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                ArtistConnection
+            </a>
+        </li>
+        <li  title="ArtistEdge">
+            <a href="artistedge.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                ArtistEdge
             </a>
         </li>
         <li  title="BlockedTrack">
@@ -481,6 +501,11 @@
                 Track
             </a>
         </li>
+        <li  title="TrackArtist">
+            <a href="trackartist.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                TrackArtist
+            </a>
+        </li>
         <li  title="TrackConnection">
             <a href="trackconnection.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 TrackConnection
@@ -655,7 +680,7 @@
             </a>
             GraphQL Schema definition
         </h2>
-        <code class="highlight"><ul class="code" style="padding-left:42px"><li><span class="keyword operator ts">type</span> <span class="identifier">RootQueryType</span> {</li><li></li><li><span class="tab"><span class="comment line">#   Find an account by ID</span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>id</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">account</span>(<span class="meta">id</span>: <a class="support type" href="id.doc.html">ID</a>!): <a class="support type" href="account.doc.html">Account</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   The main entry point to begin querying and exploring the API.</span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line">#   Returns different nodes depending on the current API session.</span></span></li><li><span class="tab"><span class="meta">me</span>: <a class="support type" href="viewer.doc.html">Viewer</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   Find entities implementing the node interface by ID</span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>id</strong>: The id of an object.</span></span></li><li><span class="tab"><span class="meta">node</span>(<span class="meta">id</span>: <a class="support type" href="id.doc.html">ID</a>!): <a class="support type" href="node.doc.html">Node</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   Find the currently playing track by sound zone ID</span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>soundZone</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">nowPlaying</span>(<span class="meta">soundZone</span>: <a class="support type" href="id.doc.html">ID</a>!): <a class="support type" href="nowplaying.doc.html">NowPlaying</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   Get the calculated complexity for a query</span></span></li><li><span class="tab"><span class="meta">queryInfo</span>: <a class="support type" href="queryinfo.doc.html">QueryInfo</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   Find a sound zone by ID</span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>id</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">soundZone</span>(<span class="meta">id</span>: <a class="support type" href="id.doc.html">ID</a>!): <a class="support type" href="soundzone.doc.html">SoundZone</a> </span></li><li>}</li></ul></code>
+        <code class="highlight"><ul class="code" style="padding-left:42px"><li><span class="keyword operator ts">type</span> <span class="identifier">RootQueryType</span> {</li><li></li><li><span class="tab"><span class="comment line">#   Find an account by ID</span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>id</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">account</span>(<span class="meta">id</span>: <a class="support type" href="id.doc.html">ID</a>!): <a class="support type" href="account.doc.html">Account</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   The main entry point to begin querying and exploring the API.</span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line">#   Returns different nodes depending on the current API session.</span></span></li><li><span class="tab"><span class="meta">me</span>: <a class="support type" href="viewer.doc.html">Viewer</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   Find entities implementing the node interface by ID</span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>id</strong>: The id of an object.</span></span></li><li><span class="tab"><span class="meta">node</span>(<span class="meta">id</span>: <a class="support type" href="id.doc.html">ID</a>!): <a class="support type" href="node.doc.html">Node</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   Find the currently playing track by sound zone ID</span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>soundZone</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">nowPlaying</span>(<span class="meta">soundZone</span>: <a class="support type" href="id.doc.html">ID</a>!): <a class="support type" href="nowplaying.doc.html">NowPlaying</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   Get the calculated complexity for a query</span></span></li><li><span class="tab"><span class="meta">queryInfo</span>: <a class="support type" href="queryinfo.doc.html">QueryInfo</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   Search for an artist</span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>after</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>before</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>first</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>last</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>query</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">searchArtist</span>(</span></li><li><span class="tab"><span class="tab"><span class="meta">after</span>: <a class="support type" href="string.doc.html">String</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">before</span>: <a class="support type" href="string.doc.html">String</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">first</span>: <a class="support type" href="int.doc.html">Int</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">last</span>: <a class="support type" href="int.doc.html">Int</a>,</span></span></li><li><span class="tab"><span class="tab"><span class="meta">query</span>: <a class="support type" href="string.doc.html">String</a>!</span></span></li><li><span class="tab">): <a class="support type" href="artistconnection.doc.html">ArtistConnection</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   Find a sound zone by ID</span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>id</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">soundZone</span>(<span class="meta">id</span>: <a class="support type" href="id.doc.html">ID</a>!): <a class="support type" href="soundzone.doc.html">SoundZone</a> </span></li><li>}</li></ul></code>
     </div>
 </section>
 <section>

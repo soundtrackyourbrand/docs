@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="./styles/graphdoc.css" />
     <link rel="shortcut icon" type="image/png" href="https://business.soundtrackyourbrand.com/favicon.ico?v=3"/>
-    <title>Account</title>
+    <title>ArtistConnection</title>
     <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700" rel="stylesheet"><link type="text/css" rel="stylesheet" href="./assets/code.css" /><link type="text/css" rel="stylesheet" href="./assets/require-by.css" />
 </head>
 <body class="slds-scrollable--y">
@@ -161,7 +161,7 @@
                 Access
             </a>
         </li>
-        <li class="slds-is-active" title="Account">
+        <li  title="Account">
             <a href="account.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 Account
             </a>
@@ -206,7 +206,7 @@
                 Artist
             </a>
         </li>
-        <li  title="ArtistConnection">
+        <li class="slds-is-active" title="ArtistConnection">
             <a href="artistconnection.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 ArtistConnection
             </a>
@@ -667,8 +667,8 @@
     </div>
     <div class="container">
         <p class="slds-text-title--caps slds-text-color--weak">OBJECT</p>
-        <h1 class="slds-text-heading--large">Account</h1>
-        <div class="slds-text-body--regular">A registered account</div>
+        <h1 class="slds-text-heading--large">ArtistConnection</h1>
+        <div class="slds-text-body--regular"></div>
         
     </div>
 </section>
@@ -680,7 +680,7 @@
             </a>
             GraphQL Schema definition
         </h2>
-        <code class="highlight"><ul class="code" style="padding-left:42px"><li><span class="keyword operator ts">type</span> <span class="identifier">Account</span> <span class="keyword operator ts">implements</span> <a class="support type" href="node.doc.html">Node</a> {</li><li></li><li><span class="tab"><span class="comment line">#   The users that can access the account</span></span></li><li><span class="tab"><span class="meta">access</span>: <a class="support type" href="access.doc.html">Access</a> </span></li><li></li><li><span class="tab"><span class="meta">businessName</span>: <a class="support type" href="string.doc.html">String</a> </span></li><li></li><li><span class="tab"><span class="meta">businessType</span>: <a class="support type" href="string.doc.html">String</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   The account's curator profile</span></span></li><li><span class="tab"><span class="meta">curator</span>: <a class="support type" href="curator.doc.html">Curator</a> </span></li><li></li><li><span class="tab"><span class="meta">id</span>: <a class="support type" href="id.doc.html">ID</a>! </span></li><li></li><li><span class="tab"><span class="comment line">#   The account's locations</span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>after</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>before</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>first</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>last</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">locations</span>(<span class="meta">after</span>: <a class="support type" href="string.doc.html">String</a>, <span class="meta">before</span>: <a class="support type" href="string.doc.html">String</a>, <span class="meta">first</span>: <a class="support type" href="int.doc.html">Int</a>, <span class="meta">last</span>: <a class="support type" href="int.doc.html">Int</a>): <a class="support type" href="locationconnection.doc.html">LocationConnection</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   The account's added soundtracks, playlists and schedules</span></span></li><li><span class="tab"><span class="meta">musicLibrary</span>: <a class="support type" href="musiclibrary.doc.html">MusicLibrary</a> </span></li><li></li><li><span class="tab"><span class="meta">settings</span>: <a class="support type" href="accountsettings.doc.html">AccountSettings</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   The account's sound zones (the zones are also available under each location)</span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>after</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>before</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>first</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>last</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">soundZones</span>(<span class="meta">after</span>: <a class="support type" href="string.doc.html">String</a>, <span class="meta">before</span>: <a class="support type" href="string.doc.html">String</a>, <span class="meta">first</span>: <a class="support type" href="int.doc.html">Int</a>, <span class="meta">last</span>: <a class="support type" href="int.doc.html">Int</a>): <a class="support type" href="soundzoneconnection.doc.html">SoundZoneConnection</a> </span></li><li>}</li></ul></code>
+        <code class="highlight"><ul class="code" style="padding-left:28px"><li><span class="keyword operator ts">type</span> <span class="identifier">ArtistConnection</span> {</li><li></li><li><span class="tab"><span class="meta">edges</span>: [<a class="support type" href="artistedge.doc.html">ArtistEdge</a>] </span></li><li></li><li><span class="tab"><span class="meta">pageInfo</span>: <a class="support type" href="pageinfo.doc.html">PageInfo</a>! </span></li><li></li><li><span class="tab"><span class="meta">total</span>: <a class="support type" href="int.doc.html">Int</a>! </span></li><li>}</li></ul></code>
     </div>
 </section>
 <section>
@@ -691,7 +691,7 @@
             </a>
             Require by
         </h2>
-        <ul class="require-by"><li><a href="accountedge.doc.html" title="AccountEdge - ">AccountEdge<em>null</em></a><li><li><a href="publicapiclientaccountsedge.doc.html" title="PublicApiClientAccountsEdge - ">PublicApiClientAccountsEdge<em>null</em></a><li><li><a href="rootquerytype.doc.html" title="RootQueryType - ">RootQueryType<em>null</em></a><li><li><a href="soundzone.doc.html" title="SoundZone - A Sound Zone">SoundZone<em>A Sound Zone</em></a><li></ul>
+        <ul class="require-by"><li><a href="rootquerytype.doc.html" title="RootQueryType - ">RootQueryType<em>null</em></a><li></ul>
     </div>
 </section>
 <footer>

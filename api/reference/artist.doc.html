@@ -56,6 +56,11 @@
                 Date
             </a>
         </li>
+        <li  title="Float">
+            <a href="float.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                Float
+            </a>
+        </li>
         <li  title="ID">
             <a href="id.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 ID
@@ -171,6 +176,11 @@
                 AccountEdge
             </a>
         </li>
+        <li  title="AccountSettings">
+            <a href="accountsettings.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                AccountSettings
+            </a>
+        </li>
         <li  title="AccountUsersConnection">
             <a href="accountusersconnection.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 AccountUsersConnection
@@ -194,6 +204,16 @@
         <li class="slds-is-active" title="Artist">
             <a href="artist.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 Artist
+            </a>
+        </li>
+        <li  title="ArtistConnection">
+            <a href="artistconnection.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                ArtistConnection
+            </a>
+        </li>
+        <li  title="ArtistEdge">
+            <a href="artistedge.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                ArtistEdge
             </a>
         </li>
         <li  title="BlockedTrack">
@@ -481,6 +501,11 @@
                 Track
             </a>
         </li>
+        <li  title="TrackArtist">
+            <a href="trackartist.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                TrackArtist
+            </a>
+        </li>
         <li  title="TrackConnection">
             <a href="trackconnection.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 TrackConnection
@@ -643,7 +668,7 @@
     <div class="container">
         <p class="slds-text-title--caps slds-text-color--weak">OBJECT</p>
         <h1 class="slds-text-heading--large">Artist</h1>
-        <div class="slds-text-body--regular">An artist</div>
+        <div class="slds-text-body--regular">An Artist</div>
         
     </div>
 </section>
@@ -655,7 +680,7 @@
             </a>
             GraphQL Schema definition
         </h2>
-        <code class="highlight"><ul class="code" style="padding-left:28px"><li><span class="keyword operator ts">type</span> <span class="identifier">Artist</span> {</li><li></li><li><span class="tab"><span class="meta">name</span>: <a class="support type" href="string.doc.html">String</a> </span></li><li>}</li></ul></code>
+        <code class="highlight"><ul class="code" style="padding-left:42px"><li><span class="keyword operator ts">type</span> <span class="identifier">Artist</span> <span class="keyword operator ts">implements</span> <a class="support type" href="node.doc.html">Node</a> {</li><li></li><li><span class="tab"><span class="meta">colors</span>: <a class="support type" href="color.doc.html">Color</a> </span></li><li></li><li><span class="tab"><span class="meta">id</span>: <a class="support type" href="id.doc.html">ID</a>! </span></li><li></li><li><span class="tab"><span class="meta">imageUrl</span>: <a class="support type" href="string.doc.html">String</a> </span></li><li></li><li><span class="tab"><span class="meta">name</span>: <a class="support type" href="string.doc.html">String</a> </span></li><li></li><li><span class="tab"><span class="meta">soundtrackId</span>: <a class="support type" href="string.doc.html">String</a> </span></li><li>}</li></ul></code>
     </div>
 </section>
 <section>
@@ -666,7 +691,7 @@
             </a>
             Require by
         </h2>
-        <ul class="require-by"><li><a href="track.doc.html" title="Track - ">Track<em>null</em></a><li></ul>
+        <ul class="require-by"><li><a href="artistedge.doc.html" title="ArtistEdge - ">ArtistEdge<em>null</em></a><li></ul>
     </div>
 </section>
 <footer>
