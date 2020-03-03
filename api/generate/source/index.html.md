@@ -298,12 +298,17 @@ All subscriptions can be found in the [reference](https://developer.soundtrackyo
 ### Endpoint & token
 
 ```plaintext
-wss://api.soundtrackyourbrand.com/v2?Authorization=Basic%20your_token
+wss://api.soundtrackyourbrand.com/v2/websocket?Authorization=Basic%20your_token
 ```
 
 For subscriptions there are two things you need to adjust: the endpoint and the way you supply your token.
 
 The **endpoint** is `wss` instead of `https`. That's because we use [web sockets](https://en.wikipedia.org/wiki/WebSocket) for subscriptions (WSS = Web Sockets Secure).
+
+The web socket API adheres to the [Phoenix](https://hexdocs.pm/phoenix/js/) and
+[Absinthe](https://github.com/absinthe-graphql/absinthe-socket) protocols. The
+easiest way to connect to it is using their provided packages. Our [example
+app](#example-app) shows how they might be used in a Javascript client.
 
 You won't be using any headers, so the **token** need to be passed as a query parameter.
 

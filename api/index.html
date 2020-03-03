@@ -575,11 +575,16 @@ query {
 <p>Use subscriptions for getting information you expect to change often. For example: what is currently playing, current playback state (played/paused) and current sound zone errors.</p>
 
 <p>All subscriptions can be found in the <a href="https://developer.soundtrackyourbrand.com/api/reference/rootsubscriptiontype.doc.html">reference</a>.</p>
-<h3 id='endpoint-amp-token'>Endpoint &amp; token</h3><pre class="highlight plaintext tab-plaintext"><code>wss://api.soundtrackyourbrand.com/v2?Authorization=Basic%20your_token
+<h3 id='endpoint-amp-token'>Endpoint &amp; token</h3><pre class="highlight plaintext tab-plaintext"><code>wss://api.soundtrackyourbrand.com/v2/websocket?Authorization=Basic%20your_token
 </code></pre>
 <p>For subscriptions there are two things you need to adjust: the endpoint and the way you supply your token.</p>
 
 <p>The <strong>endpoint</strong> is <code>wss</code> instead of <code>https</code>. That&#39;s because we use <a href="https://en.wikipedia.org/wiki/WebSocket">web sockets</a> for subscriptions (WSS = Web Sockets Secure).</p>
+
+<p>The web socket API adheres to the <a href="https://hexdocs.pm/phoenix/js/">Phoenix</a> and
+<a href="https://github.com/absinthe-graphql/absinthe-socket">Absinthe</a> protocols. The
+easiest way to connect to it is using their provided packages. Our <a href="#example-app">example
+app</a> shows how they might be used in a Javascript client.</p>
 
 <p>You won&#39;t be using any headers, so the <strong>token</strong> need to be passed as a query parameter.</p>
 <h3 id='example'>Example</h3><pre class="highlight plaintext tab-plaintext"><code>subscription nowPlaying {
