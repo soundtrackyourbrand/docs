@@ -96,6 +96,11 @@
                 ErrorState
             </a>
         </li>
+        <li  title="Platform">
+            <a href="platform.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                Platform
+            </a>
+        </li>
         <li  title="PlaybackState">
             <a href="playbackstate.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 PlaybackState
@@ -254,6 +259,11 @@
         <li  title="ErrorEdge">
             <a href="erroredge.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 ErrorEdge
+            </a>
+        </li>
+        <li  title="Feature">
+            <a href="feature.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
+                Feature
             </a>
         </li>
         <li  title="Image">
@@ -665,7 +675,7 @@
             </a>
             GraphQL Schema definition
         </h2>
-        <code class="highlight"><ul class="code" style="padding-left:42px"><li><span class="keyword operator ts">type</span> <span class="identifier">Track</span> <span class="keyword operator ts">implements</span> <a class="support type" href="node.doc.html">Node</a> {</li><li></li><li><span class="tab"><span class="meta">album</span>: <a class="support type" href="album.doc.html">Album</a> </span></li><li></li><li><span class="tab"><span class="meta">artists</span>: [<a class="support type" href="trackartist.doc.html">TrackArtist</a>] </span></li><li></li><li><span class="tab"><span class="comment line">#   The track's duration in milliseconds</span></span></li><li><span class="tab"><span class="meta">duration</span>: <a class="support type" href="int.doc.html">Int</a> </span></li><li></li><li><span class="tab"><span class="meta">explicit</span>: <a class="support type" href="boolean.doc.html">Boolean</a> </span></li><li></li><li><span class="tab"><span class="meta">id</span>: <a class="support type" href="id.doc.html">ID</a>! </span></li><li></li><li><span class="tab"><span class="comment line">#   A globally unique ID to identify this recording</span></span></li><li><span class="tab"><span class="meta">isrc</span>: <a class="support type" href="string.doc.html">String</a>! </span></li><li></li><li><span class="tab"><span class="meta">name</span>: <a class="support type" href="string.doc.html">String</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   A 30 second preview of the track. Not available for all tracks</span></span></li><li><span class="tab"><span class="meta">previewUrl</span>: <a class="support type" href="string.doc.html">String</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   The recognizability of this track (0-1.0)</span></span></li><li><span class="tab"><span class="meta">recognizability</span>: <a class="support type" href="float.doc.html">Float</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   A URL that can be used to share the track with users. Does not necessarily </span></span></li><li><span class="tab"><span class="comment line">#   always point to the same provider (e.g. Spotify)</span></span></li><li><span class="tab"><span class="meta">shareUrl</span>: <a class="support type" href="string.doc.html">String</a> </span></li><li>}</li></ul></code>
+        <code class="highlight"><ul class="code" style="padding-left:42px"><li><span class="keyword operator ts">type</span> <span class="identifier">Track</span> <span class="keyword operator ts">implements</span> <a class="support type" href="node.doc.html">Node</a> {</li><li></li><li><span class="tab"><span class="meta">album</span>: <a class="support type" href="album.doc.html">Album</a> </span></li><li></li><li><span class="tab"><span class="meta">artists</span>: [<a class="support type" href="trackartist.doc.html">TrackArtist</a>] </span></li><li></li><li><span class="tab"><span class="comment line">#   The track's duration in milliseconds</span></span></li><li><span class="tab"><span class="meta">duration</span>: <a class="support type" href="int.doc.html">Int</a> </span></li><li></li><li><span class="tab"><span class="meta">explicit</span>: <a class="support type" href="boolean.doc.html">Boolean</a> </span></li><li></li><li><span class="tab"><span class="meta">id</span>: <a class="support type" href="id.doc.html">ID</a>! </span></li><li></li><li><span class="tab"><span class="comment line">#   A globally unique ID to identify this recording</span></span></li><li><span class="tab"><span class="meta">isrc</span>: <a class="support type" href="string.doc.html">String</a>! </span></li><li></li><li><span class="tab"><span class="meta">name</span>: <a class="support type" href="string.doc.html">String</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   A 30 second preview of the track. Not available for all tracks</span></span></li><li><span class="tab"><span class="meta">previewUrl</span>: <a class="support type" href="string.doc.html">String</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   The recognizability of this track (0-1.0)</span></span></li><li><span class="tab"><span class="meta">recognizability</span>: <a class="support type" href="float.doc.html">Float</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   A URL that can be used to share the track with users. Does not necessarily </span></span></li><li><span class="tab"><span class="comment line">#   always point to the same provider (e.g. Spotify)</span></span></li><li><span class="tab"><span class="meta">shareUrl</span>: <a class="support type" href="string.doc.html">String</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   The track's version identifier</span></span></li><li><span class="tab"><span class="meta">snapshot</span>: <a class="support type" href="string.doc.html">String</a> </span></li><li>}</li></ul></code>
     </div>
 </section>
 <section>

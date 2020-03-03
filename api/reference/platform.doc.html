@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="./styles/graphdoc.css" />
     <link rel="shortcut icon" type="image/png" href="https://business.soundtrackyourbrand.com/favicon.ico?v=3"/>
-    <title>Location</title>
+    <title>Platform</title>
     <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700" rel="stylesheet"><link type="text/css" rel="stylesheet" href="./assets/code.css" /><link type="text/css" rel="stylesheet" href="./assets/require-by.css" />
 </head>
 <body class="slds-scrollable--y">
@@ -96,7 +96,7 @@
                 ErrorState
             </a>
         </li>
-        <li  title="Platform">
+        <li class="slds-is-active" title="Platform">
             <a href="platform.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 Platform
             </a>
@@ -271,7 +271,7 @@
                 Image
             </a>
         </li>
-        <li class="slds-is-active" title="Location">
+        <li  title="Location">
             <a href="location.doc.html" class="slds-navigation-list--vertical__action slds-text-link--reset slds-truncate">
                 Location
             </a>
@@ -661,9 +661,9 @@
         </div>
     </div>
     <div class="container">
-        <p class="slds-text-title--caps slds-text-color--weak">OBJECT</p>
-        <h1 class="slds-text-heading--large">Location</h1>
-        <div class="slds-text-body--regular">A physical location, like a store. Can have one or many sound zones</div>
+        <p class="slds-text-title--caps slds-text-color--weak">ENUM</p>
+        <h1 class="slds-text-heading--large">Platform</h1>
+        <div class="slds-text-body--regular">A type of platform</div>
         
     </div>
 </section>
@@ -675,7 +675,7 @@
             </a>
             GraphQL Schema definition
         </h2>
-        <code class="highlight"><ul class="code" style="padding-left:42px"><li><span class="keyword operator ts">type</span> <span class="identifier">Location</span> <span class="keyword operator ts">implements</span> <a class="support type" href="node.doc.html">Node</a> {</li><li></li><li><span class="tab"><span class="meta">address</span>: <a class="support type" href="string.doc.html">String</a> </span></li><li></li><li><span class="tab"><span class="meta">address2</span>: <a class="support type" href="string.doc.html">String</a> </span></li><li></li><li><span class="tab"><span class="meta">city</span>: <a class="support type" href="string.doc.html">String</a> </span></li><li></li><li><span class="tab"><span class="meta">countryName</span>: <a class="support type" href="string.doc.html">String</a> </span></li><li></li><li><span class="tab"><span class="meta">id</span>: <a class="support type" href="id.doc.html">ID</a>! </span></li><li></li><li><span class="tab"><span class="meta">isoCountry</span>: <a class="support type" href="string.doc.html">String</a> </span></li><li></li><li><span class="tab"><span class="meta">name</span>: <a class="support type" href="string.doc.html">String</a> </span></li><li></li><li><span class="tab"><span class="meta">postalCode</span>: <a class="support type" href="string.doc.html">String</a> </span></li><li></li><li><span class="tab"><span class="comment line">#   The sound zones at the location</span></span></li><li><span class="tab"><span class="comment line"># </span></span></li><li><span class="tab"><span class="comment line"># Arguments</span></span></li><li><span class="tab"><span class="comment line">#   <strong>after</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>before</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>first</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="comment line">#   <strong>last</strong>: [<strong>Not documented</strong>]</span></span></li><li><span class="tab"><span class="meta">soundZones</span>(<span class="meta">after</span>: <a class="support type" href="string.doc.html">String</a>, <span class="meta">before</span>: <a class="support type" href="string.doc.html">String</a>, <span class="meta">first</span>: <a class="support type" href="int.doc.html">Int</a>, <span class="meta">last</span>: <a class="support type" href="int.doc.html">Int</a>): <a class="support type" href="soundzoneconnection.doc.html">SoundZoneConnection</a> </span></li><li></li><li><span class="tab"><span class="meta">state</span>: <a class="support type" href="string.doc.html">String</a> </span></li><li></li><li><span class="tab"><span class="meta">timezone</span>: <a class="support type" href="string.doc.html">String</a> </span></li><li>}</li></ul></code>
+        <code class="highlight"><ul class="code" style="padding-left:28px"><li><span class="keyword operator ts">enum</span> <span class="identifier">Platform</span> {</li><li><span class="tab"></span></li><li><span class="tab"><span class="meta">EMBEDDED</span></span></li><li><span class="tab"></span></li><li><span class="tab"><span class="meta">MOBILE</span></span></li><li><span class="tab"></span></li><li><span class="tab"><span class="meta">WEB</span></span></li><li>}</li></ul></code>
     </div>
 </section>
 <section>
@@ -686,7 +686,7 @@
             </a>
             Require by
         </h2>
-        <ul class="require-by"><li><a href="locationedge.doc.html" title="LocationEdge - ">LocationEdge<em>null</em></a><li><li><a href="soundzone.doc.html" title="SoundZone - A Sound Zone">SoundZone<em>A Sound Zone</em></a><li></ul>
+        <ul class="require-by"><li><a href="account.doc.html" title="Account - A registered account">Account<em>A registered account</em></a><li></ul>
     </div>
 </section>
 <footer>
