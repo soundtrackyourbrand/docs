@@ -482,11 +482,11 @@ Did you get an error message that you think could be improved? Please <a href="h
 
 > Please note that the rate limit is subject to change since we continuously monitor how the API is used and make relevant updates.
 
-The Soundtrack API enforces rate limiting. You start off with the maximum amount of tokens (18000) and for every call (query, mutation or subscription) you make, tokens will be deducted.
+The Soundtrack API enforces rate limiting. You start off with the maximum amount of tokens (3600) and for every call (query, mutation or subscription) you make, tokens will be deducted.
 
 The number of tokens deducted depends on the complexity of the call you are making. But we don’t just take tokens from you - every second you get 5 tokens back.
 
-Let’s say you make a query with a complexity of 100. Now you’re down to 17900. After 20 seconds you’re back to 18000 tokens (5 tokens per second). Simple, right?
+Let’s say you make a query with a complexity of 100. Now you’re down to 3500. After 20 seconds you’re back to 3600 tokens (5 tokens per second). Simple, right?
 
 ## Queries & Mutations
 
