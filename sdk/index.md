@@ -249,10 +249,10 @@ Every Thursday Soundtrack decides if there is a need for a patch the coming week
 
 All times below are CET/CEST. Consider that the times below are deadlines.
 
-* No later than Thursday, 18:00:
+No later than Thursday, 18:00:
  * Your internal test account will be updated with the patch version
  * We will send you an email to the designated address
-* No later than Tuesday, 15:00:
+No later than Tuesday, 15:00:
  * Soundtrack Test Lead decides if the patch can be released
  * If no-go: email to you informing about the decision
  * If you have had the time to test and approve (via email): patch is released in the next morning
@@ -262,20 +262,16 @@ If you did not get in touch with us, you will have to wait until next full relea
 
 ### Release schedule
 
-Date | Release
---- | --- | ---
-3 Jul 2019 | Pre-release 51
-10 Jul 2019 | Full-release 51
-28 Aug 2019 | Pre-release 52
-4 Sep 2019 | Full-release 52
-25 Sep 2019 | Pre-release 53
-2 Oct 2019 | Full-release 53
-23 Oct 2019 | Pre-release 54
-30 Oct 2019 | Full-release 54
-20 Nov 2019 | Pre-release 55
-27 Nov 2019 | Full-release 55
+Every second week the pre-release is sent out to your pre-release channel.
+* An email will be sent to you when it's done. 
+* You have one week to test the software. If you want to stop the full release, please email to us within a week.
 
-<span style="color:red;">* Dates marked as red are changed release dates according from the original plan.</span>
+Every second other week, the full-release is sent out to full costumer base. 
+* An email will be sent to you when it's done. 
+
+You will get email notifcation whenever we are sending out a new release either to your pre-release channel or full production release. For any questions/issues, just reply back to us.
+
+Here's the full release calender (with rights to be changed): https://calendar.google.com/calendar?cid=c291bmR0cmFja3lvdXJicmFuZC5jb21fZjM5YmpzbWxrZWtncDllazN0dWprZ2NkdWNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ
 
 ## Q&A
 
