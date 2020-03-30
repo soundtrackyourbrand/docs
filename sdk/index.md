@@ -234,12 +234,15 @@ The application built is to be approved by Soundtrack and shall at all times adh
 Please note that the below release information relates to the player software within the SDK, so it's not the SDK and the splayer-APIs per se.
 
 ### Release SDK player software
-The player software is updated monthly according to a set schedule. Unless anything else is communicated the release will be done on a Wednesday between 02.00 and 06.00 (based on each player’s local time).
-* Wednesday:
- * Your internal test account will be updated
- * From this day, you have one week to flag any issues to Soundtrack. Soundtrack will decide whether or not the issue is a blocker
-* Wednesday, one week later:
- * The same release version is sent to 100% of your customer base (unless any blocking issues were found during testing)
+The player software is updated monthly according to a set schedule. Unless anything else is communicated the release will be done every second week (on Wednesdays) between 02.00 and 06.00 (based on each player’s local time).
+ 
+ Every second week the pre-release is sent out to your pre-release channel.
+* An email will be sent to you when it's done. 
+* Your internal test account will be updated.
+* From this day, you have one week to flag any issues to Soundtrack. Soundtrack will decide whether or not the issue is a blocker.
+
+Every second other week, the full-release is sent out to full costumer base.
+* An email will be sent to you when it's done. 
 
 ### Patching SDK player software
 Every Thursday Soundtrack decides if there is a need for a patch the coming week. The reason for a patch is either an incident or an important bug.
@@ -262,14 +265,7 @@ If you did not get in touch with us, you will have to wait until next full relea
 
 ### Release schedule
 
-Every second week the pre-release is sent out to your pre-release channel.
-* An email will be sent to you when it's done. 
-* You have one week to test the software. If you want to stop the full release, please email to us within a week.
-
-Every second other week, the full-release is sent out to full costumer base. 
-* An email will be sent to you when it's done. 
-
-You will get email notifcation whenever we are sending out a new release either to your pre-release channel or full production release. For any questions/issues, just reply back to us.
+You will get email notifcation whenever we are sending out a new release either to your pre-release channel or a full production release. For any questions/issues, just reply back to us.
 
 Here's the full release calender (with rights to be changed): https://calendar.google.com/calendar?cid=c291bmR0cmFja3lvdXJicmFuZC5jb21fZjM5YmpzbWxrZWtncDllazN0dWprZ2NkdWNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ
 
