@@ -234,14 +234,13 @@ The application built is to be approved by Soundtrack and shall at all times adh
 Please note that the below release information relates to the player software within the SDK, so it's not the SDK and the splayer-APIs per se.
 
 ### Release SDK player software
-The player software is updated monthly according to a set schedule. Unless anything else is communicated the release will be done every second week (on Wednesdays) between 02.00 and 06.00 (based on each player’s local time).
  
  Every second week the pre-release is sent out to your pre-release channel.
 * An email will be sent to you when it's done. 
 * Your internal test account will be updated.
 * From this day, you have one week to flag any issues to Soundtrack. Soundtrack will decide whether or not the issue is a blocker.
 
-Every second other week, the full-release is sent out to full costumer base.
+Every second other week, the full-release is sent out to full costumer base between 02.00 and 06.00 (based on each player’s local time).
 * An email will be sent to you when it's done. 
 
 ### Patching SDK player software
