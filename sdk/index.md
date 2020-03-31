@@ -125,9 +125,9 @@ mutation PartnerCodeCreator($input:GeneratePairingCodesInput!){
     }
 }
 ```
- * Change the description to add information about the platform (will not be shown to users)
+ * Change the description to add information about the platform (will be shown to users in the Business UI). It’s more of a description of the specific hardware/platform, so we can distinguish among your devices (in case there are any differences in hardware/platform or you come up with a new generation etc).
  * Set deviceType to `EMBEDDED` (currently not optional)
- * Change the label to the product's name (will be shown to users)
+ * Change the label to something unique for you as an SDK-partner. This is for us to be able to distinguish you from other SDK-partners. 
  * Change the hardwareIds entry to the hardware_id of your choice. See "Authentication & Pairing" for more info
 
 
