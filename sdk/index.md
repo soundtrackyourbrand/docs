@@ -235,6 +235,8 @@ Please note that the below release information relates to the player software wi
 
 ### Release SDK player software
  
+ The production releases are taking place on Wednesday's morning (02.00-06.00) local time. **Due to COVID-19 and limited resources, releases will be done on Tuesdays.**
+ 
  Every second week the pre-release is sent out to your pre-release channel.
 * An email will be sent to you when it's done. 
 * Your internal test account will be updated.
@@ -254,7 +256,7 @@ All times below are CET/CEST. Consider that the times below are deadlines.
 No later than Thursday, 18:00:
  * Your internal test account will be updated with the patch version
  * We will send you an email to the designated address
-No later than Tuesday, 15:00:
+No later than Tuesday (***Mondays now due to COVID-19***), 15:00:
  * Soundtrack Test Lead decides if the patch can be released
  * If no-go: email to you informing about the decision
  * If you have had the time to test and approve (via email): patch is released in the next morning
@@ -266,7 +268,7 @@ If you did not get in touch with us, you will have to wait until next full relea
 
 You will get email notifcation whenever we are sending out a new release either to your pre-release channel or a full production release. For any questions/issues, just reply back to us.
 
-Here's the full release calender (with rights to be changed): https://calendar.google.com/calendar?cid=c291bmR0cmFja3lvdXJicmFuZC5jb21fZjM5YmpzbWxrZWtncDllazN0dWprZ2NkdWNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ
+Here's the full release calender (***temporary changed due to COVID-19***): https://calendar.google.com/calendar?cid=c291bmR0cmFja3lvdXJicmFuZC5jb21fZjM5YmpzbWxrZWtncDllazN0dWprZ2NkdWNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ
 
 ## Q&A
 
