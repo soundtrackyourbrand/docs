@@ -192,6 +192,9 @@ Splayer API is provisioned by Soundtrack's backoffice systems with rollout limit
 * https://builds.soundtrackyourbrand.com/remote/splayer-x86_64/latest
 * https://builds.soundtrackyourbrand.com/remote/splayer-i686/latest
 
+The template is basically:
+* https://builds.soundtrackyourbrand.com/remote/<platform_name>/latest
+
 ```json
 {
 "id": "QnVpbGQsLDFsZ2g1bW1uNnJrLw..",
@@ -204,7 +207,7 @@ Splayer API is provisioned by Soundtrack's backoffice systems with rollout limit
 
 The two important fields are version and link, you can disregard all other fields in the JSON. In the example above the version is hashnumber, since the example is not from a proper release, but the latest build. The link points directly to the library.
 
-The checksum is a sha1 hash of he file in the link, make sure to verify the checksum matches for security and reliability reason!
+The checksum is a sha1 hash of the file in the link. Make sure to verify the checksum matches for security and reliability reason.
 
 To get provisioning working you need to send three HTTP headers. Basically each device sends a Vendor Hardware ID as described above and a Device Vendor ID. In the example below the Vendor Hardware ID is `28cfe91fcc6d`.
 
