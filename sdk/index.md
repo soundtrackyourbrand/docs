@@ -295,6 +295,32 @@ Set the ALSA buffer size to at least 1 period (second). For 44.1Khz two channel 
 Alsa initialized, buffer_size: 88200 period_size: 22050
 ```
 
+### Error codes explanation
+By calling "splayer_get_troubles()" you are able to achieve a list of SYB internal errors. See the example code snippets for exact return types since this changes over API version. Also, these error code can change depending on which SYB software is installed, but this is a list of the latest errors.
+
+Here follows a explanation of all errors we have at the moment.
+
+Error name | Explanation | Condition
+--- | ---
+ERROR_VALID_IP | Returns a list of the current network config. | Fails if no network config is found.
+ERROR_PING_SOUNDTRACK |  Checks connectivity to SYB internal endpoints in order for the product to work as expected | Fails if the player can't connect to any of these endpoints.    
+ERROR_PING_DNS | Check the DNS | Fails if DNS lookup doesn't work
+ERROR_PING_CDN | Checks connectivity to the CDN-servers in order for the product to download/stream music. | Fails if the player can't connect to the endpoints.
+ERROR_PING_CDN_IP | Checks connectivity rate to the CDN-servers in order for the product to have sufficient connectivity to guarantee download/stream music. | Fails if the player have a low success rate.
+ERROR_PING_CERT | Checks if proxy is used. We do not support that. | Fails if proxy is found.    
+ERROR_ONLINE_STATE | Checks online state | Fails if the player is offline/high amount of failing requests.
+ERROR_PAIRED | Checks if player is paried | Fails if not paired.
+ERROR_ACTIVE_SUBSCRIPTION | Checks if player have active subscription | Fails if inactice.  
+ERROR_CHANNEL_ASSIGNED | Checks if any music is assigned | Fails if no music assigned
+ERROR_DOWNLOADED_DATA | Checks downloaded data for the assigned music. | Fails if nothing is downloaded.
+ERROR_NO_VOLUME | Checks the volume level | Fails if there is no volume level is zero.
+ERROR_DISKCACHE_LOW | Checks free diskspace | Fails if free diskspace is below 1 GB.
+ERROR_DISKCACHE_CRITICALLY_LOW | Checks free diskspace | Fails if free diskspace is below 256 MB.
+ERROR_PAYMENT_EXPIRED | Check payment status | Fails if payment expired.
+ERROR_DEPRECATED | Checks if players version is deprecated (6 months old) | Fails if deprecated.
+ERROR_SOON_DEPRECATED | Checks if players version is soon to be deprecated (1 month prior to 6 months) | Fails if soon to be deprecated.
+ERROR_CLOCK_WRONG | Check server time offset | Fails if server time offset differs +- 15 min
+
 ## Certification
 
 ### Background
