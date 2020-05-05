@@ -301,7 +301,7 @@ By calling "splayer_get_troubles()" you are able to achieve a list of SYB intern
 Here follows a explanation of all errors we have at the moment.
 
 Error name | Explanation | Condition
---- | ---
+--- | --- | ---
 ERROR_VALID_IP | Returns a list of the current network config. | Fails if no network config is found.
 ERROR_PING_SOUNDTRACK |  Checks connectivity to SYB internal endpoints in order for the product to work as expected | Fails if the player can't connect to any of these endpoints.    
 ERROR_PING_DNS | Check the DNS | Fails if DNS lookup doesn't work
