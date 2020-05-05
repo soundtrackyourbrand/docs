@@ -296,9 +296,10 @@ Alsa initialized, buffer_size: 88200 period_size: 22050
 ```
 
 ### Error codes explanation
-By calling "splayer_get_troubles()" you are able to achieve a list of SYB internal errors. See the example code snippets for exact return types since this changes over API version. Also, these error code can change depending on which SYB software is installed, but this is a list of the latest errors.
+By calling `splayer_get_troubles()` you are able to achieve a list of SYB internal errors.
+See the example code to know how to achieve the list. Also, these error code can change depending on which SYB software is installed, but this is a list of the latest errors we have and is updated whenever we do any updates.
 
-Here follows a explanation of all errors we have at the moment.
+Here follows a brief explanation of all errors we have at the moment.
 
 Error name | Explanation | Condition
 --- | --- | ---
