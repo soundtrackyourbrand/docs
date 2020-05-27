@@ -65,6 +65,7 @@ Date | Version | Changes | Included APIs
 Q4, 2017 | 1 | First draft including basic functionality. | splayerapi v1
 Q2, 2018 | 2 | Moved controls to a separate API. Clarified examples. | splayerapi v2, splayerapi_control v1
 Q4, 2018 | 3 | Major/minor versioning. New metadata API. Some config variables renamed for clarity. | splayerapi v3, splayer_controls_api v2, splayer_troubles_api v1, splayer_audio_api v1, splayer_metadata_api v1
+Q2, 2020 | 4 | Updated metadata API, config variable to turn off cover art download. Config to turn of core-dumps. | splayerapi v4, splayer_controls_api v4, splayer_troubles_api v2, splayer_audio_api v1, splayer_metadata_api v2
 
 ## Getting started
 
