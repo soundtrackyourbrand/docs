@@ -99,7 +99,7 @@ Each sound zone can only have one **device**. Soundtrack supports multiple devic
 Before we can run an application using the SDK we must create a device using the Partner API. This device will be unique and needs to be paired to a sound zone. A device can only be paired with one sound zone at a time. The Partner API is a GraphQL API and you can run the following to create a device. Note: you need your Partner API credentials to do this step. It only needs to be done once since the pairing code does not change.
 
 1. Go to https://partner.soundtrackyourbrand.com/api/explore (this is just an explore tool, you should of course implement this code where you find it suitable)
-2. Add the Authorization header. In the “Value” field, write “Basic <your_credentials>” where <your_credentials> are the Partner API credentials that you should have received from Soundtrack. Ensure that you copy the full base64-token including the == on the end
+2. Add the Authorization header. In the “Value” field, write “Basic \<your_credentials\>” where \<your_credentials\> are the Partner API credentials that you should have received from Soundtrack. Ensure that you copy the full base64-token including the == on the end
 
 Example:
 ```
@@ -126,9 +126,9 @@ mutation PartnerCodeCreator($input:GeneratePairingCodesInput!){
     }
 }
 ```
- * Change the `description` to add information about the platform. It’s more of a description of the specific hardware/platform, so we can distinguish among your devices in case there are any differences in hardware/platform or you come up with a new generation etc (will be shown to users).
+ * Change the `description` to add information about the platform. It’s more of a description of the specific hardware/platform, so we can distinguish among your devices in case there are any differences in hardware/platform or you come up with a new generation etc.
  * Set `deviceType` to `EMBEDDED` (currently not optional)
- * Change the `label` to something unique for you as an SDK-partner. This is for us to be able to distinguish you from other SDK-partners. Prefarable your name (will not be shown to users).
+ * Change the `label` to the name of your product. This will be shown to users at business.soundtrackyourbrand.com.
  * Change the `hardwareIds` entry to the hardware_id of your choice. See "Authentication & Pairing" for more info
 
 
@@ -194,7 +194,7 @@ Splayer API is provisioned by Soundtrack's backoffice systems with rollout limit
 * https://builds.soundtrackyourbrand.com/remote/splayer-i686/latest
 
 The template is basically:
-* https://builds.soundtrackyourbrand.com/remote/<platform_name>/latest
+* https://builds.soundtrackyourbrand.com/remote/\<platform_name\>/latest
 
 ```json
 {
