@@ -319,8 +319,8 @@ ERROR_NO_VOLUME | Checks the volume level | Fails if there is no volume level is
 ERROR_DISKCACHE_LOW | Checks free diskspace | Fails if free diskspace is below 1 GB.
 ERROR_DISKCACHE_CRITICALLY_LOW | Checks free diskspace | Fails if free diskspace is below 256 MB.
 ERROR_PAYMENT_EXPIRED | Check payment status | Fails if payment expired.
-<span style="color: red"> (ERROR REMOVED FROM TYSON V79) </span> ERROR_DEPRECATED | Checks if players version is deprecated (6 months old) | Fails if deprecated.
-<span style="color: red"> (ERROR REMOVED FROM TYSON V79) </span> ERROR_SOON_DEPRECATED | Checks if players version is soon to be deprecated (1 month prior to 6 months) | Fails if soon to be deprecated.
+<span style="color: red"> (ERROR REMOVED FROM V79) </span> ERROR_DEPRECATED | Checks if players version is deprecated (6 months old) | Fails if deprecated.
+<span style="color: red"> (ERROR REMOVED FROM V79) </span> ERROR_SOON_DEPRECATED | Checks if players version is soon to be deprecated (1 month prior to 6 months) | Fails if soon to be deprecated.
 ERROR_CLOCK_WRONG | Check server time offset | Fails if server time offset differs +- 15 min
 
 ## Certification
