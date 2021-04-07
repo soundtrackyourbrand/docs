@@ -19,24 +19,23 @@ The Soundtrack SDK enables you to build support for Soundtrack on your platform.
 
 The SDK is available for selected partners. If you're interested in becoming one, please reach out to sdk@soundtrackyourbrand.com (applications currently open for opportunities of more than 5000 locations).
 
-This page contains the documentation for the SDK. In order to use it, you will need our latest build (which we need to send to you).
+This page contains the documentation for the SDK. In order to use it, you will need our latest build (which we will send to you).
 
 Soundtrack SDK is the package containing all code and documentation needed for you to get started. Splayer API is the local API within the SDK, used for initiating and controlling playback.
 
 Unless anything else is communicated by Soundtrack, the application shall be named "Soundtrack Player".
 
-### Features
-* Provided as a single shared library, built with toolchain provided by partner and with no external dependencies out of that.
-* Few entry points which means faster load times and simple mapping both for dynamic linking
-* Extendable API without the need to recompile (unless there are breaking changes)
-* Callbacks for audio so the user can control their hardware specific needs.
+### Api
+* Provided as a single shared library, built with toolchain provided by partner and with no external dependencies.
+* Few entry points, which means faster load times and simple mapping both for dynamic and static linking.
+* Extendable API without the need to recompile (unless there are breaking changes).
+* Callbacks for audio so you can control your hardware specific needs.
 
-### Functionality
-* Create and free a Splayer API context
-* Exit the player gracefully (after the next song)
-* Player control (play, pause, skip track, set volume)
-* Checklist for common troubles
-* Callbacks for audio so the user can control their hardware specific needs (eg. ALSA)
+#### Available actions
+* Create and free an Splayer API context.
+* Exit the player gracefully (after the next song).
+* Player control (play, pause, skip track, set volume).
+* Get error list.
 
 ### Responsibilities
 * Soundtrack is responsible for the binary and header file (eg libsplayer-x.so and splayerapi-x.h).
@@ -48,12 +47,12 @@ Unless anything else is communicated by Soundtrack, the application shall be nam
 * Partner is responsible for providing a toolchain that supports a C++ standard that is at most 5 years old at any given time now and in the future.
 
 ### Requirements
-* A POSIX api compatible OS, that support tcp sockets, and threads.
-* At lest 64Mb free ram for the player to operate in.
-* A reasonable strong cpu, that could handle our parallel encryption, decoding and digital signal processing.
-* A minimum of 4GB, recommended 8GB of storage used for offline music and data storage.
+* A POSIX API compatible OS, that support TCP sockets, and threads.
+* At lest 64 MB free RAM for the player to operate in.
+* A reasonable strong CPU, that could handle our parallel encryption, decoding and digital signal processing.
+* A minimum of 4 GB of storage used for offline music and data storage. 8 GB is recommended.
 * Partner needs to provide a C++14 capable cross compiler toolchain, and compiler options that we can build our library in a x86-64 linux docker container.
-* An onboard battery backuped RTC, in case of a powerloss we can not play audio playback until we have a valid systemtime due to our scheduling, and licensing constraints.
+* An onboard RTC with backup battery. In case of a power loss, we cannot play audio until we have a valid system time due to our scheduling, and licensing constraints.
 
 
 ## Changelog
@@ -71,10 +70,9 @@ Q2, 2020 | 4 | Updated metadata API, config variable to turn off cover art downl
 
 ### Prerequisites
 Make sure that you have:
-* your vendor secret (provided to you by Soundtrack).
-* your Partner API credentials (provided to you by Soundtrack).
-* access to Soundtrack. Sign up at soundtrackyourbrand.com.
-* the Splayer API header file (e.g. splayer-2.h) and the Splayer shared library (eg. libsplayer-1.so, libsplayer-1.dylib).
+* Your vendor secret (provided to you by Soundtrack).
+* Your Partner API credentials (provided to you by Soundtrack).
+* Access to Soundtrack. Sign up at soundtrackyourbrand.com.
 
 All applications must be in line with the terms & conditions and be certified by Soundtrack (see certification criteria further down on this page).
 
@@ -85,7 +83,7 @@ All applications must be in line with the terms & conditions and be certified by
 * Example source code using ALSA or Darwin
 * Example source code using the update service to fetch latest shared library
 
-Note: The package can't be find on this page. It will be sent to you by Soundtrack. A static library version can be provided. It is not included by default due to the increase in size of the package
+Note: The package can't be found on this page. It will be sent to you by Soundtrack. A static library version can be provided. It is not included by default due to the increase in size of the package
 
 ### Soundtrack - Overview
 We highly recommend that you play around with your Soundtrack account so you get an overview of the product prior to using the API. All guides and frequently asked questions regarding Soundtrack can be found on our help pages.
@@ -96,7 +94,7 @@ Each sound zone can only have one **device**. Soundtrack supports multiple devic
 
 ### Create a device
 
-Before we can run an application using the SDK we must create a device using the Partner API. This device will be unique and needs to be paired to a sound zone. A device can only be paired with one sound zone at a time. The Partner API is a GraphQL API and you can run the following to create a device. Note: you need your Partner API credentials to do this step. It only needs to be done once since the pairing code does not change.
+Before you can run an application using the SDK, you must create a device using the Partner API. This device will be unique and needs to be paired to a sound zone. A device can only be paired with one sound zone at a time. The Partner API is a GraphQL API and you can run the following to create a device. Note: you need your Partner API credentials to do this step. It only needs to be done once since the pairing code does not change.
 
 1. Go to https://partner.soundtrackyourbrand.com/api/explore (this is just an explore tool, you should of course implement this code where you find it suitable)
 2. Add the Authorization header. In the “Value” field, write “Basic \<your_credentials\>” where \<your_credentials\> are the Partner API credentials that you should have received from Soundtrack. Ensure that you copy the full base64-token including the == on the end
@@ -126,32 +124,27 @@ mutation PartnerCodeCreator($input:GeneratePairingCodesInput!){
     }
 }
 ```
- * Change the `description` to add information about the platform. It’s more of a description of the specific hardware/platform, so we can distinguish among your devices in case there are any differences in hardware/platform or you come up with a new generation etc.
+ * Change the `description` to add  a description of the specific hardware/platform, so we can distinguish among your devices in case there are any differences in hardware/platform or you come up with a new generation etc.
  * Set `deviceType` to `EMBEDDED` (currently not optional)
  * Change the `label` to the name of your product. This will be shown to users at business.soundtrackyourbrand.com.
  * Change the `hardwareIds` entry to the hardware_id of your choice. See "Authentication & Pairing" for more info
 
 
 5. Run the query and you should get a pairing code as output. You will need this code to pair the created device with a specific sound zone later.
-6. Write down the hardware_id that you chose (in the example ‘partner_id_ab12’). Write down the pairing code that was output when you ran the query
+6. Write down the hardware_id that you chose (in the example ‘partner_id_ab12’). Write down the pairing code that was output when you ran the query. You can re run the query if you need to. Supplying an existing hardware id will always return the same pairing code.
 
 ### Pairing a device with a sound zone
-1. Go to Soundtrack (https://www.soundtrackyourbrand.com/)
-2. Press “Locations”
-3. If you have no location set up. Create location using the “Add Location” button
-4. When the location is created, you need to create a sound zone
-5. Press the options button to the right of the location
-6. Add a zone with a name
-7. Click on the new zone
-8. Pair your player application by choosing “Hardware Device”
-9. In the input field, enter the Pairing Code that you got when creating a device.
-10. The device should now be paired with this sound zone.
+1. Open [https://business.soundtrackyourbrand.com](https://business.soundtrackyourbrand.com).
+2. Navigate to “zones”.
+3. Use an existing zone or create a new one. 
+4. Click your zone and pair the device using the "Hardware" tab.
+5. Enter the Pairing Code that you got when creating a device.
+6. The device should now be paired with this sound zone.
 
 ### Building and running the example code
-1. Unpack tar ball (sent to you by Soundtrack)
-2. In the /src folder there are several examples showcasing some basic setup of a player application
-3. Open any example file, and change the parameter: hardware_id to the hardware id you created in the “Create a device” section (“partner_id_ab12” in above example)
-4. We also need to provide the vendor secret to the application (will be sent to you by Soundtrack). This can be done in a few different ways:
+1. Open the /src folder. There are several examples showcasing some basic setup of a player application.
+3. Edit the example files with the hardware_id you created in the “Create a device” section (“partner_id_ab12” in above example).
+4. Supply the vendor secret to the application. This can be done in a few different ways:
  * Set the value directly in vendor_secret
  * Set `-DVENDOR_SECRET=xxxx` when building with cmake
  * Add the vendor secret directly in the CMakeList.txt file
@@ -185,10 +178,8 @@ In the package distributed by SYB, you will find an array of example implementat
 
 Splayer API is only aware of Vendor Hardware ID, which is something that you as a vendor chose, and a Vendor Secret that you will get from Soundtrack. The hardware ID is used to generate the Device ID in the Partner API (see Create a Device above). The reason Soundtrack Device ID's are used for pairing is because they are guaranteed to be unique, even though two vendors might have the same Vendor Hardware ID for two different devices. This way we avoid name clashes for devices.
 
-Second reason, is that our website is open for all customers, which means a user can have devices from multiple vendors and the end user would then need to pick from a list of vendor. It wouldn't be the best user experience, it would be easy to make mistakes and the user himself could guess a Vendor Hardware ID and do a denial of service for somebody else.
-
 ## Upgrade and provisioning
-Splayer API is provisioned by Soundtrack's backoffice systems with rollout limited to a certain percent of all devices, or at a certain time of day considering local time zone of the device. Below are two different endpoints to use to retrieve the latest version of Splayer API for two different platforms (Ubuntu 16.04 64-bit, Ubuntu 16.04 32 bit).
+Splayer API is provisioned by Soundtrack's build systems with rollout limited to a certain percent of all devices, or at a certain time of day considering local time zone of the device. Below are two different endpoints to use to retrieve the latest version of Splayer API for two different platforms (Ubuntu 16.04 64-bit, Ubuntu 16.04 32 bit).
 
 * https://builds.soundtrackyourbrand.com/remote/splayer-x86_64/latest
 * https://builds.soundtrackyourbrand.com/remote/splayer-i686/latest
@@ -206,7 +197,7 @@ The template is basically:
 }
 ```
 
-The two important fields are version and link, you can disregard all other fields in the JSON. In the example above the version is hashnumber, since the example is not from a proper release, but the latest build. The link points directly to the library.
+The two important fields are version and link, you can disregard all other fields in the JSON.
 
 The checksum is a sha1 hash of the file in the link. Make sure to verify the checksum matches for security and reliability reason.
 
@@ -235,11 +226,11 @@ curl_easy_setopt(curl, CURLOPT_HTTPHEADER, chunk);
 The application built is to be approved by Soundtrack and shall at all times adhere to the certification criterias (see: Certification).
 
 ## Release management
-Please note that the below release information relates to the player software within the SDK, so it's not the SDK and the splayer-APIs per se.
+This section describes the release management of the splayer shared library. Not the SDK itself. New SDK versions will be communicated when available and backwards compatibility will be kept as long as possible.
 
 ### Release SDK player software
  
- The production releases are taking place on Wednesday's morning (02.00-06.00) local time. **Due to COVID-19 and limited resources, releases will be done on Tuesdays.**
+ The production releases are taking place on Wednesday morning (02.00-06.00) local time. **Due to COVID-19 and limited resources, releases will be done on Tuesdays.**
  
  Every second week the pre-release is sent out to your pre-release channel.
 * An email will be sent to you when it's done. 
@@ -270,9 +261,9 @@ If you did not get in touch with us, you will have to wait until next full relea
 
 ### Release schedule
 
-You will get email notifcation whenever we are sending out a new release either to your pre-release channel or a full production release. For any questions/issues, just reply back to us.
+You will get an email notification whenever we are sending out a new release either to your pre-release channel or a full production release. For any questions/issues, just reply back to us.
 
-Here's the full release calender (***temporary changed due to COVID-19***): https://calendar.google.com/calendar?cid=c291bmR0cmFja3lvdXJicmFuZC5jb21fZjM5YmpzbWxrZWtncDllazN0dWprZ2NkdWNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ
+Here's the full release calender (***temporarily changed due to COVID-19***): https://calendar.google.com/calendar?cid=c291bmR0cmFja3lvdXJicmFuZC5jb21fZjM5YmpzbWxrZWtncDllazN0dWprZ2NkdWNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ
 
 ## Q&A
 
@@ -284,7 +275,7 @@ Depending on GCC version you might have an older version of libc, libstdc++ and 
 ./libSplayer_alsa: /lib/libstdc++.so.6: version `GLIBCXX_3.4.19' not found (required by libSplayer.so)
 ./libSplayer_alsa: /lib/libstdc++.so.6: version `GLIBCXX_3.4.21' not found (required by libSplayer.so)
 ```
-If needed we can link libstdc++ statically to avoid most of the issues, but your target platform needs a compatible libc.so (glibc). Use the same version of libc and libstdc++ on your target as in the toolchain that you provide us. For Linux, you can create them using Yocto or Buildroot. Be aware that we are using atomics from c++ 11, and some gcc toolchains put these in a separate library called libatomic.so. This library is required on the device for our player to run.
+If needed, we can link libstdc++ statically to avoid most of the issues, but your target platform needs a compatible libc.so (glibc). Use the same version of libc and libstdc++ on your target as in the toolchain that you provide us. For Linux, you can create them using Yocto or Buildroot. Be aware that we are using atomics from c++ 11, and some gcc toolchains put these in a separate library called libatomic.so. This library is required on the device for our player to run.
 
 ### Audio stutters
 On some hardware we have seen ALSA defaulting to a very small buffer size. A 44.1Khz two channel PCM stream is 88 200 samples/per second. In the below example that's a context switch 200 times a second (every 5ms). Now a small buffer size is great for low latency, game and sound applications where instant sound feedback is needed on user input. This is not the case for audio streaming. With these small buffers we can't feed ALSA with audio fast enough, so we will get -EPIPE from snd_pcm_writei().
@@ -351,7 +342,7 @@ Setup | 1.1 | Start the device. | - The device should be intuitive to install an
 . | 1.3 | Find the device ID | - The device ID shall be easy to find. - If the device ID is generated in the Application, this generation should take less than one second. - The device ID shall not be generated more than once (not needed, since the request always will give the same response). - When creating the device ID, the correct label and description should be set. - Clearly stated what the device ID is used for and how to use it in order to connect the Application to Soundtrack. - The `label`-field used when creating the device shall be correct.
 . | 1.4 | Pair the Application in Soundtrack and assign a soundtrack | Music should start playing within 2 minutes.
 . | 1.5 | Ensure config variable `bandwidth_limitation_kbps` is set to at least 2000 kbps. | Music playing.
-Actions in web interface (www.soundtrackyourbrand.com) | 2.1 | Skip track | Track skipped
+Actions in [web interface](https://business.soundtrackyourbrand.com) | 2.1 | Skip track | Track skipped
 . | 2.2 | Press pause | Track paused
 . | 2.3 | Press play | Track resumed
 . | 2.4 | Increase volume to max | Volume set to max
