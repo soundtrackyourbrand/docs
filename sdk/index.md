@@ -230,7 +230,7 @@ This section describes the release management of the splayer shared library. Not
 
 ### Release SDK player software
  
- The production releases are taking place on Wednesday morning (02.00-06.00) local time. **Due to COVID-19 and limited resources, releases will be done on Tuesdays.**
+ The production releases are taking place on Wednesday morning (02.00-06.00) local time.
  
  Every second week the pre-release is sent out to your pre-release channel.
 * An email will be sent to you when it's done. 
@@ -238,20 +238,21 @@ This section describes the release management of the splayer shared library. Not
 * From this day, you have one week to flag any issues to Soundtrack. Soundtrack will decide whether or not the issue is a blocker.
 
 Every second other week, the full-release is sent out to full costumer base between 02.00 and 06.00 (based on each player’s local time).
-* An email will be sent to you when it's done. 
+* An email will be sent to you when it's scheduled. 
 
 ### Patching SDK player software
 Every Thursday Soundtrack decides if there is a need for a patch the coming week. The reason for a patch is either an incident or an important bug.
 
-* Important bugs are classified as something that has direct customer impact, such as audio playback issues, UI bugs or irregular data consumption. Fixes are mostly small and should not affect major parts of the code
-* An incident is when a back-end change may or have already happened, that we will or want to protect us from
+* Important bugs are classified as something that has direct customer impact, such as audio playback issues, UI bugs or irregular data consumption. Fixes are mostly small and should not affect major parts of the code.
+* An incident is when a back-end change may or have already happened, that we will or want to protect us from.
 
 All times below are CET/CEST. Consider that the times below are deadlines.
 
 No later than Thursday, 18:00:
  * Your internal test account will be updated with the patch version
- * We will send you an email to the designated address
-No later than Tuesday (***Mondays now due to COVID-19***), 15:00:
+ * We will send you an email to the designated address.
+
+No later than Tuesday 15:00:
  * Soundtrack Test Lead decides if the patch can be released
  * If no-go: email to you informing about the decision
  * If you have had the time to test and approve (via email): patch is released in the next morning
@@ -263,7 +264,21 @@ If you did not get in touch with us, you will have to wait until next full relea
 
 You will get an email notification whenever we are sending out a new release either to your pre-release channel or a full production release. For any questions/issues, just reply back to us.
 
-Here's the full release calender (***temporarily changed due to COVID-19***): https://calendar.google.com/calendar?cid=c291bmR0cmFja3lvdXJicmFuZC5jb21fZjM5YmpzbWxrZWtncDllazN0dWprZ2NkdWNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ
+Here's the full release calender: https://calendar.google.com/calendar?cid=c291bmR0cmFja3lvdXJicmFuZC5jb21fZjM5YmpzbWxrZWtncDllazN0dWprZ2NkdWNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ
+
+### Deprecation of software
+
+We only support 6 months old software and versions older than 6 months will be unsupported (not be able to play music). One month in advance, the player is deprecated. The time is based on when the software was released. 
+
+# Unsupported
+When a player is unsupported, a device error `DEVICE_ERROR_UNSUPPORTED_VERSION` is raised on the zone and authentification will fail with http 426 which results in that the player won't be able to play more music. Mails are being sent out to the concerned customers and it's possible to filter on "Need player update" in Business to find the right players. 
+
+# Deprecated
+When a player is deprecated, a device error `DEVICE_ERROR_SOON_UNSUPPORTED` is raised on the zone but nothing happens on the player. Mails are being sent out to the concerned customers and it's possible to filter on "Need player update" in Business to find the right players. 
+
+Here's the deprecation scheudle: https://calendar.google.com/calendar/u/0?cid=Y18yN3B2cThpMWs3b2cwYmhpN2xuYnVjOHFzc0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t
+
+Please note that we can't say which versions will be deprecated when, as that mainly depends on when that version was released (which can change over time). When we deprecate once a month the next deprecation batch will be decided, which will get the deprecation error (one month in advance of being unsupported). No player newer than 6 month will ever be unsupported seen from release date. 
 
 ## Q&A
 
