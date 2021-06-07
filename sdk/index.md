@@ -266,14 +266,14 @@ You will get an email notification whenever we are sending out a new release eit
 
 Here's the full release calender: https://calendar.google.com/calendar?cid=c291bmR0cmFja3lvdXJicmFuZC5jb21fZjM5YmpzbWxrZWtncDllazN0dWprZ2NkdWNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ
 
-### Deprecation of software
+## Deprecation of software
 
 We only support 6 months old software and versions older than 6 months will be unsupported (not be able to play music). One month in advance, the player is deprecated. The time is based on when the software was released. 
 
-# Unsupported
+## Unsupported
 When a player is unsupported, a device error `DEVICE_ERROR_UNSUPPORTED_VERSION` is raised on the zone and authentification will fail with http 426 which results in that the player won't be able to play more music. Mails are being sent out to the concerned customers and it's possible to filter on "Need player update" in Business to find the right players. 
 
-# Deprecated
+## Deprecated
 When a player is deprecated, a device error `DEVICE_ERROR_SOON_UNSUPPORTED` is raised on the zone but nothing happens on the player. Mails are being sent out to the concerned customers and it's possible to filter on "Need player update" in Business to find the right players. 
 
 Here's the deprecation scheudle: https://calendar.google.com/calendar/u/0?cid=Y18yN3B2cThpMWs3b2cwYmhpN2xuYnVjOHFzc0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t
