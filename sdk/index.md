@@ -226,7 +226,7 @@ curl_easy_setopt(curl, CURLOPT_HTTPHEADER, chunk);
 The application built is to be approved by Soundtrack and shall at all times adhere to the certification criterias (see: Certification).
 
 ## Release management
-This section describes the release management of the splayer shared library. Not the SDK itself. New SDK versions will be communicated when available and backwards compatibility will be kept as long as possible.
+This section describes the release management of the player library that we send out once a month. Not the SDK itself with updated API, which will be communicated when available and backwards compatibility will be kept as long as possible.
 
 ### Release SDK player software
  
@@ -235,7 +235,7 @@ This section describes the release management of the splayer shared library. Not
  Every second week the pre-release is sent out to your pre-release channel.
 * An email will be sent to you when it's done. 
 * Your internal test account will be updated.
-* From this day, you have one week to flag any issues to Soundtrack. Soundtrack will decide whether or not the issue is a blocker.
+* From this day, you have two weeks to flag any issues to Soundtrack. Soundtrack will decide whether or not the issue is a blocker.
 
 Every second other week, the full-release is sent out to full costumer base between 02.00 and 06.00 (based on each player’s local time).
 * An email will be sent to you when it's scheduled. 
@@ -274,7 +274,7 @@ We only support 6 months old software and versions older than 6 months will be u
 When a player is unsupported, a device error `DEVICE_ERROR_UNSUPPORTED_VERSION` is raised on the zone and authentification will fail with http 426 which results in that the player won't be able to play more music. Mails are being sent out to the concerned customers and it's possible to filter on "Need player update" in Business to find the right players. 
 
 ## Deprecated
-When a player is deprecated, a device error `DEVICE_ERROR_SOON_UNSUPPORTED` is raised on the zone but nothing happens on the player. Mails are being sent out to the concerned customers and it's possible to filter on "Need player update" in Business to find the right players. 
+When a player is deprecated, a device error `DEVICE_ERROR_SOON_UNSUPPORTED_VERSION` is raised on the zone but nothing happens on the player. Mails are being sent out to the concerned customers and it's possible to filter on "Need player update" in Business to find the right players. 
 
 Here's the deprecation scheudle: https://calendar.google.com/calendar/u/0?cid=Y18yN3B2cThpMWs3b2cwYmhpN2xuYnVjOHFzc0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t
 
