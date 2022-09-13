@@ -26,7 +26,7 @@ Soundtrack SDK is the package containing all code and documentation needed for y
 Unless anything else is communicated by Soundtrack, the application shall be named "Soundtrack Player".
 
 ### Api
-* Provided as a single shared library, built with toolchain provided by partner and with no external dependencies.
+* Provided as a single shared library, built with a toolchain provided by a partner and with no external dependencies.
 * Few entry points, which means faster load times and simple mapping both for dynamic and static linking.
 * Extendable API without the need to recompile (unless there are breaking changes).
 * Callbacks for audio so you can control your hardware specific needs.
@@ -38,8 +38,8 @@ Unless anything else is communicated by Soundtrack, the application shall be nam
 * Get error list.
 
 ### Responsibilities
-* Soundtrack is responsible for the binary and header file (eg libsplayer-x.so and splayerapi-x.h).
-* Splayer communicates with Soundtrack's infrastructure and delivers sound buffers (eg. PCM data).
+* Soundtrack is responsible for the binary and header file (e.g. libsplayer-x.so and splayerapi-x.h).
+* Splayer communicates with Soundtrack's infrastructure and delivers sound buffers (e.g. PCM data).
 * Partner is responsible for all the parts concerning the executable, the actual playback (eg. ALSA).
 * Soundtrack provides source code examples as-is and it's the Partners responsibility to make them work.
 * Partner can use any part of the source code example, change and modify them, except splayerapi-x.h
@@ -47,24 +47,27 @@ Unless anything else is communicated by Soundtrack, the application shall be nam
 * Partner is responsible for providing a toolchain that supports a C++ standard that is at most 5 years old at any given time now and in the future.
 
 ### Requirements
-* A POSIX API compatible OS, that support TCP sockets, and threads.
-* At lest 64 MB free RAM for the player to operate in.
-* A reasonable strong CPU, that could handle our parallel encryption, decoding and digital signal processing.
+* A POSIX API compatible OS, that supports TCP sockets, and threads.
+* At least 64 MB free RAM for the player to operate in.
+* A reasonably strong CPU that could handle our parallel encryption, decoding and digital signal processing.
 * A minimum of 4 GB of storage used for offline music and data storage. 8 GB is recommended.
 * Partner needs to provide a C++14 capable cross compiler toolchain, and compiler options that we can build our library in a x86-64 linux docker container.
 * An onboard RTC with backup battery. In case of a power loss, we cannot play audio until we have a valid system time due to our scheduling, and licensing constraints.
 
+### Communication
+* Main communication channel with Soundtrack is a shared Slack channel in Soundtracks workspace.
+* Partner is responsible to provide a list of relevant people to be invited.
 
 ## Changelog
 
 Detailed changelog can be found in the SDK package.
 
 Date | Version | Changes | Included APIs
---- | --- | ---
+--- | --- | --- | ---
 Q4, 2017 | 1 | First draft including basic functionality. | splayerapi v1
 Q2, 2018 | 2 | Moved controls to a separate API. Clarified examples. | splayerapi v2, splayerapi_control v1
 Q4, 2018 | 3 | Major/minor versioning. New metadata API. Some config variables renamed for clarity. | splayerapi v3, splayer_controls_api v2, splayer_troubles_api v1, splayer_audio_api v1, splayer_metadata_api v1
-Q2, 2020 | 4 | Updated metadata API, config variable to turn off cover art download. Config to turn of core-dumps. | splayerapi v4, splayer_controls_api v4, splayer_troubles_api v2, splayer_audio_api v1, splayer_metadata_api v2
+Q2, 2020 | 4 | Updated metadata API, config variable to turn off cover art download. Config to turn off core-dumps. | splayerapi v4, splayer_controls_api v4, splayer_troubles_api v2, splayer_audio_api v1, splayer_metadata_api v2
 
 ## Getting started
 
@@ -115,7 +118,7 @@ mutation PartnerCodeCreator($input:GeneratePairingCodesInput!){
 ```
 4. Include the query variables
 ```
-{   
+{
     "input": {
         "description":"ARM64",
         "deviceType": "EMBEDDED",
@@ -131,12 +134,12 @@ mutation PartnerCodeCreator($input:GeneratePairingCodesInput!){
 
 
 5. Run the query and you should get a pairing code as output. You will need this code to pair the created device with a specific sound zone later.
-6. Write down the hardware_id that you chose (in the example ‘partner_id_ab12’). Write down the pairing code that was output when you ran the query. You can re run the query if you need to. Supplying an existing hardware id will always return the same pairing code.
+6. Write down the hardware_id that you chose (in the example ‘partner_id_ab12’). Write down the pairing code that was output when you ran the query. You can rerun the query if you need to. Supplying an existing hardware id will always return the same pairing code.
 
 ### Pairing a device with a sound zone
 1. Open [https://business.soundtrackyourbrand.com](https://business.soundtrackyourbrand.com).
 2. Navigate to “zones”.
-3. Use an existing zone or create a new one. 
+3. Use an existing zone or create a new one.
 4. Click your zone and pair the device using the "Hardware" tab.
 5. Enter the Pairing Code that you got when creating a device.
 6. The device should now be paired with this sound zone.
@@ -179,9 +182,9 @@ In the package distributed by SYB, you will find an array of example implementat
 Splayer API is only aware of Vendor Hardware ID, which is something that you as a vendor chose, and a Vendor Secret that you will get from Soundtrack. The hardware ID is used to generate the Device ID in the Partner API (see Create a Device above). The reason Soundtrack Device ID's are used for pairing is because they are guaranteed to be unique, even though two vendors might have the same Vendor Hardware ID for two different devices. This way we avoid name clashes for devices.
 
 ## Upgrade and provisioning
-Splayer API is provisioned by Soundtrack's build systems with rollout limited to a certain percent of all devices, or at a certain time of day considering local time zone of the device. Below are two different endpoints to use to retrieve the latest version of Splayer API for two different platforms (Ubuntu 16.04 64-bit, Ubuntu 16.04 32 bit).
+Splayer API is provisioned by Soundtrack's build systems with rollout limited to a certain percent of all devices, or at a certain time of day considering local time zone of the device. Below are two different endpoints to use to retrieve the latest version of Splayer API for two different platforms (Android ARM 64 bit, Ubuntu 16.04 32 bit).
 
-* https://builds.soundtrackyourbrand.com/remote/splayer-x86_64/latest
+* https://builds.soundtrackyourbrand.com/remote/android-arm64-sdk/latest
 * https://builds.soundtrackyourbrand.com/remote/splayer-i686/latest
 
 The template is basically:
@@ -199,7 +202,7 @@ The template is basically:
 
 The two important fields are version and link, you can disregard all other fields in the JSON.
 
-The checksum is a sha1 hash of the file in the link. Make sure to verify the checksum matches for security and reliability reason.
+The checksum is a sha1 hash of the file in the link. Make sure to verify the checksum matches for security and reliability reasons.
 
 To get provisioning working you need to send three HTTP headers. Basically each device sends a Vendor Hardware ID as described above and a Device Vendor ID. In the example below the Vendor Hardware ID is `28cfe91fcc6d`.
 
@@ -229,36 +232,22 @@ The application built is to be approved by Soundtrack and shall at all times adh
 This section describes the release management of the player library that we send out once a month. Not the SDK itself with updated API, which will be communicated when available and backwards compatibility will be kept as long as possible.
 
 ### Release SDK player software
- 
+
  The production releases are taking place on Wednesday morning (02.00-06.00) local time.
- 
- Every second week the pre-release is sent out to your pre-release channel.
-* An email will be sent to you when it's done. 
+
+ Every 4th week the pre-release is sent out to your pre-release channel.
+* An email will be sent to you when it's done.
 * Your internal test account will be updated.
 * From this day, you have two weeks to flag any issues to Soundtrack. Soundtrack will decide whether or not the issue is a blocker.
 
-Every second other week, the full-release is sent out to full costumer base between 02.00 and 06.00 (based on each player’s local time).
-* An email will be sent to you when it's scheduled. 
+Two weeks after the pre-release is sent out, the full-release is sent out to the full customer base between 02.00 and 06.00 (based on each player’s local time).
+* An email will be sent to you when it's scheduled.
 
 ### Patching SDK player software
-Every Thursday Soundtrack decides if there is a need for a patch the coming week. The reason for a patch is either an incident or an important bug.
+In the event of a critical issue and there is a need for a patch release Soundtrack has the possibility to release outside of the normal release schedule. The reason for a patch is either an incident or an important bug.
 
 * Important bugs are classified as something that has direct customer impact, such as audio playback issues, UI bugs or irregular data consumption. Fixes are mostly small and should not affect major parts of the code.
 * An incident is when a back-end change may or have already happened, that we will or want to protect us from.
-
-All times below are CET/CEST. Consider that the times below are deadlines.
-
-No later than Thursday, 18:00:
- * Your internal test account will be updated with the patch version
- * We will send you an email to the designated address.
-
-No later than Tuesday 15:00:
- * Soundtrack Test Lead decides if the patch can be released
- * If no-go: email to you informing about the decision
- * If you have had the time to test and approve (via email): patch is released in the next morning
- * If we have not heard from you, we will not do the release to your customers
-
-If you did not get in touch with us, you will have to wait until next full release to get the patch.
 
 ### Release schedule
 
@@ -268,17 +257,17 @@ Here's the full release calender: https://calendar.google.com/calendar?cid=c291b
 
 ## Deprecation of software
 
-We only support 6 months old software and versions older than 6 months will be unsupported (not be able to play music). One month in advance, the player is deprecated. The time is based on when the software was released. 
+We support a release for 6 months. Players running versions older than 6 month will stop music playback. One month in advance, the player is deprecated. The time is based on when the software was released.
+
+Here's the deprecation schedule: https://calendar.google.com/calendar/u/0?cid=Y18yN3B2cThpMWs3b2cwYmhpN2xuYnVjOHFzc0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t
 
 ## Unsupported
-When a player is unsupported, a device error `DEVICE_ERROR_UNSUPPORTED_VERSION` is raised on the zone and authentification will fail with http 426 which results in that the player won't be able to play more music. Mails are being sent out to the concerned customers and it's possible to filter on "Need player update" in Business to find the right players. 
+When a player is unsupported, a device error `DEVICE_ERROR_UNSUPPORTED_VERSION` is raised on the zone and authentication will fail with http 426 which results in that the player won't be able to play more music. Mails are being sent out to the concerned customers and it's possible to filter on "Need player update" in Business to find the right players.
 
 ## Deprecated
-When a player is deprecated, a device error `DEVICE_ERROR_SOON_UNSUPPORTED_VERSION` is raised on the zone but nothing happens on the player. Mails are being sent out to the concerned customers and it's possible to filter on "Need player update" in Business to find the right players. 
+When a player is deprecated, a device error `DEVICE_ERROR_SOON_UNSUPPORTED_VERSION` is raised on the zone but nothing happens on the player. Mails are being sent out to the concerned customers and it's possible to filter on "Need player update" in Business to find the right players.
 
-Here's the deprecation scheudle: https://calendar.google.com/calendar/u/0?cid=Y18yN3B2cThpMWs3b2cwYmhpN2xuYnVjOHFzc0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t
-
-Please note that we can't say which versions will be deprecated when, as that mainly depends on when that version was released (which can change over time). When we deprecate once a month the next deprecation batch will be decided, which will get the deprecation error (one month in advance of being unsupported). No player newer than 6 month will ever be unsupported seen from release date. 
+Please note that we can't say which versions will be deprecated when, as that mainly depends on when that version was released (which can change over time). When we deprecate once a month the next deprecation batch will be decided, which will get the deprecation error (one month in advance of being unsupported). No player newer than 6 month will ever be unsupported from release date.
 
 ## Q&A
 
@@ -311,22 +300,20 @@ Here follows a brief explanation of the current possible errors:
 Error name | Explanation | Condition
 --- | --- | ---
 ERROR_VALID_IP | Returns a list of the current network config. | Fails if no network config is found.
-ERROR_PING_SOUNDTRACK |  Checks connectivity to SYB internal endpoints in order for the product to work as expected | Fails if the player can't connect to any of these endpoints.    
+ERROR_PING_SOUNDTRACK |  Checks connectivity to SYB internal endpoints in order for the product to work as expected | Fails if the player can't connect to any of these endpoints.
 ERROR_PING_DNS | Check the DNS | Fails if DNS lookup doesn't work
 ERROR_PING_CDN | Checks connectivity to the CDN-servers in order for the product to download/stream music. | Fails if the player can't connect to the endpoints.
-ERROR_PING_CDN_IP | Checks connectivity rate to the CDN-servers in order for the product to have sufficient connectivity to guarantee download/stream music. | Fails if the player have a low success rate.
-ERROR_PING_CERT | Checks if proxy is used. We do not support that. | Fails if proxy is found.    
+ERROR_PING_CDN_IP | Checks connectivity rate to the CDN-servers in order for the product to have sufficient connectivity to guarantee download/stream music. | Fails if the player has a low success rate.
+ERROR_PING_CERT | Checks if a proxy is used. We do not support that. | Fails if proxy is found.
 ERROR_ONLINE_STATE | Checks online state | Fails if the player is offline/high amount of failing requests.
-ERROR_PAIRED | Checks if player is paried | Fails if not paired.
-ERROR_ACTIVE_SUBSCRIPTION | Checks if player have active subscription | Fails if inactice.  
+ERROR_PAIRED | Checks if player is paired | Fails if not paired.
+ERROR_ACTIVE_SUBSCRIPTION | Checks if player have active subscription | Fails if inactive.
 ERROR_CHANNEL_ASSIGNED | Checks if any music is assigned | Fails if no music assigned
 ERROR_DOWNLOADED_DATA | Checks downloaded data for the assigned music. | Fails if nothing is downloaded.
-ERROR_NO_VOLUME | Checks the volume level | Fails if there is no volume level is zero.
-ERROR_DISKCACHE_LOW | Checks free diskspace | Fails if free diskspace is below 1 GB.
-ERROR_DISKCACHE_CRITICALLY_LOW | Checks free diskspace | Fails if free diskspace is below 256 MB.
-ERROR_PAYMENT_EXPIRED | Check payment status | Fails if payment expired.
-<span style="color: red"> (ERROR REMOVED FROM V79) </span> ERROR_DEPRECATED | Checks if players version is deprecated (6 months old) | Fails if deprecated.
-<span style="color: red"> (ERROR REMOVED FROM V79) </span> ERROR_SOON_DEPRECATED | Checks if players version is soon to be deprecated (1 month prior to 6 months) | Fails if soon to be deprecated.
+ERROR_NO_VOLUME | Checks the volume level | Fails if there is no volume, level is zero.
+ERROR_DISKCACHE_LOW | Checks free disk space | Fails if free disk space is below 1 GB.
+ERROR_DISKCACHE_CRITICALLY_LOW | Checks free disk space | Fails if free disk space is below 256 MB.
+ERROR_PAYMENT_EXPIRED | Check payment status | Fails if payment has expired.
 ERROR_CLOCK_WRONG | Check server time offset | Fails if server time offset differs +- 15 min
 
 ## Certification
@@ -347,10 +334,10 @@ ERROR_CLOCK_WRONG | Check server time offset | Fails if server time offset diffe
 * Please note that you need to provide Soundtrack with two pcs of the hardware in order for Soundtrack to do the certification
 * Any changes to the hardware will prompt a new certification process
 * All tests should pass on a 0.5 Mbps network, unless anything else is stated in the instructions
-* The partner shall recommend an SD-card to it's client (unless internal storage is used). The same SD-card shall be used for the certification
+* The partner shall recommend an SD-card to its client (unless internal storage is used). The same SD-card shall be used for the certification
 * The certification shall be as close to the real environment as possible, so if the platform's normal state is e.g. to have two other applications running at the same time, these shall be running during the certification as well
 
-Type | Test case | Instructions | Expected behaviour
+Type | Test case | Instructions | Expected behavior
 --- | --- | --- | ---
 Setup | 1.1 | Start the device. | - The device should be intuitive to install and come with necessary instructions. - It should be simple to start the Application.
 . | 1.2 | Ensure Application has connectivity | Clearly stated whether or not the Application can access Soundtrack
@@ -366,13 +353,13 @@ Actions in [web interface](https://business.soundtrackyourbrand.com) | 2.1 | Ski
 Playback (offline) | 3.1 | Cut off internet access (e.g. by plugging out the ethernet cable) when the device is powered on | Music should keep playing
 . | 3.2 | Start device without internet access | Music should keep playing
 . | 3.3 | Enable internet again | - Music should keep playing. - Device should go online in Soundtrack.
-Playback - poor internet connectivity _(ensure that you have music cached offline for this step)_ | 4.1 | Set up network according to profile "100% Loss". See below. | Music should keep playing
-. | 4.2 | Set up network according to profile "High latency DNS". See below. | Music should keep playing
-. | 4.3 | Set up network according to profile "Very bad network". See below. | Music should keep playing
-. | 4.4 | Set up network according to profile "Edge". See below. | Music should keep playing
-Updater | 5.1 | None | - Contacts Soundtrack's update service every 15 minutes (if the device is online). - If new SDK available: download. -When new SDK downloaded: quit Application at end of next song. - If installation fails: fall back to previous SDK version
+Playback - poor internet connectivity _(ensure that you have music cached offline for this step)_ | 4.1 | Set up a network according to the profile "100% Loss". See below. | Music should keep playing
+. | 4.2 | Set up a network according to the profile "High latency DNS". See below. | Music should keep playing
+. | 4.3 | Set up a network according to the profile "Very bad network". See below. | Music should keep playing
+. | 4.4 | Set up a network according to the profile "Edge". See below. | Music should keep playing
+Updater | 5.1 | None | - Contacts Soundtrack's update service every 15 minutes (if the device is online). - If a new SDK is available: download. -When the new SDK downloaded: quit Application at end of next song. - If installation fails: fall back to previous SDK version
 Watchdog | 6.1 | Make sure the application is running, then ask Soundtrack to simulate a crash remotely | - Application should be restarted. - Music should start playing within 30 seconds.
-Test latency on actions _(implementation of these actions are not mandatory)_ | 7.1 | Skip track (e.g. using a button on the device or in the application) | Track changed within 1 second
+Test latency on actions _(implementation of these actions are not mandatory)_ | 7.1 | Skip track (e.g. using a button on the device or in the application) | Track changes within 1 second
 . | 7.2 | Press pause (e.g. using a button on the device or in the application) | Track paused within 1 second
 . | 7.3 | Press play (e.g. using a button on the device or in the application) | Track resumed within 1 second
 . | 7.4 | Change volume (e.g. using a button on the device or in the application) | Volume changed within 1 second
