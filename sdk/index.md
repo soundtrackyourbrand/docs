@@ -229,18 +229,21 @@ curl_easy_setopt(curl, CURLOPT_HTTPHEADER, chunk);
 The application built is to be approved by Soundtrack and shall at all times adhere to the certification criterias (see: Certification).
 
 ## Release management
-This section describes the release management of the player library that we send out once a month. Not the SDK itself with updated API, which will be communicated when available and backwards compatibility will be kept as long as possible.
+This section describes the release management of the player library that we send out once a quarter. Note, that this update does not refer to the SDK itself with updated API, which will be communicated when available and backwards compatibility will be kept as long as possible.
 
 ### Release SDK player software
+The SYB releases contains of a pre- and full-release. The pre-release is sent out for purpose of SDK in-house testing and the full-release is the the full costumer production release. SYB releases are taking place once every quarter, which we’ve divided into following months: November, February, Maj, August. 
 
- The production releases are taking place on Wednesday morning (02.00-06.00) local time.
+See [SDK Release Calendar](https://calendar.google.com/calendar?cid=c291bmR0cmFja3lvdXJicmFuZC5jb21fZjM5YmpzbWxrZWtncDllazN0dWprZ2NkdWNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ) for exact dates.
 
- Every 4th week the pre-release is sent out to your pre-release channel.
+#### Pre-release
+Every quarter the pre-release is sent out to your pre-release channel.
 * An email will be sent to you when it's done.
 * Your internal test account will be updated.
-* From this day, you have two weeks to flag any issues to Soundtrack. Soundtrack will decide whether or not the issue is a blocker.
+* From this day, you have three weeks to flag any issues to Soundtrack. Soundtrack will decide whether or not the issue is a blocker.
 
-Two weeks after the pre-release is sent out, the full-release is sent out to the full customer base between 02.00 and 06.00 (based on each player’s local time).
+#### Full-release
+Three weeks after the pre-release is sent out, the production release is sent out to the full customer base on Wednesday morning 02.00-06.00 (based on each player’s local time).
 * An email will be sent to you when it's scheduled.
 
 ### Patching SDK player software
@@ -253,13 +256,13 @@ In the event of a critical issue and there is a need for a patch release Soundtr
 
 You will get an email notification whenever we are sending out a new release either to your pre-release channel or a full production release. For any questions/issues, just reply back to us.
 
-Here's the full release calender: https://calendar.google.com/calendar?cid=c291bmR0cmFja3lvdXJicmFuZC5jb21fZjM5YmpzbWxrZWtncDllazN0dWprZ2NkdWNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ
+Here's the full [SDK Release Calendar](https://calendar.google.com/calendar?cid=c291bmR0cmFja3lvdXJicmFuZC5jb21fZjM5YmpzbWxrZWtncDllazN0dWprZ2NkdWNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ).
 
 ## Deprecation of software
 
 We support a release for 6 months. Players running versions older than 6 month will stop music playback. One month in advance, the player is deprecated. The time is based on when the software was released.
 
-Here's the deprecation schedule: https://calendar.google.com/calendar/u/0?cid=Y18yN3B2cThpMWs3b2cwYmhpN2xuYnVjOHFzc0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t
+Here's the full [SYB Deprecation Schedule](https://calendar.google.com/calendar/u/0?cid=Y18yN3B2cThpMWs3b2cwYmhpN2xuYnVjOHFzc0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t).
 
 ## Unsupported
 When a player is unsupported, a device error `DEVICE_ERROR_UNSUPPORTED_VERSION` is raised on the zone and authentication will fail with http 426 which results in that the player won't be able to play more music. Mails are being sent out to the concerned customers and it's possible to filter on "Need player update" in Business to find the right players.
