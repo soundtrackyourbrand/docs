@@ -235,7 +235,7 @@ This section describes the release management of the player library that we send
 The SYB releases contain a pre- and full-release. The pre-release is sent out for the purpose of SDK partner testing and the full-release is the the costumer production release. The SYB releases are taking place once every quarter, which is distributed into following months: November, February, May, August. See [SDK Release Calendar](https://calendar.google.com/calendar?cid=c291bmR0cmFja3lvdXJicmFuZC5jb21fZjM5YmpzbWxrZWtncDllazN0dWprZ2NkdWNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ) for exact dates.
 
 #### Pre-release
-Every quarter the pre-release is sent out to your pre-release channel.
+Every quarter the pre-release is sent out to the SDK pre-release channel.
 * An email will be sent to you when it's done.
 * Your internal test account will be updated.
 * From this day, you have three weeks to flag any issues to Soundtrack. Soundtrack will decide whether or not the issue is a blocker.
