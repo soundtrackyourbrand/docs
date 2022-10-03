@@ -232,7 +232,7 @@ The application built is to be approved by Soundtrack and shall at all times adh
 This section describes the release management of the player library that we send out once a quarter. Note, that this update does not refer to the SDK itself with updated API, which will be communicated when available and backwards compatibility will be kept as long as possible.
 
 ### Release SDK player software
-The SYB releases contains of a pre- and full-release. The pre-release is sent out for purpose of SDK in-house testing and the full-release is the the full costumer production release. SYB releases are taking place once every quarter, which we’ve divided into following months: November, February, Maj, August. 
+The SYB releases contain a pre- and full-release. The pre-release is sent out for the purpose of SDK partner testing and the full-release is the the costumer production release. The SYB releases are taking place once every quarter, which is distributed into following months: November, February, Maj, August. 
 
 See [SDK Release Calendar](https://calendar.google.com/calendar?cid=c291bmR0cmFja3lvdXJicmFuZC5jb21fZjM5YmpzbWxrZWtncDllazN0dWprZ2NkdWNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ) for exact dates.
 
