@@ -28,22 +28,17 @@ search: true
 
 This is the documentation for Soundtrack API. There's just too much shitty documentation out there, and we aim to be better than that. Feel free to do pull requests [straight into the repo](https://github.com/soundtrackyourbrand/docs/blob/master/api/generate/source/index.html.md) if you have any suggestions - or drop us a line in our [public Slack channel](https://join.slack.com/t/soundtrack-api/shared_invite/enQtNjM5MzAwMzExNTI3LWIyZjQ3NjQ4MjU2NWJlM2YxZjk2YjZmNWNhMzdkMjNkNWI2ZTliYTg1Nzc2MGUwODQyODc3MzQ4MmY5NmNkZWE).
 
-Soundtrack is a complete music streaming service for businesses.  Soundtrack API lets you build display-, control- and monitoring apps on top of Soundtrack. You can learn more about Soundtrack [here](https://www.soundtrackyourbrand.com) and get inspired on how to use the API [here](https://www.soundtrackyourbrand.com/api).
+Soundtrack is a complete music streaming service for businesses. Soundtrack API lets you build display-, control- and monitoring apps on top of Soundtrack. You can learn more about Soundtrack [here](https://www.soundtrackyourbrand.com) and get inspired on how to use the API [here](https://www.soundtrackyourbrand.com/api).
 
-<aside class="notice">
-You'll need a <a href="https://business.soundtrackyourbrand.com/signup/">Soundtrack account</a> and an <a href="https://www.soundtrackyourbrand.com/our-api/apply">API token</a> to get started (unless you use <a href="#authorizing-as-a-user">this way</a> to authorize). Soundtrack API is free for all Soundtrack users.
-</aside>
+### Requirements
+You'll need a [Soundtrack account](https://business.soundtrackyourbrand.com/signup/) and an [API token](https://www.soundtrackyourbrand.com/our-api/apply) to get started (unless you use [this way](#authorizing-as-a-user) to authorize). Soundtrack API is free for all Soundtrack users.
 
 
 # Getting a grasp
 
 ```shell
-curl -XPOST https://api.soundtrackyourbrand.com/v2 \
--H 'Authorization: Basic your_token' \
--H 'Content-Type: application/graphql' \
--d '
-query {
-  nowPlaying(soundZone: "U291bmRabwsMWNhedTc1Nm8v") {
+json='{"query": "query {
+  nowPlaying(soundZone: \"U291bmRabwsMWNhedTc1Nm8v\") {
     track {
       name
       artists {
@@ -51,8 +46,11 @@ query {
       }
     }
   }
-}
-'
+}"}'
+echo $json | curl -XPOST https://api.soundtrackyourbrand.com/v2 \
+-H 'Authorization: Basic your_token' \
+-H 'Content-Type: application/json' \
+-d @-
 ```
 > **Response**
 
@@ -112,7 +110,7 @@ You can login without asking us for a token, given you have login credentials to
 -H 'Content-Type: application/graphql'
 ```
 
-To make things easier to read, these docs uses `application/graphql` as content-type.
+We do support this content-type however it is not recommended to use it since it will soon be deprecated.
 
 > In production, use the below content-type and [adjust your queries](#parameterised-queries)
 
@@ -170,13 +168,13 @@ We highly recommend that you play around with your Soundtrack account so you get
 
 As you've seen in the examples, there's something called a "sound zone". In the table below, we've explained the different concepts you need to know about.
 
-Concept | Description
---------- | -----------
-Account | e.g. "Sven's burgers". Can have multiple locations.
-Location | e.g. "Flagship Store, Stockholm". Can have multiple sound zones.
-Sound zone | e.g. "Bar" or "Lobby". Can only have one device.
-Device | One of the [supported player types](https://help.soundtrackbusiness.com/hc/en-us/articles/115002026372). Needed to play music.
-User | Can control one or many accounts.
+| Concept    | Description                                                                                                                    |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| Account    | e.g. "Sven's burgers". Can have multiple locations.                                                                            |
+| Location   | e.g. "Flagship Store, Stockholm". Can have multiple sound zones.                                                               |
+| Sound zone | e.g. "Bar" or "Lobby". Can only have one device.                                                                               |
+| Device     | One of the [supported player types](https://help.soundtrackbusiness.com/hc/en-us/articles/115002026372). Needed to play music. |
+| User       | Can control one or many accounts.                                                                                              |
 
 Each sound zone can only output one music stream. So if you want different music in different parts of the same location, you need multiple sound zones (and thus: multiple devices).
 
@@ -187,11 +185,7 @@ Each sound zone equals one subscription (which is what costs money).
 ## Asking what you don't know
 
 ```shell
-curl -XPOST https://api.soundtrackyourbrand.com/v2 \
--H 'Authorization: Basic your_token' \
--H 'Content-Type: application/graphql' \
--d '
-query {
+json='{"query": "query {
   me {
   ...on PublicAPIClient {
       accounts(first: 1) {
@@ -218,8 +212,12 @@ query {
       }
     }
   }
-}
-'
+}"}'
+
+echo $json | curl -XPOST https://api.soundtrackyourbrand.com/v2 \
+-H 'Authorization: Basic your_token' \
+-H 'Content-Type: application/json' \
+-d @-
 ```
 
 As you saw in the [first example query](#getting-a-grasp), with a short query you'll get the info you need - given you know the `id` (e.g. the id of the sound zone). But how do you get to know what the `id` is? You ask Soundtrack API.
@@ -244,27 +242,27 @@ For the sake of structure, we'll let you drill down on introspection [here](#gra
 
 Soundtrack API supports queries, subscriptions and mutations.
 
- | Example, use case
----------- | -------
-Queries | Fetch information that usually doesn't change (e.g. sound zone name)
-Subscriptions | Fetch information that usually changes (e.g. what's currently playing)
-Mutations | Make changes (e.g. skip to next track)
+| Entry points  | Use case                                                               |
+| ------------- | ---------------------------------------------------------------------- |
+| Queries       | Fetch information that usually doesn't change (e.g. sound zone name)   |
+| Subscriptions | Fetch information that usually changes (e.g. what's currently playing) |
+| Mutations     | Make changes (e.g. skip to next track)                                 |
 
 ## Queries
 
 ```shell
-curl -XPOST https://api.soundtrackyourbrand.com/v2 \
--H 'Authorization: Basic your_token' \
--H 'Content-Type: application/graphql' \
--d '
-query {
+json='{"query": "query {
   soundZone(id:"soundzone_id") {
     name
     id
     isPaired
   }
-}
-'
+}"}'
+
+echo $json |curl -XPOST https://api.soundtrackyourbrand.com/v2 \
+-H 'Authorization: Basic your_token' \
+-H 'Content-Type: application/json' \
+-d @-
 ```
 
 > Response
@@ -305,12 +303,10 @@ For subscriptions there are two things you need to adjust: the endpoint and the 
 
 The **endpoint** is `wss` instead of `https`. That's because we use [web sockets](https://en.wikipedia.org/wiki/WebSocket) for subscriptions (WSS = Web Sockets Secure).
 
-The web socket API adheres to the [Phoenix](https://hexdocs.pm/phoenix/js/) and
-[Absinthe](https://github.com/absinthe-graphql/absinthe-socket) protocols. The
-easiest way to connect to it is using their provided packages. Our [example
+The web socket API adheres to the [GraphQL transport WS](https://github.com/enisdenjo/graphql-ws/blob/master/PROTOCOL.md) protocol. The easiest way to connect to it is using their provided packages. Our [example
 app](#example-app) shows how they might be used in a Javascript client.
 
-You won't be using any headers, so the **token** need to be passed as a query parameter.
+You won't be using any headers, so the **token** needs to be passed in when setting up the connection as its payload (e.g. ```plaintext{"type":"connection_init`,"payload":{"Authorization":"Bearer YOUR_TOKEN],"content-type":"application/json"}}```).
 
 ### Example
 
@@ -372,9 +368,8 @@ subscription nowPlaying {
 }
 ```
 
-<aside class="notice">
-Since cURL doesn't support web sockets out-of-the box, we don't provide you with a cURL example. Instead: if you want to try subscriptions straight away, check out our <a href="https://api.soundtrackyourbrand.com/v2/explore">playground</a>.
-</aside>
+
+Since cURL doesn't support web sockets out-of-the box, we don't provide you with a cURL example. Instead: if you want to try subscriptions straight away, check out our [playground](https://api.soundtrackyourbrand.com/v2/explore)
 
 In this example we want to get enough information in order to build a neat display screen showing what's playing. For that we need the **name of the artist, album & track** as well as some **album art info**.
 
@@ -384,7 +379,7 @@ Once you fire away the request, you'll most likely get an initial response stati
 
 Good thinking! In those cases you should have an initial query where you ask for what's playing. Then you'll let the subscription take over from there.
 
-**"What if I the web socket connection is lost in one way or another?"**
+**"What if the web socket connection is lost in one way or another?"**
 
 It's up to you to handle this in your code. Maybe by sending a query (to fetch what's playing) and then re-try the subscription.
 
@@ -395,16 +390,15 @@ With subscriptions you limit the amount of requests as well as avoid getting [ra
 ## Mutations
 
 ```shell
-curl -XPOST https://api.soundtrackyourbrand.com/v2 \
--H 'Authorization: Basic your_token' \
--H 'Content-Type: application/graphql' \
--d '
-mutation {
+json='{"query":"mutation {
   setVolume(input: {soundZone:"soundzone_id", volume: 11}) {
       volume
   }
-}
-'
+}"}'
+echo $json | curl -XPOST https://api.soundtrackyourbrand.com/v2 \
+-H 'Authorization: Basic your_token' \
+-H 'Content-Type: application/json' \
+-d @-
 ```
 
 > Response
@@ -430,16 +424,15 @@ In this example you set the volume to 11 on a specific sound zone. You always ne
 > Incorrect input (an account id that doesn't exist)
 
 ```shell
-curl -XPOST https://api.soundtrackyourbrand.com/v2 \
--H 'Authorization: Basic your_token' \
--H 'Content-Type: application/graphql' \
--d '
-query {
+json='{"query": "query {
   account(id:"QWNjb3VudCwsWNheXg3dTc1Nm8v") {
     businessName
   }
-}
-'
+}"}'
+echo $json | curl -XPOST https://api.soundtrackyourbrand.com/v2 \
+-H 'Authorization: Basic your_token' \
+-H 'Content-Type: application/json' \
+-d @-
 ```
 
 > Response (HTTP `200 OK`)
@@ -468,11 +461,11 @@ query {
 
 With GraphQL, a HTTP code stating `200 OK` doesn't always mean that you get the data you wanted. If the query executes but bumps into an error along the way, you'll get a `200` with an `errors`-object appended to the response body.
 
-Error | Description | Example
----------- | ------- | -------
-HTTP `5xx` or WebSocket `1xxx` | Server problems | e.g. server not available
-HTTP `4xx` | Client problems | e.g. rate limited
-HTTP `200` with `errors`-body | GraphQL problems | e.g. incorrect input
+| Error                          | Description      | Example                   |
+| ------------------------------ | ---------------- | ------------------------- |
+| HTTP `5xx` or WebSocket `1xxx` | Server problems  | e.g. server not available |
+| HTTP `4xx`                     | Client problems  | e.g. rate limited         |
+| HTTP `200` with `errors`-body  | GraphQL problems | e.g. incorrect input      |
 
 <aside class="notice">
 Did you get an error message that you think could be improved? Please <a href="https://join.slack.com/t/soundtrack-api/shared_invite/enQtNjM5MzAwMzExNTI3LWIyZjQ3NjQ4MjU2NWJlM2YxZjk2YjZmNWNhMzdkMjNkNWI2ZTliYTg1Nzc2MGUwODQyODc3MzQ4MmY5NmNkZWE">reach out on Slack</a> and let us know.
@@ -484,18 +477,14 @@ Did you get an error message that you think could be improved? Please <a href="h
 
 The Soundtrack API enforces rate limiting. You start off with the maximum amount of tokens (3600) and for every call (query, mutation or subscription) you make, tokens will be deducted.
 
-The number of tokens deducted depends on the complexity of the call you are making. But we don’t just take tokens from you - every second you get 5 tokens back.
+The number of tokens deducted depends on the complexity of the call you are making. But we don’t just take tokens from you - every second you get 50 tokens back.
 
-Let’s say you make a query with a complexity of 100. Now you’re down to 3500. After 20 seconds you’re back to 3600 tokens (5 tokens per second). Simple, right?
+Let’s say you make a query with a complexity of 1000. Now you’re down to 2600. After 20 seconds you’re back to 3600 tokens (50 tokens per second). Simple, right?
 
 ## Queries & Mutations
 
 ```shell
-curl -XPOST https://api.soundtrackyourbrand.com/v2 \
--H 'Authorization: Basic your_token' \
--H 'Content-Type: application/graphql' \
--d '
-query {
+json='{"query: "query {
   account(id:"account_id") {
     businessName
 
@@ -515,60 +504,35 @@ query {
       }
     }
   }
-}
-'
+}"}'
+curl -XPOST https://api.soundtrackyourbrand.com/v2 \
+-H 'Authorization: Basic your_token' \
+-H 'Content-Type: application/json' \
+-d @-
 ```
 
 Queries and mutations calculates the rate limit in the same way. Keep scrolling to understand how we rate limit subscriptions.
 
 In this section's example you’re fetching the device information from the first ten sound zones for each of the first ten locations on a single account. In the same call, you’re also fetching the now playing information form one sound zone. Here’s how we calculate:
 
- | Cost
----------- | -------
-accounts | 1
-locations | 10
-soundzones | 100 (10 sound zones on 10 locations)
-device | 100 (10 devices on 10 sound zones)
-**total** | **211**
+| Field      | Cost                                  |
+| ---------- | ------------------------------------- |
+| accounts   | 1                                     |
+| locations  | 2                                     |
+| soundzones | 3                                     |
+| device     | 4+1 (since the id field was selected) |
+| **total**  | **11**                                |
 
 A request’s cost is deducted from your tokens. **The cost is calculated based on the query, and not the data it would return if it were to execute**.
 
-In the example above, even if each location only had one single sound zone, the cost for the sound zones would still be 100 (instead of 10). This means you should try to be conservative with how much data you ask for in deeply nested connections in order to preserve your tokens.
+In the example above, even if each location only had one single sound zone, the cost for the sound zones would still be 3 (instead of 2). This means you should try to be conservative with how much data you ask for in deeply nested connections in order to preserve your tokens.
 
 ### "But I don't want to calculate!"
-
+All calculations are done for every operation you do and will be returned in the headers *x-ratelimiting-cost* and *x-ratelimiting-tokens-available*. So for the example above the returned headers would've been:
 ```shell
-curl -XPOST https://api.soundtrackyourbrand.com/v2 \
--H 'Authorization: Basic your_token' \
--H 'Content-Type: application/graphql' \
--d '
-query {
-  queryInfo {
-    complexity
-  }
-  account(id:"account_id") {
-    businessName
-  }
-}
-'
+x-ratelimiting-cost: 11
+x-ratelimiting-tokens-available: 3589
 ```
-
-> Response
-
-```json
-{
-  "data": {
-    "queryInfo": {
-      "complexity": 1
-    },
-    "account": {
-      "businessName": "The Halloumi Burger Joints"
-    }
-  }
-}
-```
-
-Just append `queryInfo` to your query and we'll do the calculation for you (we currently don't have this for mutations nor subscriptions).
 
 ## Subscriptions
 
@@ -650,19 +614,19 @@ Here's a good read on [introspection in GraphQL](https://graphql.org/learn/intro
 ## Connections
 
 ```shell
-curl -XPOST https://api.soundtrackyourbrand.com/v2 \
--H 'Authorization: Basic your_token' \
--H 'Content-Type: application/graphql' \
--d '
-query {
+json='{"query":"query {
   node(id: "track_id") {
     ...on Track {
       name
       previewUrl
     }
   }
-}
-'
+}"}'
+
+echo $json | curl -XPOST https://api.soundtrackyourbrand.com/v2 \
+-H 'Authorization: Basic your_token' \
+-H 'Content-Type: application/json' \
+-d @-
 ```
 
 Every one to many relationship is modelled using a concept of connections, edges and nodes. This is according to [Relay’s Connection Specification](https://facebook.github.io/relay/graphql/connections.htm) and allows every such relationship to be paginated in a consistent manner.
@@ -677,11 +641,7 @@ For many other entities, you can use the more general `node` query to get a spec
 > Pagination: first query
 
 ```shell
-curl -XPOST https://api.soundtrackyourbrand.com/v2 \
--H 'Authorization: Basic your_token' \
--H 'Content-Type: application/graphql' \
--d '
-query {
+json='{"query":"query {
   account(id: "account_id") {
     access {
       users(first: 5) {
@@ -699,18 +659,18 @@ query {
       }
     }
   }
-}
-'
+}"}'
+
+echo $json | curl -XPOST https://api.soundtrackyourbrand.com/v2 \
+-H 'Authorization: Basic your_token' \
+-H 'Content-Type: application/json' \
+-d @-
 ```
 
 > Pagination: second query
 
 ```shell
-curl -XPOST https://api.soundtrackyourbrand.com/v2 \
--H 'Authorization: Basic your_token' \
--H 'Content-Type: application/graphql' \
--d '
-query {
+json='{"query": "query {
   account(id: "account_id") {
     access {
       users(first: 5 after: "endCursor") {
@@ -728,8 +688,12 @@ query {
       }
     }
   }
-}
-'
+}"}'
+
+echo $json | curl -XPOST https://api.soundtrackyourbrand.com/v2 \
+-H 'Authorization: Basic your_token' \
+-H 'Content-Type: application/json' \
+-d @-
 ```
 
 ### Pagination
@@ -786,11 +750,7 @@ In order to use parameterised queries, the API expects the `Content-Type` to be 
 ## Fragments & multiple queries
 
 ```shell
-curl -XPOST https://api.soundtrackyourbrand.com/v2 \
--H 'Authorization: Basic your_token' \
--H 'Content-Type: application/graphql' \
--d '
-fragment nowPlayingFields on NowPlaying {
+json='{"query":"fragment nowPlayingFields on NowPlaying {
   startedAt
     track {
       name
@@ -815,8 +775,12 @@ query {
   nowPlaying2: nowPlaying(soundZone: "soundzone_id_2") {
     ...nowPlayingFields
   }
-}
-'
+}"}'
+
+echo $json | curl -XPOST https://api.soundtrackyourbrand.com/v2 \
+-H 'Authorization: Basic your_token' \
+-H 'Content-Type: application/json' \
+-d @-
 ```
 
 This example combines multiple queries into a single query. This can be done for all GraphQL you want to run (as long as they are independent from each other) in order to save round trips. It also shows how you can use [GraphQL fragments](http://graphql.org/learn/queries/#fragments) to reduce the amount of boilerplate in your queries.
@@ -824,16 +788,16 @@ This example combines multiple queries into a single query. This can be done for
 ## Authorizing as a user
 
 ```shell
-curl -XPOST https://api.soundtrackyourbrand.com/v2 \
--H 'Content-Type: application/graphql' \
--d '
-mutation {
+json='{"query": "mutation {
   loginUser(input: {email: "your_email", password: "your_password"}) {
     token
     refreshToken
   }
-}
-'
+}"}'
+
+echo $json | curl -XPOST https://api.soundtrackyourbrand.com/v2 \
+-H 'Content-Type: application/json' \
+-d @-
 ```
 
 If you want to, you can skip asking for API client credentials and just get a token using your existing Soundtrack-credentials, using the `loginUser`-mutation. For the `loginUser`-mutation you (obviously...) don't need an authorization-header.
@@ -859,16 +823,15 @@ The token won't be valid forever. That's why you need to use your `refreshToken`
 ### Using `refreshToken`
 
 ```shell
-curl -XPOST https://api.soundtrackyourbrand.com/v2 \
--H 'Content-Type: application/graphql' \
--d '
-mutation{
+json='{"query": "mutation{
   refreshLogin(input:{refreshToken: "your_refresh_token"}){
     token
     refreshToken
   }
-}
-'
+}"}'
+curl -XPOST https://api.soundtrackyourbrand.com/v2 \
+-H 'Content-Type: application/json' \
+-d @-
 ```
 
 The `refreshToken` will enable you to fetch a new access `token`. Once you get the response, replace your old `token` with the new one.
