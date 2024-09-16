@@ -15,149 +15,75 @@
 
 ## Introduction
 
-The Soundtrack SDK enables you to build support for Soundtrack on your platform. By combining expert curation and world-class tech, Soundtrack Your Brand provides a beautiful all-in-one solution for streaming music to stores, hotels, restaurants, and other commercial settings.
+The Soundtrack SDK makes it possible to play music from Soundtrack on your platform. 
+It is available for selected partners with potential for over 5000 locations. 
+If you're interested in becoming one, please reach out to [sdk@soundtrackyourbrand.com](mailto:sdk@soundtrackyourbrand.com).
 
-The SDK is available for selected partners. If you're interested in becoming one, please reach out to sdk@soundtrackyourbrand.com (applications currently open for opportunities of more than 5000 locations).
-
-This page contains the documentation for the SDK. In order to use it, you will need our latest build (which we will send to you).
-
-Soundtrack SDK is the package containing all code and documentation needed for you to get started. Splayer API is the local API within the SDK, used for initiating and controlling playback.
-
-Unless anything else is communicated by Soundtrack, the application shall be named "Soundtrack Player".
+All applications using the SDK must adhere to the Soundtrack Terms & Conditions. Certification is required before launch.
 
 ### Api
-* Provided as a single shared library, built with a toolchain provided by a partner and with no external dependencies.
-* Few entry points, which means faster load times and simple mapping both for dynamic and static linking.
-* Extendable API without the need to recompile (unless there are breaking changes).
-* Callbacks for audio so you can control your hardware specific needs.
+The SDK provides C header files, exposing an API called SPlayer API. It enables you to can do basic playback control and interface to the audio output of your choice.
+In its most basic form you'll get raw PCM samples out, but there are examples provided for common platforms for how to interface with the OS audio output.
 
-#### Available actions
-* Create and free an Splayer API context.
-* Exit the player gracefully (after the next song).
-* Player control (play, pause, skip track, set volume).
-* Get error list.
+The player itself is provided as a single shared library, built by us with a toolchain you provide. Api additions can be made without the need for recompile from your side.
 
-### Responsibilities
-* Soundtrack is responsible for the binary and header file (e.g. libsplayer-x.so and splayerapi-x.h).
-* Splayer communicates with Soundtrack's infrastructure and delivers sound buffers (e.g. PCM data).
-* Partner is responsible for all the parts concerning the executable, the actual playback (eg. ALSA).
-* Soundtrack provides source code examples as-is and it's the Partners responsibility to make them work.
-* Partner can use any part of the source code example, change and modify them, except splayerapi-x.h
-* Partner is responsible to check with Soundtrack's infrastructure every 15 minutes to see if new releases are available.
-* Partner is responsible for providing a toolchain that supports a C++ standard that is at most 5 years old at any given time now and in the future.
+#### Available Actions
+* Create and free an SPlayer API context.
+* Exit the player gracefully (after current song has ended).
+* Authentication
+* Playback controls (play, pause, skip track, set volume).
+* Retrieve errors.
 
 ### Requirements
 * A POSIX API compatible OS, that supports TCP sockets, and threads.
 * At least 64 MB free RAM for the player to operate in.
 * A reasonably strong CPU that could handle our parallel encryption, decoding and digital signal processing.
 * A minimum of 4 GB of storage used for offline music and data storage. 8 GB is recommended.
-* Partner needs to provide a C++14 capable cross compiler toolchain, and compiler options that we can build our library in a x86-64 linux docker container.
+* You need to provide a C++14 capable cross-compiler toolchain and compiler options, so we can build our library in an x86-64 linux docker container.
 * An onboard RTC with backup battery. In case of a power loss, we cannot play audio until we have a valid system time due to our scheduling, and licensing constraints.
 
-### Communication
-* Main communication channel with Soundtrack is a shared Slack channel in Soundtracks workspace.
-* Partner is responsible to provide a list of relevant people to be invited.
+### Soundtrack Responsibilities
+* SPlayer binary and header files (e.g. libsplayer-x.so and splayerapi-x.h).
+* Backend infrastructure used by SPlayer.
 
-## Changelog
-
-Detailed changelog can be found in the SDK package.
-
-Date | Version | Changes | Included APIs
---- | --- | --- | ---
-Q4, 2017 | 1 | First draft including basic functionality. | splayerapi v1
-Q2, 2018 | 2 | Moved controls to a separate API. Clarified examples. | splayerapi v2, splayerapi_control v1
-Q4, 2018 | 3 | Major/minor versioning. New metadata API. Some config variables renamed for clarity. | splayerapi v3, splayer_controls_api v2, splayer_troubles_api v1, splayer_audio_api v1, splayer_metadata_api v1
-Q2, 2020 | 4 | Updated metadata API, config variable to turn off cover art download. Config to turn off core-dumps. | splayerapi v4, splayer_controls_api v4, splayer_troubles_api v2, splayer_audio_api v1, splayer_metadata_api v2
+### Partner Responsibilities
+* Application lifecycle.
+* Application monitoring.
+* Audio processing of the SPlayer output.
+* All source code except for splayerapi-x.h.
+* Library update mechanism.
+* Updating the toolchain to make sure it supports a C++ standard that is at most 5 years old at any given time now and in the future.
 
 ## Getting started
 
-### Prerequisites
-Make sure that you have:
-* Your vendor secret (provided to you by Soundtrack).
-* Your Partner API credentials (provided to you by Soundtrack).
-* Access to Soundtrack. Sign up at soundtrackyourbrand.com.
-
-All applications must be in line with the terms & conditions and be certified by Soundtrack (see certification criteria further down on this page).
-
 ### What's in the package?
-* Header files for Splayer API and ALSA implementation example
+* Header files for Splayer API
 * Shared library for Splayer API
 * Example implementations for audio output via ALSA or Darwin
-* Example source code using ALSA or Darwin
 * Example source code using the update service to fetch latest shared library
 
-Note: The package can't be found on this page. It will be sent to you by Soundtrack. A static library version can be provided. It is not included by default due to the increase in size of the package
+You'll find the link for it here: https://builds.soundtrackyourbrand.com/remote/splayer-ubuntu/latest
+Look for the splayerapi-1-v4 package. Inside it, there are the headers needed to interface to the library as well as some example applications.
 
-### Soundtrack - Overview
-We highly recommend that you play around with your Soundtrack account so you get an overview of the product prior to using the API. All guides and frequently asked questions regarding Soundtrack can be found on our help pages.
+In order for you to get a player up and running as quickly as possible, use the pairing code option available in the auth api. There is an example of how to use it in the example_auth.c file.
+Unfortunately, we haven't yet finished updating the official documentation over at https://developer.soundtrackyourbrand.com/sdk/ with this feature. But I believe you can figure it out using the example and the function descriptions in the headers.
 
-It’s extra important that you understand the hierarchy, where one **account** (e.g. “Ludwig's Burgers”) can have multiple **locations** (e.g. “Flagship restaurant, Stockholm”) which in turn can have multiple **sound zones** (e.g. “Bar”, “Restaurant area”, “Staff room”).
-
-Each sound zone can only have one **device**. Soundtrack supports multiple device types (see our help pages to see which ones). The rationale for having multiple sound zones is that you want different music in different parts of the same location. If you want the same music everywhere in the same location you’ll only need one device and then distribute the music with your audio system.
-
-### Create a device
-
-Before you can run an application using the SDK, you must create a device using the Partner API. This device will be unique and needs to be paired to a sound zone. A device can only be paired with one sound zone at a time. The Partner API is a GraphQL API and you can run the following to create a device. Note: you need your Partner API credentials to do this step. It only needs to be done once since the pairing code does not change.
-
-1. Go to https://partner.soundtrackyourbrand.com/api/explore (this is just an explore tool, you should of course implement this code where you find it suitable)
-2. Add the Authorization header. In the “Value” field, write “Basic \<your_credentials\>” where \<your_credentials\> are the Partner API credentials that you should have received from Soundtrack. Ensure that you copy the full base64-token including the == on the end
-
-Example:
-```
-Authorization: base64encode(client_id:client_secret)
-```
-3. Enter a GraphQL query in the top box
-```
-mutation PartnerCodeCreator($input:GeneratePairingCodesInput!){
-    generatePairingCodes(input: $input) {
-        codes {
-            pairingCode
-        }
-    }
-}
-```
-4. Include the query variables
-```
-{
-    "input": {
-        "description":"ARM64",
-        "deviceType": "EMBEDDED",
-        "label": "Partnername M324",
-        "hardwareIds": ["partner_id_ab12"]
-    }
-}
-```
- * Change the `description` to add  a description of the specific hardware/platform, so we can distinguish among your devices in case there are any differences in hardware/platform or you come up with a new generation etc.
- * Set `deviceType` to `EMBEDDED` (currently not optional)
- * Change the `label` to the name of your product. This will be shown to users at business.soundtrackyourbrand.com.
- * Change the `hardwareIds` entry to the hardware_id of your choice. See "Authentication & Pairing" for more info
-
-
-5. Run the query and you should get a pairing code as output. You will need this code to pair the created device with a specific sound zone later.
-6. Write down the hardware_id that you chose (in the example ‘partner_id_ab12’). Write down the pairing code that was output when you ran the query. You can rerun the query if you need to. Supplying an existing hardware id will always return the same pairing code.
-
-### Pairing a device with a sound zone
-1. Open [https://business.soundtrackyourbrand.com](https://business.soundtrackyourbrand.com).
-2. Navigate to “zones”.
-3. Use an existing zone or create a new one.
-4. Click your zone and pair the device using the "Hardware" tab.
-5. Enter the Pairing Code that you got when creating a device.
-6. The device should now be paired with this sound zone.
+Let us know if you have any questions!
 
 ### Building and running the example code
 1. Open the /src folder. There are several examples showcasing some basic setup of a player application.
-3. Edit the example files with the hardware_id you created in the “Create a device” section (“partner_id_ab12” in above example).
-4. Supply the vendor secret to the application. This can be done in a few different ways:
+1. Edit the example files with the hardware_id you created in the “Create a device” section (“partner_id_ab12” in above example).
+1. Supply the vendor secret to the application. This can be done in a few different ways:
  * Set the value directly in vendor_secret
  * Set `-DVENDOR_SECRET=xxxx` when building with cmake
  * Add the vendor secret directly in the CMakeList.txt file
  ```c
  add_definitions(-DVENDOR_SECRET=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx)
  ```
-5. Build the project using cmake
-6. There will now be several example targets in the build root folder
-7. Run the example executable (eg. libsplayer_simple)
-8. There should be some console output and music should start playing shortly
+1. Build the project using cmake
+1. There will now be several example targets in the build root folder
+1. Run the example executable (eg. libsplayer_simple)
+1. There should be some console output and music should start playing shortly
 
 ```c
 libsplayer_alsa
