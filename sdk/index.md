@@ -19,7 +19,7 @@ The Soundtrack SDK makes it possible to play music from Soundtrack on your platf
 It is available for selected partners with potential for over 5000 locations. 
 If you're interested in becoming one, please reach out to [sdk@soundtrackyourbrand.com](mailto:sdk@soundtrackyourbrand.com).
 
-All applications using the SDK must adhere to the Soundtrack Terms & Conditions. Certification is required before launch.
+All applications using the SDK must adhere to the Soundtrack Terms & Conditions. Certification of the integration is required before launch. Any non-trivial modification to the integration post-launch requires re-certification before it is released.
 
 ### API
 The SDK provides C header files, exposing an API called SPlayer API. It enables you to do basic playback control and interface to the audio output of your choice.
