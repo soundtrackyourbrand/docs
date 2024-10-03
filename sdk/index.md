@@ -22,7 +22,7 @@ If you're interested in becoming one, please reach out to [sdk@soundtrackyourbra
 All applications using the SDK must adhere to the Soundtrack Terms & Conditions. Certification is required before launch.
 
 ### API
-The SDK provides C header files, exposing an API called SPlayer API. It enables you to can do basic playback control and interface to the audio output of your choice.
+The SDK provides C header files, exposing an API called SPlayer API. It enables you to do basic playback control and interface to the audio output of your choice.
 In its most basic form you'll get raw PCM samples out, but there are examples provided for common platforms for how to interface with the OS audio output.
 
 The player itself is provided as a single shared library, built by us with a toolchain you provide. API additions can be made without the need for recompile from your side.
