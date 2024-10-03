@@ -249,7 +249,7 @@ ERROR_DOWNLOADED_DATA | Checks downloaded data for the assigned music. | Fails i
 ERROR_NO_VOLUME | Checks the volume level | Fails if the volume is set to zero.
 ERROR_DISKCACHE_LOW | Checks free disk space | Fails if the free disk space is below 1 GB.
 ERROR_DISKCACHE_CRITICALLY_LOW | Checks free disk space | Fails if the free disk space is below 256 MB.
-ERROR_PAYMENT_EXPIRED | Check payment status | Fails if the paired zone doesn't have a valid and payed subscription.
+ERROR_PAYMENT_EXPIRED | Check payment status | Fails if the paired zone doesn't have a valid and paid subscription.
 ERROR_CLOCK_WRONG | Check server time offset | Fails if server time offset differs +- 15 min from the device local time.
 
 ## Certification
