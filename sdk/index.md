@@ -38,8 +38,11 @@ The player itself is provided as a single shared library, built by us with a too
 * A POSIX API compatible OS, that supports TCP sockets, and threads.
 * At least 64 MB free RAM for the player to operate in.
 * A reasonably strong CPU that could handle our parallel encryption, decoding and digital signal processing.
-* A minimum of 4 GB of storage used for offline music and data storage. 8 GB is recommended.
-* You need to provide a C++14 capable cross-compiler toolchain and compiler options, so we can build our library in an x86-64 linux docker container.
+* A minimum of 256 MB storage.
+* You need to provide a C++17 capable cross-compiler toolchain and compiler options, so we can build our library in an x86-64 linux docker container.
+
+#### Additional requirements for offline playback
+* A minimum of 1 GB of storage used for offline music and data storage. 8 GB is recommended.
 * An onboard RTC with backup battery. In case of a power loss, we cannot play audio until we have a valid system time due to our scheduling, and licensing constraints.
 
 ### Soundtrack Responsibilities
